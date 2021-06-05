@@ -1,0 +1,16 @@
+{
+  "title": "Async Blocks",
+  "author": "Anibal Santos",
+  "headerTitle": "async blocks",
+  "description": "Se me olvidan las cosas, entonces escribo.",
+  "language": "es-es",
+  "siteUrl": "https://tailwind-nextjs-starter-blog.vercel.app",
+  "siteRepo": "https://github.com/timlrx/tailwind-nextjs-starter-blog",
+  "image": "/static/images/profile.png",
+  "socialBanner": "/static/images/twitter-card.png",
+  "email": "anibalsantosgo@gmail.com",
+  "github": "https://github.com/ansango",
+  "twitter": "https://twitter.com/iamasync_",
+  "linkedin": "https://www.linkedin.com/in/ansango",
+  "locale": "es-ES"
+}
