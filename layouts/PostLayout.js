@@ -8,7 +8,7 @@ import siteMetadata from '@/data/siteMetadata'
 const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
 
 export default function PostLayout({ children, frontMatter, next, prev }) {
-  const { slug, fileName, date, title, tags, readingTime } = frontMatter
+  const { date, title, tags, readingTime } = frontMatter
   const min = Math.round(readingTime.minutes)
   const toRead = `- ${min} ${min > 1 ? 'minutos de lectura' : 'minuto de lectura'}`
   return (
