@@ -27,7 +27,11 @@ export default function Tags({ tags }) {
           </h1>
         </div>
         <div className="flex flex-wrap max-w-lg">
-          {Object.keys(tags).length === 0 && 'No tags found.'}
+          {Object.keys(tags).length === 0 && (
+            <div className="text-center py-10">
+              <p>No se han encontrado etiquetas</p>
+            </div>
+          )}
           {sortedTags.map((t) => {
             return (
               <div key={t} className="mt-2 mb-2 mr-5">

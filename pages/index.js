@@ -31,7 +31,11 @@ export default function Home({ posts }) {
           </p>
         </div>
         <ul className="">
-          {!posts.length && 'No posts found.'}
+          {!posts.length && (
+            <div className="text-center py-10">
+              <p>No se han encontrado entradas</p>
+            </div>
+          )}
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
