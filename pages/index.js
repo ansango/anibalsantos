@@ -27,7 +27,7 @@ export default function Home({ posts }) {
             Lo último
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
         <ul className="">
