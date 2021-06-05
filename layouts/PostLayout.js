@@ -35,13 +35,14 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                       <dd className="text-gray-900 dark:text-gray-100">{siteMetadata.author}</dd>
                       {typeof siteMetadata.twitter === 'string' && (
                         <>
-                          <dt className="sr-only">Twitter</dt>
+                          <dt className="sr-only">Instagram</dt>
                           <dd>
                             <Link
-                              href={siteMetadata.twitter}
+                              href={siteMetadata.instagram}
+                              target="_blank"
                               className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
                             >
-                              {siteMetadata.twitter.replace('https://twitter.com/', '@')}
+                              {siteMetadata.instagram.replace('https://instagram.com/', '@')}
                             </Link>
                           </dd>
                         </>

@@ -1,3 +1,4 @@
+import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import { PageSeo } from '@/components/SEO'
@@ -24,9 +25,7 @@ export default function Bio() {
             </h3>
             <div className="text-gray-500 dark:text-gray-400">Frontend Mid Developer</div>
 
-            <a href="https://www.everis.com/global/en" target="_blank" rel="noreferrer">
-              Everis
-            </a>
+            <Link href={'https://www.everis.com/global/en'}>Everis</Link>
 
             <div className="flex pt-6 space-x-3">
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
@@ -38,31 +37,20 @@ export default function Bio() {
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
             <p>
               Me llamo Aníbal, actualmente resido en Salamanca, donde trabajo como desarrollador
-              Frontend en{' '}
-              <a href="https://www.everis.com/global/en" target="_blank" rel="noreferrer">
-                Everis
-              </a>
-              , para el proyecto de{' '}
-              <a href="https://iberdrola.es" target="_blank" rel="noreferrer">
-                Iberdrola
-              </a>
-              , en el departamento de web comercial.
+              Frontend en <Link href={'https://www.everis.com/global/en'}>Everis</Link>, para el
+              proyecto de <Link href={'https://iberdrola.es'}>Iberdrola</Link>, en el departamento
+              de web comercial.
             </p>
             <p>
               Me licencié en Derecho en la{' '}
-              <a href="https://www.usal.es/" target="_blank" rel="noreferrer">
-                Universidad de Salamanca
-              </a>{' '}
-              finalizando mi carrera universitaria en la{' '}
-              <a href="https://www.uniroma3.it/" target="_blank" rel="noreferrer">
-                Università di Roma Tre
-              </a>
-              , en Roma. Un día cambié de opinión y decidí reinventarme y empecé a estudiar
-              programación. Actualmente me encuentro finalizando el Máster de Desarrollo de
-              Aplicaciones Web de la{' '}
-              <a href="https://www.uoc.edu/portal/en/index.html" target="_blank" rel="noreferrer">
+              <Link href={'https://www.usal.es/'}>Universidad de Salamanca</Link> finalizando mi
+              carrera universitaria en la{' '}
+              <Link href={'https://www.uniroma3.it/'}>Università di Roma Tre</Link>, en Roma. Un día
+              cambié de opinión y decidí reinventarme y empecé a estudiar programación. Actualmente
+              me encuentro finalizando el Máster de Desarrollo de Aplicaciones Web de la{' '}
+              <Link href={'https://www.uoc.edu/portal/en/index.html'}>
                 Universitat Oberta de Catalunya
-              </a>
+              </Link>
               .
             </p>
             <p>
@@ -78,7 +66,10 @@ export default function Bio() {
               que soy un melómano increíble. Me encanta la música y engullo tanta música como
               frameworks de frontend.
             </p>
-            <p>Si quieres preguntarme cualquier cosa, estaré encantado de escucharte.</p>
+            <p>
+              Si quieres <Link href={`mailto:${siteMetadata.email}`}>preguntarme</Link> cualquier
+              cosa, estaré encantado de escucharte.
+            </p>
           </div>
         </div>
       </div>
