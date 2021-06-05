@@ -10,7 +10,7 @@ const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day:
 export default function PostLayout({ children, frontMatter, next, prev }) {
   const { date, title, tags, readingTime } = frontMatter
   const min = Math.round(readingTime.minutes)
-  const toRead = `- ${min} ${min > 1 ? 'minutos de lectura' : 'minuto de lectura'}`
+  const toRead = `- ${min} ${min !== 1 ? 'minutos de lectura' : 'minuto de lectura'}`
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
