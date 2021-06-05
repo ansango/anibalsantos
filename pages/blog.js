@@ -20,7 +20,7 @@ export default function Blog({ posts, initialDisplayPosts, pagination }) {
   return (
     <>
       <PageSeo
-        title={`Blog - ${siteMetadata.author}`}
+        title={'Blog'}
         description={siteMetadata.description}
         url={`${siteMetadata.siteUrl}/blog`}
       />
