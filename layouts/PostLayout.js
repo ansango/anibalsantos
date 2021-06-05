@@ -89,6 +89,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                         </div>
                       </div>
                     )}
+                    {!prev && <div></div>}
                     {next && (
                       <div className="flex flex-col items-end">
                         <h2 className="text-xs tracking-wide text-gray-500 dark:text-gray-400">
@@ -99,6 +100,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                         </div>
                       </div>
                     )}
+                    {!next && <div></div>}
                   </div>
                 )}
               </div>
