@@ -28,7 +28,6 @@ export async function getStaticProps({ params }) {
   const filteredPosts = allPosts.filter(
     (post) => post.draft !== true && post.tags.map((t) => kebabCase(t)).includes(params.tag)
   )
-
   // rss
   const rss = generateRss(filteredPosts, `tags/${params.tag}/index.xml`)
   const rssPath = path.join(root, 'public', 'tags', params.tag)
