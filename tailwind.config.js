@@ -60,7 +60,7 @@ module.exports = {
             },
             code: {
               color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.800'),
+              backgroundColor: theme('colors.gray.100'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',
@@ -116,7 +116,7 @@ module.exports = {
               color: theme('colors.gray.100'),
             },
             code: {
-              backgroundColor: theme('colors.gray.700'),
+              backgroundColor: theme('colors.gray.800'),
             },
             hr: { borderColor: theme('colors.gray.700') },
             'ol li:before': {
