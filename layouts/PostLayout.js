@@ -1,5 +1,6 @@
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
+import ScrollButton from '@/components/ScrollButton'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'

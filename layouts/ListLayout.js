@@ -24,7 +24,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>
-          <div className="relative max-w-lg">
+          <p className="text-md leading-7 text-gray-500 dark:text-gray-400">
+            Aquí puedes encontrar todas las entradas que he ido escribiendo a lo largo del tiempo.
+            Utiliza el siguiente buscador para filtrar por título.
+          </p>
+          <div className="relative">
             <input
               aria-label="Buscar artículos"
               type="text"
@@ -48,7 +52,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             </svg>
           </div>
         </div>
-        <ul>
+        <ul className="py-10">
           {!filteredBlogPosts.length && (
             <div className="text-center py-10">
               <p>No se han encontrado entradas</p>
