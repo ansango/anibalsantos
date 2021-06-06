@@ -17,7 +17,7 @@ export default function Bio() {
             Bio
           </h1>
         </div>
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="items-start space-y-2">
           <div className="flex flex-col items-center pt-8 space-x-2">
             <img src={siteMetadata.image} alt="avatar" className="w-48 h-48 rounded-full" />
             <h3 className="pt-4 pb-2 text-2xl font-bold leading-8 tracking-tight">
@@ -28,10 +28,10 @@ export default function Bio() {
             <Link href={'https://www.everis.com/global/en'}>Everis</Link>
 
             <div className="flex pt-6 space-x-3">
-              <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="6" />
-              <SocialIcon kind="github" href={siteMetadata.github} size="6" />
-              <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="6" />
-              <SocialIcon kind="instagram" href={siteMetadata.instagram} size="6" />
+              <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="5" />
+              <SocialIcon kind="github" href={siteMetadata.github} size="5" />
+              <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
+              <SocialIcon kind="instagram" href={siteMetadata.instagram} size="5" />
             </div>
           </div>
           <div className="pt-8 pb-8 prose dark:prose-dark max-w-none xl:col-span-2">
