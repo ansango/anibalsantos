@@ -20,7 +20,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-col mt-5 space-y-4 md:flex-row md:items-center md:justify-between md:space-x-4 ">
           <Link href="/">{siteMetadata.title}</Link>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center justify-center md:justify-start space-x-2">
             <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="5" />
             <SocialIcon kind="github" href={siteMetadata.github} size="5" />
             <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
