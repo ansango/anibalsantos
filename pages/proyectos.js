@@ -14,6 +14,7 @@ export default function Projects() {
 
   const displayProjects =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredProjects
+
   return (
     <>
       <PageSeo
