@@ -4,7 +4,7 @@
   "headerTitle": "anibalsantos",
   "description": "Un blog sobre Javascript y copiar y pegar",
   "language": "es-es",
-  "siteUrl": "https://anibalsantos.vercel.app/",
+  "siteUrl": "https://anibalsantos.vercel.app",
   "siteRepo": "https://github.com/ansango/anibalsantos",
   "image": "/static/images/profile.png",
   "socialBanner": "/static/images/then.png",
