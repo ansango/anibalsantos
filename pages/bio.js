@@ -7,8 +7,8 @@ export default function Bio() {
   return (
     <>
       <PageSeo
-        title={`Bio - ${siteMetadata.author}`}
-        description={`About me - ${siteMetadata.author}`}
+        title={'Bio'}
+        description={`Bio - ${siteMetadata.author}`}
         url={`${siteMetadata.siteUrl}/bio`}
       />
       <div className="divide-y">
