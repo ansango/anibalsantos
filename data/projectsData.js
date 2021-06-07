@@ -51,6 +51,7 @@ const projectsData = [
     imgSrc: '/static/images/profile.png',
     href: 'https://anibalsantos-resume.netlify.app/',
     stack: [icons.html, icons.js, icons.sass, icons.netlify],
+    tags: ['html', 'js', 'javascript', 'sass', 'itcss', 'oocss', 'netlify', 'frontend'],
   },
   {
     title: 'Blog',
@@ -59,6 +60,7 @@ const projectsData = [
     imgSrc: '/static/images/next.jpg',
     href: '/',
     stack: [icons.next, icons.tailwind, icons.markdown, icons.vercel],
+    tags: ['markdown', 'react', 'nextjs', 'tailwind', 'vercel', 'frontend'],
   },
   {
     title: 'NgBrew',
@@ -67,6 +69,7 @@ const projectsData = [
     imgSrc: '/static/images/brew.jpg',
     href: 'https://ng-brew.netlify.app/',
     stack: [icons.angular, icons.tailwind, icons.netlify],
+    tags: ['angular', 'tailwind', 'netlify', 'service', 'worker', 'pwa', 'frontend'],
   },
   {
     title: 'NgMaterial',
@@ -75,6 +78,7 @@ const projectsData = [
     imgSrc: '/static/images/material.png',
     href: 'https://ng-material.netlify.app/',
     stack: [icons.angular, icons.redux, icons.material, icons.netlify],
+    tags: ['angular', 'material', 'netlify', 'redux', 'ngrx', 'frontend'],
   },
   {
     title: 'Undefined Band - Bootstrap 5',
@@ -83,6 +87,7 @@ const projectsData = [
     imgSrc: '/static/images/band.jpg',
     href: 'https://band-uoc.netlify.app/',
     stack: [icons.react, icons.sass, icons.bootstrap, icons.netlify],
+    tags: ['parcel', 'react', 'bootstrap', 'sass', 'netlify', 'itcss', 'oocss', 'frontend'],
   },
   {
     title: 'Undefined Band - TailwindCSS',
@@ -91,6 +96,7 @@ const projectsData = [
     imgSrc: '/static/images/band2.jpg',
     href: 'https://band-uoc-tailwind.netlify.app/',
     stack: [icons.react, icons.sass, icons.tailwind, icons.netlify],
+    tags: ['parcel', 'react', 'tailwind', 'sass', 'netlify', 'itcss', 'oocss', 'frontend'],
   },
   {
     title: 'Neo Punk Api',
@@ -99,6 +105,7 @@ const projectsData = [
     imgSrc: '/static/images/brew2.jpg',
     href: 'https://neopunkapi.herokuapp.com/',
     stack: [icons.node, icons.mongo, icons.heroku],
+    tags: ['node', 'express', 'heroku', 'mongodb', 'api', 'rest', 'backend', 'js', 'javascript'],
   },
   {
     title: 'Shopping List',
@@ -107,6 +114,7 @@ const projectsData = [
     imgSrc: '/static/images/nuxt.jpg',
     href: 'https://nuxt-shopping-list.netlify.app/',
     stack: [icons.nuxt, icons.vue, icons.tailwind, icons.netlify],
+    tags: ['nuxt', 'vue', 'taiwind', 'netlify', 'pwa', 'service', 'worker', 'frontend'],
   },
   {
     title: 'Retro Pair Game',
@@ -115,6 +123,7 @@ const projectsData = [
     imgSrc: '/static/images/retro.jpg',
     href: 'https://retro-pair.netlify.app/',
     stack: [icons.html, icons.css3, icons.js, icons.netlify],
+    tags: ['html', 'js', 'javascript', 'css', 'nescss', 'netlify', 'game', 'frontend'],
   },
 ]
 
