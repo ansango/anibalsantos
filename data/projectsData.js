@@ -38,7 +38,7 @@ const projectsData = [
     description:
       'Landing de producto, creada con Parcel, React, TailwindCSS y Sass, version reducida y refactorizada. Desplegado en Netlify',
     imgSrc: '/static/images/band.jpg',
-    href: 'https://band-uoc.netlify.app/',
+    href: 'https://band-uoc-tailwind.netlify.app/',
   },
   {
     title: 'Neo Punk Api',
