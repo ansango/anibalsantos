@@ -17,8 +17,8 @@ export default function Projects() {
             Proyectos
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Pequeños proyectos Frontend y Backend, desarrollados escritos en Vue, Nuxt.js, Angular,
-            React, ES6, Node.js, Express y MongoDB.
+            Pequeños proyectos Frontend y Backend, desarrollados en Vue, Nuxt.js, Angular, React,
+            Next.js, ES6, Node.js, Express y MongoDB.
           </p>
         </div>
         <div className="container py-12">
