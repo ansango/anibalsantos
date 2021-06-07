@@ -62,9 +62,10 @@ export default function Bio() {
               gastronomía. No se si el empezar a escribir en un blog se convertirá en otra de ellas.
             </p>
             <p>
-              Por último, no pretendo abrumarte con mi stack tecnológico, se me olvidaba comentar
-              que soy un melómano increíble. Me encanta la música y engullo tanta música como
-              frameworks de frontend.
+              Por último, no pretendo aburrirte con mi stack tecnológico, puedes verlo{' '}
+              <Link href={'https://anibalsantos-resume.netlify.app/'}>aqui</Link>. Se me olvidaba
+              comentar que soy un melómano increíble. Me encanta la música y engullo tanta música
+              como frameworks de frontend.
             </p>
             <p>
               Si quieres <Link href={`mailto:${siteMetadata.email}`}>preguntarme</Link> cualquier
