@@ -40,7 +40,7 @@ const Card = ({ title, description, imgSrc, href }) => (
             className="text-base font-medium leading-6 text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
             aria-label={`Link to ${title}`}
           >
-            Learn more &rarr;
+            Ir al proyecto &rarr;
           </Link>
         )}
       </div>

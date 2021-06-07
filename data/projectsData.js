@@ -1,14 +1,14 @@
 const projectsData = [
   {
     title: 'Curriculum',
-    description: `Mi Curriculum Vitae desarrollado en una sola página con ES6, Sass, y HTML y desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
+    description: `Mi Curriculum Vitae desarrollado en ES6, Sass, y HTML. Desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
     imgSrc: '/static/images/profile.png',
     href: 'https://anibalsantos-resume.netlify.app/',
   },
   {
     title: 'Blog',
     description:
-      'Referencia a este presente blog, desarrollado en Next.js, TailwindCSS y desplegado en Vercel.',
+      'Mi blog actual, en el que estás navegando. Desarrollado en Next.js, TailwindCSS, basado en Markdown y mejorado con MDX. Desplegado en Vercel.',
     imgSrc: '/static/images/next.jpg',
     href: '/',
   },
@@ -29,7 +29,7 @@ const projectsData = [
   {
     title: 'Undefined Band - Bootstrap 5',
     description:
-      'Landing de producto, creada con Parcel, React, Bootstrap 5 y Sass, from scratch. Desplegado en Netlify.',
+      'Landing de producto, creada con Parcel, React, Bootstrap 5 y Sass, ITCSS, from scratch. Desplegado en Netlify.',
     imgSrc: '/static/images/band.jpg',
     href: 'https://band-uoc.netlify.app/',
   },
