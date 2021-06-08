@@ -79,7 +79,7 @@ export default function Home({ posts }) {
         </ul>
       </div>
       {posts.length > MAX_DISPLAY && (
-        <div className="flex justify-end text-base font-medium leading-6">
+        <div className="flex justify-end text-base font-medium leading-6 pb-10">
           <Link
             href="/blog"
             className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
