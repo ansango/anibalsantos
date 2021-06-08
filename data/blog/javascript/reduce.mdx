@@ -1,6 +1,6 @@
 ---
 title: Array Reduce
-date: '2021-06-8'
+date: '2021-06-06'
 tags: ['javascript', 'es6', 'array-methods', 'reduce']
 draft: false
 summary: Cómo usar array reduce
@@ -33,6 +33,8 @@ En la vuelta del callback obtenemos un el valor anterior en cada iteración. Com
 
 Reduce devuelve un solo valor, no un array que contiene un único elemento.
 
+> El método `reduce` aplica una función a un acumulador y a cada valor de una array (de izquierda a derecha) para reducirlo a un único valor.
+
 ## Ejemplos
 
 ### Suma de lista de numeros
@@ -60,7 +62,7 @@ const result = numbers.reduce((accumulator, number) => {
 console.log(result) // output: 10
 ```
 
-el `acumulador` es el valor anterior, resultante de la operacion que se devuelve, el `numero` es el elemento actual de la iteración, todo esto es pasado como primer argumento de la función. Como segundo argumento tenemos el valor inicial sobre el cual se comienza.
+el `acumulador` es el valor anterior, resultante de la operación que se devuelve, el `número` es el elemento actual de la iteración, todo esto es pasado como primer argumento de la función. Como segundo argumento tenemos el valor inicial sobre el cual se comienza.
 
 ### Formatear un array de objetos
 
@@ -89,4 +91,42 @@ console.log(resultado)
   2: { nombre: 'gato', ubicaciones: [ 'salamanca', 'madrid' ] }, 
   3: { nombre: 'conejo', ubicaciones: [ 'salamanca', 'madrid' ] } } 
 */
+```
+
+### Contador de nombres
+
+```javascript
+const nombres = [
+  'Anibal',
+  'Sergio',
+  'Miguel',
+  'Juan Carlos',
+  'Thomas',
+  'Manuel',
+  'Laura',
+  'Miguel',
+  'Sergio',
+]
+
+const cantidadNombres = nombres.reduce((acumuladorNombre, nombreActual) => {
+  acumuladorNombre[nombreActual] = (acumuladorNombre[nombreActual] || 0) + 1
+  return acumuladorNombre
+}, {})
+
+console.log(cantidadNombres)
+
+/**
+ * Output: { Anibal: 1, Sergio: 2, Miguel: 2, Carlos: 1, Thomas: 1, Manuel: 1, Laura: 1, }
+ */
+```
+
+La función se ejecuta de esta manera:
+
+```javascript
+// Primera ejecución
+1 - contadorNombre = {} // Objecto vacío
+2 - nombre = Jorge // Primer elemento del array
+3 - {Anibal: 1}
+4 - Se retorna el objecto existen -> {Anibal: 1}
+5 - contadorNombre = {Anibal: 1} // Se repite el ciclo
 ```
