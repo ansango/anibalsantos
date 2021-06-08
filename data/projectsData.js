@@ -17,6 +17,7 @@ import {
   SiNuxtDotJs as NUXT,
   SiVueDotJs as VUE,
   SiCss3 as CSS3,
+  SiBulma as BULMA,
 } from 'react-icons/si'
 
 import { IoLogoVercel as VERCEL } from 'react-icons/io5'
@@ -42,6 +43,7 @@ const icons = {
   nuxt: <NUXT key="nuxt" size={sizeIcons} color="#3B8070" className="mr-3" />,
   vue: <VUE key="vue" size={sizeIcons} color="#3FB27F" className="mr-3" />,
   css3: <CSS3 key="css" size={sizeIcons} color="#0270BA" className="mr-3" />,
+  bulma: <BULMA key="bulma" size={sizeIcons} color="#27BDB8" className="mr-3" />,
 }
 
 const projectsData = [
@@ -51,7 +53,19 @@ const projectsData = [
     imgSrc: '/static/images/profile.png',
     href: 'https://anibalsantos-resume.netlify.app/',
     stack: [icons.html, icons.js, icons.sass, icons.netlify],
-    tags: ['html', 'js', 'javascript', 'sass', 'itcss', 'oocss', 'netlify', 'frontend'],
+    tags: [
+      'html',
+      'js',
+      'javascript',
+      'sass',
+      'itcss',
+      'oocss',
+      'netlify',
+      'frontend',
+      'cv',
+      'curriculum',
+      'resume',
+    ],
   },
   {
     title: 'Blog',
@@ -60,7 +74,7 @@ const projectsData = [
     imgSrc: '/static/images/next.jpg',
     href: '/',
     stack: [icons.next, icons.tailwind, icons.markdown, icons.vercel],
-    tags: ['markdown', 'react', 'nextjs', 'tailwind', 'vercel', 'frontend'],
+    tags: ['markdown', 'react', 'nextjs', 'tailwind', 'vercel', 'frontend', 'blog'],
   },
   {
     title: 'NgBrew',
@@ -69,7 +83,7 @@ const projectsData = [
     imgSrc: '/static/images/brew.jpg',
     href: 'https://ng-brew.netlify.app/',
     stack: [icons.angular, icons.tailwind, icons.netlify],
-    tags: ['angular', 'tailwind', 'netlify', 'service', 'worker', 'pwa', 'frontend'],
+    tags: ['angular', 'tailwind', 'netlify', 'service', 'worker', 'pwa', 'frontend', 'ng', 'brew'],
   },
   {
     title: 'NgMaterial',
@@ -78,7 +92,7 @@ const projectsData = [
     imgSrc: '/static/images/material.png',
     href: 'https://ng-material.netlify.app/',
     stack: [icons.angular, icons.redux, icons.material, icons.netlify],
-    tags: ['angular', 'material', 'netlify', 'redux', 'ngrx', 'frontend'],
+    tags: ['angular', 'material', 'netlify', 'redux', 'ngrx', 'frontend', 'ng'],
   },
   {
     title: 'Undefined Band - Bootstrap 5',
@@ -87,7 +101,18 @@ const projectsData = [
     imgSrc: '/static/images/band.jpg',
     href: 'https://band-uoc.netlify.app/',
     stack: [icons.react, icons.sass, icons.bootstrap, icons.netlify],
-    tags: ['parcel', 'react', 'bootstrap', 'sass', 'netlify', 'itcss', 'oocss', 'frontend'],
+    tags: [
+      'parcel',
+      'react',
+      'bootstrap',
+      'sass',
+      'netlify',
+      'itcss',
+      'oocss',
+      'frontend',
+      'undefined',
+      'band',
+    ],
   },
   {
     title: 'Undefined Band - TailwindCSS',
@@ -96,7 +121,18 @@ const projectsData = [
     imgSrc: '/static/images/band2.jpg',
     href: 'https://band-uoc-tailwind.netlify.app/',
     stack: [icons.react, icons.sass, icons.tailwind, icons.netlify],
-    tags: ['parcel', 'react', 'tailwind', 'sass', 'netlify', 'itcss', 'oocss', 'frontend'],
+    tags: [
+      'parcel',
+      'react',
+      'tailwind',
+      'sass',
+      'netlify',
+      'itcss',
+      'oocss',
+      'frontend',
+      'undefined',
+      'band',
+    ],
   },
   {
     title: 'Neo Punk Api',
@@ -105,7 +141,19 @@ const projectsData = [
     imgSrc: '/static/images/brew2.jpg',
     href: 'https://neopunkapi.herokuapp.com/',
     stack: [icons.node, icons.mongo, icons.heroku],
-    tags: ['node', 'express', 'heroku', 'mongodb', 'api', 'rest', 'backend', 'js', 'javascript'],
+    tags: [
+      'node',
+      'express',
+      'heroku',
+      'mongodb',
+      'api',
+      'rest',
+      'backend',
+      'js',
+      'javascript',
+      'neo',
+      'punk',
+    ],
   },
   {
     title: 'Shopping List',
@@ -114,7 +162,18 @@ const projectsData = [
     imgSrc: '/static/images/nuxt.jpg',
     href: 'https://nuxt-shopping-list.netlify.app/',
     stack: [icons.nuxt, icons.vue, icons.tailwind, icons.netlify],
-    tags: ['nuxt', 'vue', 'taiwind', 'netlify', 'pwa', 'service', 'worker', 'frontend'],
+    tags: [
+      'nuxt',
+      'vue',
+      'taiwind',
+      'netlify',
+      'pwa',
+      'service',
+      'worker',
+      'frontend',
+      'shopping',
+      'list',
+    ],
   },
   {
     title: 'Retro Pair Game',
@@ -123,7 +182,16 @@ const projectsData = [
     imgSrc: '/static/images/retro.jpg',
     href: 'https://retro-pair.netlify.app/',
     stack: [icons.html, icons.css3, icons.js, icons.netlify],
-    tags: ['html', 'js', 'javascript', 'css', 'nescss', 'netlify', 'game', 'frontend'],
+    tags: ['html', 'js', 'javascript', 'css', 'nescss', 'netlify', 'game', 'frontend', 'retro'],
+  },
+  {
+    title: 'The Frontend Roadmap',
+    description:
+      'Landing page creada from scratch en Vue 2, Parcel v1, BulmaCSS. Desplegado en Netlify.',
+    imgSrc: '/static/images/roadmap.png',
+    href: 'https://frontend-roadmap.netlify.app/',
+    stack: [icons.vue, icons.bulma, icons.netlify],
+    tags: ['vue', 'parcel', 'bulmacss', 'netlify', 'landing', 'frontend', 'roadmap'],
   },
 ]
 
