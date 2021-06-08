@@ -2,15 +2,22 @@ import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
+import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 
 export default function Projects() {
+  const b5 = 'Undefined Band - Bootstrap 5'
+  const road = 'The Frontend Roadmap'
+  const blog = 'Blog'
   const initialDisplayPosts = []
   const [searchValue, setSearchValue] = useState('')
-  const filteredProjects = projectsData.filter((project) => {
-    const searchContent = project.tags
-    return searchContent.join().includes(searchValue.toLowerCase())
+  const filteredProjects = projectsData.map((project) => {
+    if (project.title == b5 || road || blog) {
+      console.log(project.title)
+      return project
+    }
   })
+  console.log(filteredProjects)
 
   const displayProjects =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredProjects
@@ -24,44 +31,29 @@ export default function Projects() {
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Proyectos
-          </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Puedes utilizar el buscador para filtrar por skill técnico o título.
-          </p>
-          <div className="relative">
-            <input
-              aria-label="Buscar proyectos"
-              type="text"
-              onChange={(e) => setSearchValue(e.target.value)}
-              placeholder="Buscar proyecto"
-              className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-800 dark:text-gray-100"
-            />
-            <svg
-              className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
+          <div className="flex items-center">
+            <h1 className="text-3xl mr-3 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+              Proyectos destacados
+            </h1>
+            <span className="text-3xl" role="img" aria-label="star">
+              ⭐
+            </span>
           </div>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            Estos son mis algunos de mis últimos proyectos personales, si quieres ver el listado
+            completo, puedes hacerlo{' '}
+            <Link
+              className="font-bold text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
+              href="/proyectos/todos"
+            >
+              aquí
+            </Link>
+            .
+          </p>
         </div>
         <div className="container py-12">
-          {!filteredProjects.length && (
-            <div className="text-center py-10">
-              <p>No se han encontrado entradas</p>
-            </div>
-          )}
           <div className="flex flex-wrap -m-4">
-            {displayProjects.map((d) => (
+            {projectsData.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}
