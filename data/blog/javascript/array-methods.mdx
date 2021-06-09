@@ -2,7 +2,7 @@
 title: Los array methods más utilizados
 date: '2021-06-09'
 tags: ['javascript', 'es6', 'array-methods']
-draft: true
+draft: false
 summary: Los métodos para trabajar que necesitarás
 ---
 
@@ -160,6 +160,23 @@ const found = array1.find((element) => element > 10)
 
 console.log(found)
 // Output: 12
+```
+
+⭐ `includes()` - Determina si un array incluye un determinado valor entre sus entradas, devolviendo true o false según corresponda.
+
+```javascript
+const array1 = [1, 2, 3]
+
+console.log(array1.includes(2))
+// Output: true
+
+const pets = ['cat', 'dog', 'bat']
+
+console.log(pets.includes('cat'))
+// Output: true
+
+console.log(pets.includes('at'))
+// Output: false
 ```
 
 ⭐ `reduce()` - Ejecuta una función reductora (que tú proporcionas) en cada elemento del array, dando como resultado un único valor de salida.
