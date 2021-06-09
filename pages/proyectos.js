@@ -16,24 +16,22 @@ export default function Projects() {
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <div className="flex items-center">
-            <h1 className="text-3xl mr-3 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-              Proyectos destacados
-            </h1>
-            <span className="text-3xl" role="img" aria-label="pushpin">
-              📌
-            </span>
-          </div>
+          <h1 className="text-3xl mr-3 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Proyectos destacados
+          </h1>
+
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Estos son mis algunos de mis últimos proyectos personales, si quieres ver el listado
-            completo, puedes hacerlo{' '}
+            Estos son mis algunos de mis últimos proyectos personales, puedes acceder a su código en{' '}
+            <b>Github</b> y también puedes ver el{' '}
             <Link
-              className="font-bold text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
+              className="font-bold text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400 mr-1"
               href="/proyectos/todos"
             >
-              aquí
+              listado completo
             </Link>
-            .
+            <span role="img" aria-label="books">
+              📚
+            </span>
           </p>
         </div>
         <div className="container py-12">
