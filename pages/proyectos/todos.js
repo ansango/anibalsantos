@@ -2,6 +2,7 @@ import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
+import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 export default function AllProjects() {
   const initialDisplayPosts = []
@@ -26,7 +27,17 @@ export default function AllProjects() {
             Todos los proyectos
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Puedes utilizar el buscador para filtrar por skill técnico o título.
+            Puedes utilizar el buscador para filtrar por skill técnico o título. También puedes
+            volver a ver mis{' '}
+            <Link
+              className="font-bold text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400 mr-1"
+              href="/proyectos"
+            >
+              proyectos destacados
+            </Link>
+            <span role="img" aria-label="star">
+              📌
+            </span>
           </p>
           <div className="relative">
             <input
@@ -69,6 +80,15 @@ export default function AllProjects() {
                 stack={d.stack}
               />
             ))}
+          </div>
+          <div className="flex justify-start text-base font-medium leading-6 pt-10">
+            <Link
+              href="/proyectos"
+              className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
+              aria-label="all posts"
+            >
+              &larr; Proyectos destacados
+            </Link>
           </div>
         </div>
       </div>

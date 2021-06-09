@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import siteMetadata from '@/data/siteMetadata'
 import projectsData from '@/data/projectsData'
 import Card from '@/components/Card'
@@ -6,22 +5,8 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 
 export default function Projects() {
-  const b5 = 'Undefined Band - Bootstrap 5'
-  const road = 'The Frontend Roadmap'
-  const blog = 'Blog'
-  const initialDisplayPosts = []
-  const [searchValue, setSearchValue] = useState('')
-  const filteredProjects = projectsData.map((project) => {
-    if (project.title == b5 || road || blog) {
-      console.log(project.title)
-      return project
-    }
-  })
-  console.log(filteredProjects)
-
-  const displayProjects =
-    initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredProjects
-
+  const pins = [1, 3, 4, 6, 7, 8]
+  const pinnedProjects = projectsData.filter((project) => pins.includes(project.id))
   return (
     <>
       <PageSeo
@@ -35,8 +20,8 @@ export default function Projects() {
             <h1 className="text-3xl mr-3 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
               Proyectos destacados
             </h1>
-            <span className="text-3xl" role="img" aria-label="star">
-              ⭐
+            <span className="text-3xl" role="img" aria-label="pushpin">
+              📌
             </span>
           </div>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
@@ -53,7 +38,7 @@ export default function Projects() {
         </div>
         <div className="container py-12">
           <div className="flex flex-wrap -m-4">
-            {projectsData.map((d) => (
+            {pinnedProjects.map((d) => (
               <Card
                 key={d.title}
                 title={d.title}
@@ -63,6 +48,15 @@ export default function Projects() {
                 stack={d.stack}
               />
             ))}
+          </div>
+          <div className="flex justify-end text-base font-medium leading-6 pt-10">
+            <Link
+              href="/proyectos/todos"
+              className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
+              aria-label="all posts"
+            >
+              Todos los proyectos &rarr;
+            </Link>
           </div>
         </div>
       </div>
