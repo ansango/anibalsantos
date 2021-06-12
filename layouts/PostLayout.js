@@ -1,6 +1,15 @@
+import {
+  EmailShareButton,
+  LinkedinShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+  TelegramShareButton,
+} from 'react-share'
+
+import SocialIcon from '@/components/social-icons'
+
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
-import ScrollButton from '@/components/ScrollButton'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -9,13 +18,17 @@ import siteMetadata from '@/data/siteMetadata'
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 
 export default function PostLayout({ children, frontMatter, next, prev }) {
-  const { date, title, tags, readingTime, author } = frontMatter
+  const { date, title, tags, readingTime } = frontMatter
   const min = Math.round(readingTime.minutes)
   const toRead = `${min} ${min !== 1 ? 'minutos leyendo' : 'minuto de leyendo'}`
+  const shareUrl = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
       <article>
+        <LinkedinShareButton url={shareUrl} className="w-3 h-3">
+          <SocialIcon kind="linkedin" href={'/'} size="5" />
+        </LinkedinShareButton>
         <div className="">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1">
