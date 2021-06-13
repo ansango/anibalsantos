@@ -61,9 +61,12 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           {displayPosts.map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <Link key={slug} href={`/blog/${slug}`}>
-                <li className="p-4 mb-4 border border-gray-200 dark:border-gray-800 rounded hover:shadow-md xl:p-0 xl:mb-0 xl:border xl:border-white xl:dark:border-gray-900 xl:hover:shadow-none">
-                  <article className="xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline xl:mb-4">
+              <li
+                key={slug}
+                className="p-4 mb-4 border border-gray-200 dark:border-gray-800 rounded hover:shadow-md xl:p-0 xl:mb-0 xl:border xl:border-white xl:dark:border-gray-900 xl:hover:shadow-none"
+              >
+                <article className="xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline xl:mb-4">
+                  <Link href={`/blog/${slug}`}>
                     <dl>
                       <dt className="sr-only">Published on</dt>
                       <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
@@ -89,9 +92,9 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
                         {summary}
                       </div>
                     </div>
-                  </article>
-                </li>
-              </Link>
+                  </Link>
+                </article>
+              </li>
             )
           })}
         </ul>

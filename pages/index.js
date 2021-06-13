@@ -39,10 +39,10 @@ export default function Home({ posts }) {
                 key={slug}
                 className="border border-gray-200 dark:border-gray-800 rounded p-4 mb-4 hover:shadow-md"
               >
-                <Link href={`/blog/${slug}`}>
-                  <article>
-                    <div className="space-y-2">
-                      <div className="space-y-2 xl:col-span-3">
+                <article>
+                  <div className="space-y-2">
+                    <div className="space-y-2 xl:col-span-3">
+                      <Link href={`/blog/${slug}`}>
                         <div className="space-y-2">
                           <div>
                             <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
@@ -69,10 +69,10 @@ export default function Home({ posts }) {
                             </time>
                           </dd>
                         </dl>
-                      </div>
+                      </Link>
                     </div>
-                  </article>
-                </Link>
+                  </div>
+                </article>
               </li>
             )
           })}
