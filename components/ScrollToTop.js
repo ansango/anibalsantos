@@ -1,3 +1,4 @@
+import { ImArrowUp2 as ARROW } from 'react-icons/im'
 import { useEffect, useState } from 'react'
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
@@ -27,11 +28,11 @@ const ScrollToTop = () => {
     <div className="fixed bottom-6 right-10">
       {isVisible && (
         <button
-          className="bg-yellow-300 hover:bg-yellow-200 text-yellow-600 font-bold py-1 px-3 border-b-4 border-yellow-500 hover:border-blue rounded-xl"
+          className="bg-yellow-300 hover:bg-yellow-200 text-yellow-600 font-bold px-3 py-2 border-b-4 border-yellow-500 hover:border-blue rounded-full"
           onClick={scrollToTop}
           role={role}
         >
-          <h3>Go up!</h3>
+          <ARROW />
         </button>
       )}
     </div>
