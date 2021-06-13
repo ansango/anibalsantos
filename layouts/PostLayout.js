@@ -85,7 +85,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                     <SocialShare
                       kind={'whatsapp'}
                       size={5}
-                      params={{ url: urlShare }}
+                      params={{ url: urlShare, title: title }}
                     ></SocialShare>
                     <SocialShare
                       kind={'telegram'}
