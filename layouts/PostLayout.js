@@ -1,15 +1,6 @@
-import {
-  EmailShareButton,
-  LinkedinShareButton,
-  TwitterShareButton,
-  WhatsappShareButton,
-  TelegramShareButton,
-} from 'react-share'
-
-import SocialIcon from '@/components/social-icons'
-
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
+import SocialShare from '@/components/SocialShare'
 import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
@@ -21,14 +12,11 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
   const { date, title, tags, readingTime } = frontMatter
   const min = Math.round(readingTime.minutes)
   const toRead = `${min} ${min !== 1 ? 'minutos leyendo' : 'minuto de leyendo'}`
-  const shareUrl = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
+  const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
       <article>
-        <LinkedinShareButton url={shareUrl} className="w-3 h-3">
-          <SocialIcon kind="linkedin" href={'/'} size="5" />
-        </LinkedinShareButton>
         <div className="">
           <header className="pt-6 xl:pb-6">
             <div className="space-y-1">
@@ -75,15 +63,38 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
             </div>
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
-                {tags && (
-                  <div className="py-4 xl:py-8">
+                <div className="py-4 xl:py-8 flex justify-between items-center">
+                  {tags && (
                     <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
                     </div>
+                  )}
+                  <div className="flex">
+                    <SocialShare
+                      kind={'mail'}
+                      size={5}
+                      params={{ title: title, url: urlShare, text: title }}
+                    ></SocialShare>
+                    <SocialShare
+                      kind={'twitter'}
+                      size={5}
+                      params={{ title: title, url: urlShare, tags: tags }}
+                    ></SocialShare>
+                    <SocialShare
+                      kind={'whatsapp'}
+                      size={5}
+                      params={{ url: urlShare }}
+                    ></SocialShare>
+                    <SocialShare
+                      kind={'telegram'}
+                      size={5}
+                      params={{ url: urlShare, text: title }}
+                    ></SocialShare>
                   </div>
-                )}
+                </div>
+
                 {(next || prev) && (
                   <div className="flex justify-between py-4">
                     {prev && (
