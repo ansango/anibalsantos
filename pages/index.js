@@ -17,7 +17,7 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSeo title={'Inicio'} description={siteMetadata.description} url={siteMetadata.siteUrl} />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div className="">
         <div className="py-10 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Lo último
@@ -26,7 +26,7 @@ export default function Home({ posts }) {
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
-        <ul className="py-10">
+        <ul className="py-5 pb-10 md:py-10">
           {!posts.length && (
             <div className="text-center">
               <p>No se han encontrado entradas</p>
@@ -35,45 +35,42 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <li key={slug} className="py-4">
-                <article>
-                  <div className="space-y-2">
-                    <div className="space-y-2 xl:col-span-3">
-                      <div className="space-y-2">
-                        <div>
-                          <h2 className="text-2xl font-bold leading-8 tracking-tight">
-                            <Link
-                              href={`/blog/${slug}`}
-                              className="text-gray-900 dark:text-gray-100"
-                            >
+              <Link key={slug} href={`/blog/${slug}`}>
+                <li className="border border-gray-200 dark:border-gray-800 rounded p-4 mb-4 hover:shadow-md">
+                  <article>
+                    <div className="space-y-2">
+                      <div className="space-y-2 xl:col-span-3">
+                        <div className="space-y-2">
+                          <div>
+                            <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                               {title}
-                            </Link>
-                          </h2>
+                            </h2>
+                          </div>
+                          <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                            {summary}
+                          </div>
                         </div>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
-                          {summary}
+                        <div className="flex flex-wrap">
+                          {tags.map((tag) => (
+                            <Tag key={tag} text={tag} />
+                          ))}
                         </div>
+                        <dl>
+                          <dt className="sr-only">Published on</dt>
+                          <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
+                            <time dateTime={date}>
+                              {new Date(date).toLocaleDateString(
+                                siteMetadata.locale,
+                                postDateTemplate
+                              )}
+                            </time>
+                          </dd>
+                        </dl>
                       </div>
-                      <div className="flex flex-wrap">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
-                      </div>
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
-                          <time dateTime={date}>
-                            {new Date(date).toLocaleDateString(
-                              siteMetadata.locale,
-                              postDateTemplate
-                            )}
-                          </time>
-                        </dd>
-                      </dl>
                     </div>
-                  </div>
-                </article>
-              </li>
+                  </article>
+                </li>
+              </Link>
             )
           })}
         </ul>

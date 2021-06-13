@@ -21,7 +21,7 @@ export default function AllProjects() {
         description={`Todos los proyectos - ${siteMetadata.title}`}
         url={`${siteMetadata.siteUrl}/proyectos/todos`}
       />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div>
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Todos los proyectos
@@ -63,7 +63,7 @@ export default function AllProjects() {
             </svg>
           </div>
         </div>
-        <div className="container py-12">
+        <div className="container pb-12 pt-6">
           {!filteredProjects.length && (
             <div className="text-center py-10">
               <p>No se han encontrado entradas</p>

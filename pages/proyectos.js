@@ -14,7 +14,7 @@ export default function Projects() {
         description={siteMetadata.description}
         url={`${siteMetadata.siteUrl}/proyectos`}
       />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div>
         <div className="pt-6 pb-8 space-y-2 md:space-y-5">
           <h1 className="text-3xl mr-3 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Proyectos destacados
@@ -34,7 +34,7 @@ export default function Projects() {
             </span>
           </p>
         </div>
-        <div className="container py-12">
+        <div className="container pb-12 pt-6">
           <div className="flex flex-wrap -m-4">
             {pinnedProjects.map((d) => (
               <Card
