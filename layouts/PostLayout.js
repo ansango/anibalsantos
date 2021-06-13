@@ -64,15 +64,15 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
             </div>
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
-                <div className="py-4 xl:py-8 flex flex-col md:flex-row md:justify-between">
+                <div className="py-4 xl:py-8 flex flex-col md:flex-row md:justify-between md:items-center">
                   {tags && (
-                    <div className="flex flex-wrap mb-3">
+                    <div className="flex flex-wrap">
                       {tags.map((tag) => (
                         <Tag key={tag} text={tag} />
                       ))}
                     </div>
                   )}
-                  <div className="flex justify-center md:justify-start">
+                  <div className="flex justify-center mt-5 md:justify-start md:mt-0">
                     <SocialShare
                       kind={'mail'}
                       size={5}

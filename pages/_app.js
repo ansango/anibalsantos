@@ -6,6 +6,7 @@ import Head from 'next/head'
 
 import { SEO } from '@/components/SEO'
 import LayoutWrapper from '@/components/LayoutWrapper'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -16,6 +17,7 @@ export default function App({ Component, pageProps }) {
       <DefaultSeo {...SEO} />
       <LayoutWrapper>
         <Component {...pageProps} />
+        <ScrollToTop />
       </LayoutWrapper>
     </ThemeProvider>
   )
