@@ -26,7 +26,7 @@ export default function Home({ posts }) {
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
-        <ul className="py-5 pb-10 md:py-10">
+        <ul className="pb-10">
           {!posts.length && (
             <div className="text-center">
               <p>No se han encontrado entradas</p>
@@ -35,43 +35,27 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <li
-                key={slug}
-                className="border border-gray-200 dark:border-gray-800 rounded p-4 mb-4 hover:shadow-md"
-              >
+              <li key={slug} className="py-4">
                 <article>
-                  <div className="space-y-2">
-                    <div className="space-y-2 xl:col-span-3">
-                      <Link href={`/blog/${slug}`}>
-                        <div className="space-y-2">
-                          <div>
-                            <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
-                              {title}
-                            </h2>
-                          </div>
-                          <div className="prose text-gray-500 max-w-none dark:text-gray-400">
-                            {summary}
-                          </div>
-                        </div>
-                        <div className="flex flex-wrap">
-                          {tags.map((tag) => (
-                            <Tag key={tag} text={tag} />
-                          ))}
-                        </div>
-                        <dl>
-                          <dt className="sr-only">Published on</dt>
-                          <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
-                            <time dateTime={date}>
-                              {new Date(date).toLocaleDateString(
-                                siteMetadata.locale,
-                                postDateTemplate
-                              )}
-                            </time>
-                          </dd>
-                        </dl>
-                      </Link>
-                    </div>
+                  <div>
+                    <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                      <Link href={`/blog/${slug}`}>{title}</Link>
+                    </h2>
                   </div>
+                  <div className="prose text-gray-500 max-w-none dark:text-gray-400">{summary}</div>
+                  <div className="flex flex-wrap">
+                    {tags.map((tag) => (
+                      <Tag key={tag} text={tag} />
+                    ))}
+                  </div>
+                  <dl className="mt-2">
+                    <dt className="sr-only">Published on</dt>
+                    <dd className="text-sm font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <time dateTime={date}>
+                        {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                      </time>
+                    </dd>
+                  </dl>
                 </article>
               </li>
             )

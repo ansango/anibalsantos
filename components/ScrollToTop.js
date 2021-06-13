@@ -28,7 +28,7 @@ const ScrollToTop = () => {
     <div className="fixed bottom-6 right-10">
       {isVisible && (
         <button
-          className="bg-yellow-300 hover:bg-yellow-200 text-yellow-600 font-bold px-3 py-2 border-b-4 border-yellow-500 hover:border-blue rounded-full"
+          className="bg-yellow-300 hover:bg-yellow-200 text-yellow-600 font-bold px-3 py-2 border-b-4 border-yellow-500 hover:border-blue rounded-md"
           onClick={scrollToTop}
           role={role}
         >
