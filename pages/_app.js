@@ -8,7 +8,7 @@ import { SEO } from '@/components/SEO'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import ScrollToTop from '@/components/ScrollToTop'
 
-export default function App({ Component, pageProps }) {
+export default function App({ Component, pageProps, router }) {
   return (
     <ThemeProvider attribute="class">
       <Head>
@@ -16,7 +16,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <DefaultSeo {...SEO} />
       <LayoutWrapper>
-        <Component {...pageProps} />
+        <Component {...pageProps} key={router.route} />
         <ScrollToTop />
       </LayoutWrapper>
     </ThemeProvider>
