@@ -35,8 +35,11 @@ export default function Home({ posts }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <Link key={slug} href={`/blog/${slug}`}>
-                <li className="border border-gray-200 dark:border-gray-800 rounded p-4 mb-4 hover:shadow-md">
+              <li
+                key={slug}
+                className="border border-gray-200 dark:border-gray-800 rounded p-4 mb-4 hover:shadow-md"
+              >
+                <Link href={`/blog/${slug}`}>
                   <article>
                     <div className="space-y-2">
                       <div className="space-y-2 xl:col-span-3">
@@ -69,8 +72,8 @@ export default function Home({ posts }) {
                       </div>
                     </div>
                   </article>
-                </li>
-              </Link>
+                </Link>
+              </li>
             )
           })}
         </ul>
