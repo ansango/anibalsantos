@@ -6,15 +6,28 @@ draft: false
 summary: Convertir una petición ajax de jQuery en async/await ES8
 ---
 
-Si eres como yo, probablemente estarás aburrido de usar peticiones ajax con jQuery. Es algo que está en todas partes, en miles y miles de proyectos.
+<div className="flex justify-center">
+  <Image alt="ajax" src="/static/blog/javascript/ajax.jpg" width={768} height={476} />
+</div>
+
+<section>
+
+##
+
+Si eres como yo, probablemente estarás aburrido de usar peticiones `ajax` con jQuery. Es algo que está en todas partes, en miles y miles de proyectos.
 
 No he venido a criticar jQuery, de hecho, me parece una librería super útil, que ahorra tiempo y a la que por alguna razón le he cogido cariño.
 
-Async/await es una característica bastante nueva. Fue añadida en la especificación ES2017 hace 4 años más o menos y ahora está disponible de forma nativa en la mayoría de los navegadores modernos. No hay razón para no usarla en tu código JavaScript actual.
+`async/await` es una característica bastante nueva. Fue añadida en la especificación ES2017 hace 4 años más o menos y ahora está disponible de forma nativa en la mayoría de los navegadores modernos. No hay razón para no usarla en tu código JavaScript actual.
 
 Si quieres soportar navegadores más antiguos (o el viejo IE), tendrás que usar un transpilador como Babel para que funcione en navegadores antiguos.
 
-## ¿Cómo usar async/await con jQuery?
+</section>
+<section>
+
+## En la época de ajax 🧓
+
+Antes teníamos este tipo de funciones para consumir datos mediante `ajax`
 
 ```javascript
 function myAjax() {
@@ -37,7 +50,10 @@ function myAjax() {
 }
 ```
 
-### Repaso! Código síncrono vs código asíncrono:
+</section>
+<section>
+
+## Código síncrono vs código asíncrono:
 
 - **Síncrono**:
 
@@ -47,7 +63,13 @@ function myAjax() {
 
   Estás en un restaurante con muchas otras personas. Pides tu comida. Otras personas también pueden pedir su comida, no tienen que esperar a que tu comida esté cocinada y servida para poder pedir. En la cocina, los trabajadores del restaurante están continuamente cocinando, sirviendo y tomando pedidos. La gente tendrá su comida servida tan pronto como esté cocinada.
 
-Si partimos del anterior código, un ejemplo de async/await con ajax podría ser:
+</section>
+
+<section>
+
+## ¿Cómo usar async/await con jQuery? 🤹
+
+Si partimos del anterior código, un ejemplo de `async/await` con `ajax` podría ser:
 
 ```javascript
 async function myAjax(param) {
@@ -96,6 +118,7 @@ myAjax().then((data) => {
 })
 ```
 
+</section>
 Las promesas no son una mala opción, y pueden parecer más limpias o ser más fácil trabajar con ellas, depende del contexto.
 
 Espero que te haya gustado este artículo. ❤️
