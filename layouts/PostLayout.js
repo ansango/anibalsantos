@@ -1,3 +1,4 @@
+import { isMobile } from 'react-device-detect'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SocialShare from '@/components/SocialShare'
@@ -85,7 +86,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
                     <SocialShare
                       kind={'whatsapp'}
                       size={5}
-                      params={{ url: urlShare, title: title }}
+                      params={{ url: urlShare, title: title, isMobile: isMobile }}
                     ></SocialShare>
                     <SocialShare
                       kind={'telegram'}

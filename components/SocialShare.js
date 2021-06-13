@@ -1,4 +1,3 @@
-import { isMobile } from 'react-device-detect'
 import {
   SiMailDotRu as Mail,
   SiTwitter as Twitter,
@@ -17,9 +16,9 @@ const shareURL = ({ kind, params }) => {
   const urls = {
     mail: `mailto:?subject=${params.title}&body=${params.url}`,
     twitter: `https://twitter.com/intent/tweet?url=${params.url}&text=${params.title}&via=iamasync_&hashtags=${params.tags}`,
-    whatsapp: !isMobile
-      ? `https://web.whatsapp.com/send?text=${params.url}`
-      : `https://api.whatsapp.com/send?&text=${params.title}%20${params.url}`,
+    whatsapp: params.isMobile
+      ? `https://api.whatsapp.com/send?&text=${params.title}%20${params.url}`
+      : `https://web.whatsapp.com/send?text=${params.url}`,
     telegram: `https://telegram.me/share/url?url=${params.url}&text=${params.text}`,
   }
   return urls[kind]
