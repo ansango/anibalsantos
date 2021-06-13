@@ -14,6 +14,8 @@ export default function AllProjects() {
 
   const displayProjects =
     initialDisplayPosts.length > 0 && !searchValue ? initialDisplayPosts : filteredProjects
+
+  fetch('https://github.com/users/ansango/contributions?to=2021-12-31').then()
   return (
     <>
       <PageSeo
