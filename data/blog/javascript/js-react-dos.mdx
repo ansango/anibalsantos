@@ -6,10 +6,20 @@ draft: false
 summary: Segunda parte del resumen de las mejoras de ES6 más útiles para React
 ---
 
+<div className="flex justify-center">
+  <Image alt="react" src="/static/blog/javascript/react-dos.jpg" width={768} height={476} />
+</div>
+
+<section>
+
+##
+
 1. [Operador spread](/blog/javascript/js-react-dos#spread)
 2. [Desestrucutración](/blog/javascript/js-react-dos#destructuracion)
 3. [Tipos primitivos](/blog/javascript/js-react-dos#tipos-primitivos)
 4. [Métodos de array](/blog/javascript/js-react-dos#metodos-array)
+
+</section>
 
 <section id="spread">
 
@@ -134,7 +144,7 @@ console.log(secondPerson) // output: Anibal
 Es importante tener en cuenta que los objetos y los arrays son de tipo referencia (sucede lo mismo con los arrays). Si los reasignamos, estamos copiando el puntero y no el valor. Por lo tanto, si queremos hacer una copia real, tendremos que crear un nuevo objeto y sólo copiar las propiedades, no todo el objeto.
 
 </section>
-<section id="metodos-array"></section>
+<section id="metodos-array">
 
 ## Métodos de array
 
@@ -150,6 +160,8 @@ console.log(doubleArray) // output: [2, 4, 6]
 ```
 
 > Puedes repasar todos los métodos de array más usados [aquí](/blog/javascript/array-methods)
+
+</section>
 
 Como ves todas estas mejoras nos ayudan a escribir un código más mantenible, y utilizable no sólo en React. Pero asegurate de tu navegador soporta esta sintáxis antes de utilizarla en producción.
 

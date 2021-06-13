@@ -6,7 +6,15 @@ draft: false
 summary: Cómo usar array reduce
 ---
 
-Gracias a ES6 y las nuevas ventajas que trae consigo, programar mediante arrow functions funcionalmente nos hace escribir código muy legible.
+<div className="flex justify-center">
+  <Image alt="reduce" src="/static/blog/javascript/reduce.jpg" width={768} height={476} />
+</div>
+
+<section>
+
+##
+
+Gracias a `ES6` y las nuevas ventajas que trae consigo, programar mediante arrow functions funcionalmente nos hace escribir código muy legible.
 
 Cuando empecé en esto de la programación he de reconocer que se me iba la cabeza. Tenia que entender paradigmas, como programar, tipos de datos, manejo de los mismos, métodos y herramientas del lenguaje y un montón de tecnologías que aun mi cabeza no había digerido.
 
@@ -16,9 +24,16 @@ Un buen dia, realizando una practica del master, teníamos que preparar ejercici
 
 No ha sido hasta hace bien poco que he comprendido como se utiliza en algunos aspectos y la versatilidad que puede ofrecernos a la hora de trabajar (seguramente antes estaría siempre haciendo todo con map, filter, find o includes).
 
+</section>
+
+<section>
+
 ## Qué hace reduce?
 
 Mientras que map o filter crean un nuevo array mediante la transformacion de cada elemento o eliminando los elementos que no pertenecen, **`reduce` toma todos esos elementos en un array y valga la redundancia, los reduce en un solo valor**.
+
+</section>
+<section>
 
 ## Qué recibe reduce?
 
@@ -29,11 +44,18 @@ Mientras que map o filter crean un nuevo array mediante la transformacion de cad
 
 En la vuelta del callback obtenemos un el valor anterior en cada iteración. Como en la primera vuelta no tenemos valor anterior, esta es la razón, por la que reduce puede recibir un valor inicial.
 
+</section>
+
+<section>
+
 ## Que devuelve reduce?
 
 Reduce devuelve un solo valor, no un array que contiene un único elemento.
 
 > El método `reduce` aplica una función a un acumulador y a cada valor de una array (de izquierda a derecha) para reducirlo a un único valor.
+
+</section>
+<section>
 
 ## Ejemplos
 
@@ -131,7 +153,7 @@ La función se ejecuta de esta manera:
 5 - contadorNombre = {Anibal: 1} // Se repite el ciclo
 ```
 
-## Conclusión
+</section>
 
 La función `reduce` permite lograr objetivos que generalmente de manera estructurada cuestan un poco de trabajo lograr. El dominio de este tipo de funciones nos permitirán logra una código más limpio y mucho más fácil de leer. Al principio puede costar entender como funciona, pero todo es práctica.
 
