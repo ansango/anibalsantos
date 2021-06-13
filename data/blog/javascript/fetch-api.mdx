@@ -17,11 +17,10 @@ summary: El pasado Ajax y el presente con Fetch API
 7. [Manejo de respuestas básicas de texto/HTML](/blog/javascript/fetch-api#text-html)
 8. [Manejo de las respuestas Blob](/blog/javascript/fetch-api#blob)
 9. [Envío de datos](/blog/javascript/fetch-api#data)
-10. [Conclusiones](/blog/javascript/fetch-api#end)
 
 Uno de los secretos peor guardados sobre AJAX en la web es que la API subyacente para ello, XMLHttpRequest, no fue realmente hecha para usarla en la manera en la que lo hacemos.
 
-<div id="xml"></div>
+<section id="xml">
 
 ## XMLHttpRequest
 
@@ -53,7 +52,9 @@ request.send(null)
 
 Por supuesto, los fabulosos frameworks de JavaScript ❤️, hacen que sea más agradable trabajar con XHR, pero lo anterior es un auténtico jaleo.
 
-<div id="fetch"></div>
+</section>
+
+<section id="fetch"></section>
 
 ## Uso básico de fetch
 
@@ -95,7 +96,7 @@ fetch('https://async-blocks.name/some/url')
 
 Vale, puede que jamás has usado **then**, pero sinceramente, comiénza a usarlo, porque en breves no verás otra cosa.
 
-<div id="headers"></div>
+<section id="headers">
 
 ## Headers
 
@@ -140,7 +141,8 @@ fetch(request).then(function () {
 
 Muchas cositas hemos contado hasta ahora, igual te está pasando como me pasó a mi en su momento 💥 😲 👽 🤔, y te está estallando la cabeza. Vale, no te preocupes, vamos a ver que hacen `Request` y `Response`, para aclarar algo más:
 
-<div id="request"></div>
+</section>
+<section id="request">
 
 ## Request
 
@@ -174,7 +176,9 @@ fetch(myRequest).then(function () {
 })
 ```
 
-<div id="response"></div>
+</section>
+
+<section id="response">
 
 ## Response
 
@@ -216,7 +220,8 @@ fetch('https://async-blocks.name/').then(function (responseObj) {
 - `json()` - Devuelve una promesa que se resuelve con un objeto JSON.
 - `text()` - Devuelve una promesa que se resuelve con un USVString (texto).
 
-<div id="json"></div>
+</section>
+<section id="json">
 
 ## Manejo de JSON
 
@@ -236,7 +241,8 @@ fetch('https://async-blocks.name/data/superobject.json')
 
 Sí, claro, podemos utilizar también `JSON.parse(jsonString)`, pero lo anterior es un gran atajo. ❤️
 
-<div id="text-html"></div>
+</section>
+<section id="text-html">
 
 ## Manejo de respuestas básicas de texto/HTML
 
@@ -255,7 +261,8 @@ fetch('/next/page')
 
 Puedes obtener el texto de la respuesta encadenando el método then de la promesa junto con el método `text()`.
 
-<div id="blob"></div>
+</section>
+<section id="blob">
 
 ## Manejo de las respuestas Blob
 
@@ -273,7 +280,8 @@ fetch('https://async-blocks.name/logo.jpg')
 
 El método `blob()` toma un flujo de Response y lo lee hasta completarlo.
 
-<div id="data"></div>
+</section>
+<section id="data">
 
 ## Envío de datos
 
@@ -300,9 +308,7 @@ fetch('https://async-blocks.name/submit-json', {
 
 Fácil ¿verdad? 😏
 
-<div id="end"></div>
-
-## Conclusiones
+</section>
 
 Aunque fetch es una API más agradable de usar, la API actual no permite cancelar una solicitud, lo que hace que no sea una opción para muchos desarrolladores.
 
