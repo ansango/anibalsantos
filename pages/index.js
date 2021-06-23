@@ -25,12 +25,12 @@ export default function Home({ posts }) {
           </h2>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">Marcadores y utils</p>
         </div>
-        <ul className="pb-10 grid grid-cols-2">
+        <ul className="pb-10 grid gap-3 md:grid-cols-2">
           {pinned.map((post) => {
             const { slug, title } = post
             return (
               <li key={slug}>
-                <article className="px-3 border border-gray-400 rounded-lg">
+                <article className="px-3 border border-gray-200 rounded-lg">
                   <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                     {title}
                   </h3>
