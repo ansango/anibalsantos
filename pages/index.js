@@ -30,11 +30,13 @@ export default function Home({ posts }) {
             const { slug, title } = post
             return (
               <li key={slug}>
-                <article className="px-3 border border-gray-200 rounded-lg">
-                  <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
-                    {title}
-                  </h3>
-                </article>
+                <Link href={`/blog/${slug}`}>
+                  <article className="p-5 border border-gray-300 rounded-lg">
+                    <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                      {title}
+                    </h3>
+                  </article>
+                </Link>
               </li>
             )
           })}
