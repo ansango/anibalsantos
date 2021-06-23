@@ -14,14 +14,37 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  const pinned = posts.filter((post) => post.tags.includes('pinned'))
   return (
     <>
       <PageSeo title={'Inicio'} description={siteMetadata.description} url={siteMetadata.siteUrl} />
+      <div>
+        <div className="py-10 space-y-2 md:space-y-5">
+          <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Destacados
+          </h2>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">Marcadores y utils</p>
+        </div>
+        <ul className="pb-10 grid grid-cols-2">
+          {pinned.map((post) => {
+            const { slug, title } = post
+            return (
+              <li key={slug}>
+                <article className="px-3 border border-gray-400 rounded-lg">
+                  <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                    {title}
+                  </h3>
+                </article>
+              </li>
+            )
+          })}
+        </ul>
+      </div>
       <div className="">
         <div className="py-10 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Lo último
-          </h1>
+          </h2>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             Se me olvidan las cosas, entonces escribo.
           </p>
@@ -38,9 +61,9 @@ export default function Home({ posts }) {
               <li key={slug} className="py-4">
                 <article>
                   <div>
-                    <h2 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                    <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                       <Link href={`/blog/${slug}`}>{title}</Link>
-                    </h2>
+                    </h3>
                   </div>
                   <div className="prose text-gray-500 max-w-none dark:text-gray-400">{summary}</div>
                   <div className="flex flex-wrap">
