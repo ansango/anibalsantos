@@ -12,7 +12,7 @@ const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 export default function PostLayout({ children, frontMatter, next, prev }) {
   const { date, title, tags, readingTime } = frontMatter
   const min = Math.round(readingTime.minutes)
-  const literalReader = `${min} ${min !== 1 ? 'minutos leyendo' : 'minuto de leyendo'}`
+  const literalReader = `${min} ${min !== 1 ? 'minutos leyendo' : 'minuto leyendo'}`
   const toRead = min > 0 ? literalReader : ''
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
   return (
