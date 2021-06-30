@@ -2,17 +2,15 @@ import { HiChevronDown as ArrowDown } from 'react-icons/hi'
 import { Disclosure, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
 
-const Bookmarks = ({ posts }) => {
-  const bookmarks = posts.filter(
-    (post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos'
-  )
+const Pinned = ({ posts }) => {
+  const pinned = posts.filter((post) => post.tags.includes('pinned'))
   return (
     <Disclosure>
       {({ open }) => (
         <div className="py-5 space-y-2 md:space-y-5">
           <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none">
             <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:leading-14">
-              Bookmarks
+              Destacados
             </h2>
             <div className="px-4">
               <ArrowDown size={26} className={`${open ? 'transform rotate-180' : ''}`} />
@@ -29,8 +27,8 @@ const Bookmarks = ({ posts }) => {
           >
             <Disclosure.Panel className="py-5">
               <ul className="grid gap-3 md:grid-cols-2">
-                {bookmarks.map((bookmark) => {
-                  const { slug, title, summary } = bookmark
+                {pinned.map((post) => {
+                  const { slug, title } = post
                   return (
                     <li key={slug}>
                       <Link href={`/blog/${slug}`}>
@@ -38,9 +36,6 @@ const Bookmarks = ({ posts }) => {
                           <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                             {title}
                           </h3>
-                          <p className="prose text-gray-500 max-w-none dark:text-gray-400">
-                            {summary}
-                          </p>
                         </article>
                       </Link>
                     </li>
@@ -54,5 +49,4 @@ const Bookmarks = ({ posts }) => {
     </Disclosure>
   )
 }
-
-export default Bookmarks
+export default Pinned
