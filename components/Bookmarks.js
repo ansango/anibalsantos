@@ -37,7 +37,7 @@ const Bookmarks = ({ posts }) => {
                     <li key={slug}>
                       <Link href={`/blog/${slug}`}>
                         <article className="p-5 border border-gray-300 rounded-lg">
-                          <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                          <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                             {title}
                           </h3>
                           <p className="prose text-gray-500 max-w-none dark:text-gray-400">

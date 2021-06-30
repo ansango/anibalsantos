@@ -33,7 +33,7 @@ const Pinned = ({ posts }) => {
                     <li key={slug}>
                       <Link href={`/blog/${slug}`}>
                         <article className="p-5 border border-gray-300 rounded-lg">
-                          <h3 className="text-2xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                          <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                             {title}
                           </h3>
                         </article>
