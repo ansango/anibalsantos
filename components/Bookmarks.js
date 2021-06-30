@@ -3,12 +3,11 @@ import { Disclosure, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
 
 const Bookmarks = ({ posts }) => {
-  posts.sort(function (a, b) {
-    return new Date(a.date) - new Date(b.date)
-  })
-  const bookmarks = posts.filter(
-    (post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos'
-  )
+  const bookmarks = posts
+    .filter((post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos')
+    .sort(function (a, b) {
+      return new Date(a.date) - new Date(b.date)
+    })
   return (
     <Disclosure>
       {({ open }) => (
