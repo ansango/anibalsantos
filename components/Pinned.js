@@ -9,7 +9,7 @@ const Pinned = ({ posts }) => {
       {({ open }) => (
         <div className="pt-5 space-y-2 md:space-y-5">
           <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none">
-            <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14">
+            <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14">
               Destacados
             </h2>
             <div className="px-4">
