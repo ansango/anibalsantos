@@ -16,7 +16,6 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  const pinned = posts.filter((post) => post.tags.includes('pinned'))
   return (
     <>
       <PageSeo title={'Inicio'} description={siteMetadata.description} url={siteMetadata.siteUrl} />
@@ -77,8 +76,8 @@ export default function Home({ posts }) {
         </div>
       )}
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
-      <Bookmarks posts={posts} />
       <Pinned posts={posts} />
+      <Bookmarks posts={posts} />
     </>
   )
 }
