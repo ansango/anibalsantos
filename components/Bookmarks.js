@@ -6,7 +6,6 @@ const Bookmarks = ({ posts }) => {
   posts.sort(function (a, b) {
     return new Date(a.date) - new Date(b.date)
   })
-  console.log(posts)
   const bookmarks = posts.filter(
     (post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos'
   )
