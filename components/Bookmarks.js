@@ -14,7 +14,7 @@ const Bookmarks = ({ bookmarks }) => {
               <ArrowDown size={26} className={`${open ? 'transform rotate-180' : ''}`} />
             </div>
           </Disclosure.Button>
-          <Disclosure.Panel className="pb-10">
+          <Disclosure.Panel className="py-10">
             <ul className="grid gap-3 md:grid-cols-2">
               {bookmarks.map((bookmark) => {
                 const { slug, title, summary } = bookmark
