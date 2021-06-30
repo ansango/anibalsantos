@@ -40,9 +40,7 @@ const Bookmarks = ({ posts }) => {
                           <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
                             {title}
                           </h3>
-                          <p className="prose text-gray-500 max-w-none dark:text-gray-400">
-                            {summary}
-                          </p>
+                          <p className="text-gray-500 max-w-none dark:text-gray-400">{summary}</p>
                         </article>
                       </Link>
                     </li>
