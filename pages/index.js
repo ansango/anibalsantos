@@ -102,6 +102,9 @@ export default function Home({ posts }) {
           </Link>
         </div>
       )}
+      <div className="pb-5">
+        <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+      </div>
 
       <Bookmarks bookmarks={bookmarks} />
     </>
