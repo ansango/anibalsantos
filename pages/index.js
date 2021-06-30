@@ -15,7 +15,9 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
   const pinned = posts.filter((post) => post.tags.includes('pinned'))
-  const bookmarks = posts.filter((post) => post.tags.includes('bookmarks'))
+  const bookmarks = posts.filter(
+    (post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos'
+  )
   return (
     <>
       <PageSeo title={'Inicio'} description={siteMetadata.description} url={siteMetadata.siteUrl} />
@@ -43,7 +45,7 @@ export default function Home({ posts }) {
           })}
         </ul>
       </div>
-      <div className="hidden">
+      <div>
         <div className="py-10 space-y-2 md:space-y-5">
           <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Bookmarks
