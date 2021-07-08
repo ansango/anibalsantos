@@ -97,13 +97,6 @@ var ourDecimal = 5.7 // float
 
 ### ES6 var, let y const
 
-- Unlike `var`, `let` throws an error if you declare the same variable twice.
-- Variables declared with `let` inside a block, statement, or expression, its scope is limited to that block, statement, or expression.
-- Variables declared with `const` are read-only and cannot be reassigned.
-- Objects (including arrays and functions) assigned to a variable using `const` are still mutable and only prevents the reassignment of the variable identifier.
-
-To ensure your data doesn't change, JavaScript provides a function Object.freeze to prevent data mutation.
-
 - A diferencia de `var`, `let` arroja un error si se declara la misma variable dos veces.
 - Las variables declaradas con `let` dentro de un bloque, sentencia o expresión, su alcance está limitado a ese bloque, sentencia o expresión.
 - Las variables declaradas con `const` son de sólo lectura y no pueden ser reasignadas.
@@ -502,8 +495,8 @@ let userActivity = {
   },
 }
 
-userActivity.data.online = 45 // or
-userActivity['data'].online = 45 // or
+userActivity.data.online = 45 // o
+userActivity['data'].online = 45 // o
 userActivity['data']['online'] = 45
 ```
 
@@ -615,7 +608,7 @@ ourStorage.desk.drawer // "stapler"
 ### Desestructuración de variables a partir de objetos
 
 ```javascript
-// Mira el siguiente código ES5
+// Teniendo en cuenta el siguiente código ES5:
 var voxel = { x: 3.6, y: 7.4, z: 6.54 }
 var x = voxel.x // x = 3.6
 var y = voxel.y // y = 7.4
@@ -643,10 +636,9 @@ console.log(startX, startY) // 5, 6
 ### ES6 Desestructuración para pasar un objeto como parámetro de una función
 
 ```javascript
-// desestructurar el objeto en un argumento propio de la función.
+// Desestructurar el objeto en un argumento propio de la función.
 const profileUpdate = (profileData) => {
   const { name, age, nationality, location } = profileData
-  // hacer algo con estas variables
 }
 
 // también se puede hacer así:
@@ -1034,7 +1026,7 @@ const person = {
 | `match()`   | Extrae las coincidencias reales encontradas.                     |
 | `replace()` | Buscar y reemplazar texto en una cadena.                         |
 
-### Examples
+### Ejemplos
 
 ```javascript
 // el método test devuelve true o false si el patrón coincide con una cadena o no
@@ -1356,7 +1348,7 @@ goodBoy.sing() // Cantando con una melodía impresionante
 </section>
 <section id="poo-es6">
 
-## Orientación a objetos ES6
+## ES6 Orientación a objetos
 
 ES6 proporciona una nueva sintaxis para ayudar a crear objetos, la palabra clave `class`.
 es sólo una sintaxis, y no una implementación completa basada en clases del paradigma orientado a objetos,
@@ -1409,7 +1401,7 @@ lol.writer = 'wut'
 console.log(lol.writer) // wut
 ```
 
-### ES6 Statics Methods
+### ES6 Métodos estáticos
 
 Los métodos estáticos permiten utilizar métodos sin instanciar un objeto
 
