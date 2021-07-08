@@ -6,6 +6,7 @@ import SectionContainer from '@/components/SectionContainer'
 import { BlogSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
+import SendErrors from '@/components/SendErrors'
 
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 
@@ -65,6 +66,7 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
             </div>
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
+                <SendErrors params={{ title: title, url: urlShare, text: title }} />
                 <div className="py-4 xl:py-8 flex flex-col md:flex-row md:justify-between md:items-center">
                   {tags && (
                     <div className="flex flex-wrap">
