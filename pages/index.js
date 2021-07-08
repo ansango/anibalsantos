@@ -1,4 +1,5 @@
 import Bookmarks from '@/components/Bookmarks'
+import CheatSheet from '@/components/Cheatsheet'
 import Link from '@/components/Link'
 import Pinned from '@/components/Pinned'
 import { PageSeo } from '@/components/SEO'
@@ -69,7 +70,7 @@ export default function Home({ posts }) {
           <Link
             href="/blog"
             className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
-            aria-label="all posts"
+            aria-label="todas las cosas"
           >
             Todas las cosas &rarr;
           </Link>
@@ -78,6 +79,7 @@ export default function Home({ posts }) {
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
       <Pinned posts={posts} />
       <Bookmarks posts={posts} />
+      <CheatSheet posts={posts} />
     </>
   )
 }

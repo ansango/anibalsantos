@@ -87,7 +87,7 @@ export default function AllProjects() {
             <Link
               href="/proyectos"
               className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
-              aria-label="all posts"
+              aria-label="todos los proyectos"
             >
               &larr; Proyectos destacados
             </Link>

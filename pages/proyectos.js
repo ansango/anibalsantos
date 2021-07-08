@@ -51,7 +51,7 @@ export default function Projects() {
             <Link
               href="/proyectos/todos"
               className="text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
-              aria-label="all posts"
+              aria-label="todos los proyectos"
             >
               Todos los proyectos &rarr;
             </Link>
