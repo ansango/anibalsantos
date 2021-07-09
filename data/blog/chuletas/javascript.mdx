@@ -102,7 +102,7 @@ var ourDecimal = 5.7 // float
 - Las variables declaradas con `const` son de sólo lectura y no pueden ser reasignadas.
 - Los objetos (incluyendo arrays y funciones) asignados a una variable usando `const` siguen siendo mutables y sólo se impide la reasignación del identificador de la variable.
 
-Para asegurar que sus datos no cambian, JavaScript proporciona una función Object.freeze para prevenir la mutación de datos.
+Para asegurar que los datos no cambian, JavaScript proporciona una función Object.freeze para prevenir la mutación de datos.
 
 ```javascript
 let obj = {
@@ -365,11 +365,11 @@ let thatArray = ['basil', 'cilantro', ...thisArray, 'coriander']
 const [a, b] = [1, 2, 3, 4, 5, 6]
 console.log(a, b) // 1, 2
 
-// puede acceder a cualquier valor utilizando comas para llegar al índice deseado
+// acceder a cualquier valor utilizando comas para llegar al índice deseado
 const [a, b, , , c] = [1, 2, 3, 4, 5, 6]
 console.log(a, b, c) // 1, 2, 5
 
-// para recoger el resto de los elementos en un array separado.
+// recoger el resto de los elementos en un array separado.
 const [a, b, ...arr] = [1, 2, 3, 4, 5, 7]
 console.log(a, b) // 1, 2
 console.log(arr) // [3, 4, 5, 7]
