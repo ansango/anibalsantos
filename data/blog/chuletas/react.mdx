@@ -1,0 +1,68 @@
+---
+title: React 📑
+date: '2021-07-10'
+tags: ['cheatsheet', 'react', 'javascript', js']
+draft: true
+summary: summary
+---
+
+<div className="flex justify-center">
+  <Image alt="react" src="/static/blog/chuletas/react.jpg" width={768} height={476} />
+</div>
+
+<section>
+
+##
+
+Es cierto que empecé a aprender React este año, es por eso que he decidido crear una pequeña chuleta por si olvido cualquier cosa. Iré ampliando esta sección con cosas de utilidad que pueda reutilizar.
+
+Si tienes ideas o recomendaciones no dudes en mandarme un mail, al final de la página tienes un reporte para errores 😄
+
+</section>
+
+<section id="basicos">
+
+## React básico
+
+<article id="create">
+
+</article>
+
+<article id="jsx">
+
+### JSX
+
+Las aplicaciones React se estructuran utilizando una sintaxis llamada JSX. Esta es la sintaxis de un elemento JSX básico. Se diferencia de HTML en varios aspectos importantes:
+
+- Algunos atributos de JSX se denominan de forma diferente a los atributos de HTML. Porque son palabras reservadas en JavaScript, como 'class'. En lugar de class, JSX utiliza 'className'.
+
+```javascript
+<div id="header">
+  <h1 className="title">Hello React!</h1>
+</div>
+```
+
+- Elementos JSX que tienen una sola etiqueta (input, img, br) tienen que cerrarse con una barra diagonal para que sean válidos (/):
+
+```javascript
+<input type="email" /> // <input type="email"> syntax error
+```
+
+- Elementos JSX que tienen una etiqueta de apertura y otra de cierre (div, span, button), tienen que tener ambas o cerrarse con una barra diagonal final.
+
+```javascript
+<button>Click me</button> // <button> o </button> syntax error
+<button /> // válido
+```
+
+</article>
+<article id="componentes"></article>
+<article id="listas"></article>
+<article id="eventos"></article>
+
+</section>
+
+<section id="hooks-esenciales"></section>
+<section id="hooks-performance"></section>
+<section id="hooks-avanzados"></section>
+<section id="forms"></section>
