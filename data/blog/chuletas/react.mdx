@@ -1,7 +1,7 @@
 ---
 title: React 📑
 date: '2021-07-10'
-tags: ['cheatsheet', 'react', 'javascript', js']
+tags: ['cheatsheet', 'react', 'javascript', 'js']
 draft: true
 summary: summary
 ---
@@ -18,6 +18,11 @@ Es cierto que empecé a aprender React este año, es por eso que he decidido cre
 
 Si tienes ideas o recomendaciones no dudes en mandarme un mail, al final de la página tienes un reporte para errores 😄
 
+1. [React básico](/blog/chuletas/react#basicos)
+   - [Create React App](/blog/chuletas/react#create)
+   - [JSX](/blog/chuletas/react#jsx)
+1. [Hooks básicos](/blog/chuletas/react#hooks-basicos)
+
 </section>
 
 <section id="basicos">
@@ -26,13 +31,26 @@ Si tienes ideas o recomendaciones no dudes en mandarme un mail, al final de la p
 
 <article id="create">
 
+### Create React App
+
+```bash
+// Crear una nueva app
+npx create-react-app my-app-name
+
+// Ejecutar la aplicación
+cd my-app-name
+yarn start
+
+// http://localhost:3000
+```
+
 </article>
 
 <article id="jsx">
 
 ### JSX
 
-Las aplicaciones React se estructuran utilizando una sintaxis llamada JSX. Esta es la sintaxis de un elemento JSX básico. Se diferencia de HTML en varios aspectos importantes:
+Las aplicaciones React se estructuran utilizando JSX. Se diferencia de HTML en varios aspectos importantes:
 
 - Algunos atributos de JSX se denominan de forma diferente a los atributos de HTML. Porque son palabras reservadas en JavaScript, como 'class'. En lugar de class, JSX utiliza 'className'.
 
@@ -55,6 +73,82 @@ Las aplicaciones React se estructuran utilizando una sintaxis llamada JSX. Esta 
 <button /> // válido
 ```
 
+Los estilos en línea pueden añadirse utilizando el atributo style, y se actualizan dentro de un objeto.
+
+```javascript
+<h1 style={{ color: 'blue', fontSize: 22, padding: '0.5em 1em' }}>Hello React!</h1>
+```
+
+Los elementos JSX son expresiones de JavaScript y pueden utilizarse como tales. JSX nos da toda la potencia de JavaScript directamente dentro de nuestra interfaz de usuario.
+
+```javascript
+const greeting = <div>Hello React!</div>
+const isNewToReact = true
+
+function sayGreeting() {
+  if (isNewToReact) {
+    return greeting
+  } else {
+    return <div>Hi again, React</div>
+  }
+}
+```
+
+JSX nos permite insertar (o incrustar) expresiones simples de JavaScript utilizando la sintaxis de llaves:
+
+```javascript
+const year = 2021
+const greeting = <div>Hello React in {year}</div>
+const goodbye = <div>Goodbye previous year: {year - 1}</div>
+const className = 'title'
+const title = <h1 className={className}>My title</h1>
+// Intentar insertar valores de objetos entre llaves dará lugar a un error
+```
+
+JSX nos permite anidar elementos unos dentro de otros, como haríamos con HTML.
+
+```javascript
+const greeting = (
+  <div>
+    <h1>Hello!</h1>
+    <p>Welcome to React</p>
+  </div>
+)
+```
+
+Los comentarios se escriben como comentarios JavaScript de varias líneas:
+
+```javascript
+const greeting = (
+  <div>
+    {/* This is a single line comment */}
+    <h1>Hello!</div>
+    <p>Welcome to React</p>
+    {/* This is a 
+      multiline
+      comment */}
+  </div>
+)
+```
+
+Todas las aplicaciones React requieren tres cosas:
+
+1. ReactDOM.render(): se utiliza para renderizar (mostrar) nuestra aplicación montándola en un elemento HTML.
+2. Un elemento JSX: llamado "nodo raíz", porque es la raíz de nuestra aplicación. Es decir, al renderizarlo se renderizarán todos los hijos que estén dentro de él.
+3. Un elemento HTML (DOM): Donde se inserta la aplicación dentro de una página HTML. El elemento suele ser un div con un id de "raíz", ubicado en un archivo index.html.
+
+```javascript
+// Los paquetes pueden ser instalados localmente o traídos a través de un enlace CDN (añadido a la cabeza del documento HTML)
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+// el nodo raíz (normalmente un componente) suele llamarse "App"
+const App = <h1>Hello React!</h1>
+
+// ReactDOM.render(nodo raíz, elemento HTML)
+ReactDOM.render(App, document.getElementById('root'))
+```
+
 </article>
 <article id="componentes"></article>
 <article id="listas"></article>
@@ -62,7 +156,7 @@ Las aplicaciones React se estructuran utilizando una sintaxis llamada JSX. Esta 
 
 </section>
 
-<section id="hooks-esenciales"></section>
+<section id="hooks-basicos"></section>
 <section id="hooks-performance"></section>
 <section id="hooks-avanzados"></section>
 <section id="forms"></section>
