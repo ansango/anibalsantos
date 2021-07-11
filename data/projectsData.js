@@ -87,6 +87,36 @@ const projectsData = [
   },
   {
     id: 2,
+    title: 'Meal Tracker',
+    description: `Mi Curriculum Vitae desarrollado en ES6, Sass, y HTML. Desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
+    imgSrc: '/static/images/mern.jpeg',
+    href: 'https://meal-tracker-front.vercel.app/',
+    stack: [
+      icons.react,
+      icons.tailwind,
+      icons.node,
+      icons.mongo,
+      icons.vercel,
+      <Repo key="github" url={'https://github.com/ansango/meal-tracker-front'} />,
+    ],
+    tags: [
+      'react',
+      'js',
+      'javascript',
+      'tailwind',
+      'node',
+      'express',
+      'mongodb',
+      'tailwind',
+      'frontend',
+      'backend',
+      'full stack',
+      'meal',
+      'tracker',
+    ],
+  },
+  {
+    id: 3,
     title: 'Blog',
     description:
       'Mi blog actual, en el que estás navegando. Desarrollado en Next.js, TailwindCSS, basado en Markdown y mejorado con MDX. Desplegado en Vercel.',
@@ -102,7 +132,7 @@ const projectsData = [
     tags: ['markdown', 'react', 'nextjs', 'tailwind', 'vercel', 'frontend', 'blog'],
   },
   {
-    id: 3,
+    id: 4,
     title: 'NgBrew',
     description:
       'Pequeña aplicación desarrollada en Angular 12 y TailwindCSS, con implementación de Service Workers y PWA, instalable y accesible offline. Desplegado en Netlify.',
@@ -117,7 +147,7 @@ const projectsData = [
     tags: ['angular', 'tailwind', 'netlify', 'service', 'worker', 'pwa', 'frontend', 'ng', 'brew'],
   },
   {
-    id: 4,
+    id: 5,
     title: 'NgMaterial',
     description:
       'Aplicación de gestión con roles de usuario y administrador, desarrollada en Angular 12, Material, y NGRX. Desplegado en Netlify. Puedes probar a registrarte como turista o empresa!',
@@ -133,7 +163,7 @@ const projectsData = [
     tags: ['angular', 'material', 'netlify', 'redux', 'ngrx', 'frontend', 'ng'],
   },
   {
-    id: 5,
+    id: 6,
     title: 'Undefined Band - Bootstrap 5',
     description:
       'Landing de producto, creada con Parcel Bundler, React, Bootstrap 5 y Sass, ITCSS, OOCSS, from scratch. Desplegado en Netlify.',
@@ -160,7 +190,7 @@ const projectsData = [
     ],
   },
   {
-    id: 6,
+    id: 7,
     title: 'Undefined Band - TailwindCSS',
     description:
       'Landing de producto, creada con Parcel Bundler, React, TailwindCSS y Sass, versión reducida y refactorizada. Desplegado en Netlify.',
@@ -187,7 +217,7 @@ const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: 'Neo Punk Api',
     description:
       'Pequeña api rest pública, de las cervezas BrewDog realizada en Express y Mongo DB, consumida por el proyecto NgBrew. Desplegado en Netlify.',
@@ -214,7 +244,7 @@ const projectsData = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: 'Shopping List',
     description:
       'Lista de la compra, instalable con PWA y LocalStorage, desarrollada con Nuxt.js, Vuex y TailwindCSS. Desplegado en Netlify.',
@@ -241,7 +271,7 @@ const projectsData = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: 'Retro Pair Game',
     description:
       'Un juego sencillo de memoria, escrito en ES6 y NESCSS para darle un toque retro. Desplegado en Netlify.',
