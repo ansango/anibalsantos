@@ -88,7 +88,7 @@ const projectsData = [
   {
     id: 2,
     title: 'Meal Tracker',
-    description: `Mi Curriculum Vitae desarrollado en ES6, Sass, y HTML. Desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
+    description: `Aplicación full stack para el seguimiento semanal de comidas y recetas. Desarrollada en React, Node (Express), Mongo y Tailwind. Desplegada en Vercel y Heroku.`,
     imgSrc: '/static/images/mern.jpeg',
     href: 'https://meal-tracker-front.vercel.app/',
     stack: [
@@ -97,6 +97,7 @@ const projectsData = [
       icons.node,
       icons.mongo,
       icons.vercel,
+      icons.heroku,
       <Repo key="github" url={'https://github.com/ansango/meal-tracker-front'} />,
     ],
     tags: [
