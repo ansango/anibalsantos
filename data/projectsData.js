@@ -165,6 +165,20 @@ const projectsData = [
   },
   {
     id: 6,
+    title: 'Expense Tracker',
+    description: `Pequeña aplicación realizada en React para controlar los gastos diarios y crear una UI Base para arquitectura dinámica. Desarrollada en React y Tailwind. Desplegada en Vercel.`,
+    imgSrc: '/static/images/react-tailwind.jpeg',
+    href: 'https://expense-tracker-react-app.vercel.app/',
+    stack: [
+      icons.react,
+      icons.tailwind,
+      icons.vercel,
+      <Repo key="github" url={'https://github.com/ansango/expense-tracker'} />,
+    ],
+    tags: ['react', 'js', 'javascript', 'tailwind', 'tailwind', 'frontend', 'expense', 'tracker'],
+  },
+  {
+    id: 7,
     title: 'Undefined Band - Bootstrap 5',
     description:
       'Landing de producto, creada con Parcel Bundler, React, Bootstrap 5 y Sass, ITCSS, OOCSS, from scratch. Desplegado en Netlify.',
@@ -191,7 +205,7 @@ const projectsData = [
     ],
   },
   {
-    id: 7,
+    id: 8,
     title: 'Undefined Band - TailwindCSS',
     description:
       'Landing de producto, creada con Parcel Bundler, React, TailwindCSS y Sass, versión reducida y refactorizada. Desplegado en Netlify.',
@@ -218,7 +232,7 @@ const projectsData = [
     ],
   },
   {
-    id: 8,
+    id: 9,
     title: 'Neo Punk Api',
     description:
       'Pequeña api rest pública, de las cervezas BrewDog realizada en Express y Mongo DB, consumida por el proyecto NgBrew. Desplegado en Netlify.',
@@ -245,7 +259,7 @@ const projectsData = [
     ],
   },
   {
-    id: 9,
+    id: 10,
     title: 'Shopping List',
     description:
       'Lista de la compra, instalable con PWA y LocalStorage, desarrollada con Nuxt.js, Vuex y TailwindCSS. Desplegado en Netlify.',
@@ -272,7 +286,7 @@ const projectsData = [
     ],
   },
   {
-    id: 10,
+    id: 11,
     title: 'Retro Pair Game',
     description:
       'Un juego sencillo de memoria, escrito en ES6 y NESCSS para darle un toque retro. Desplegado en Netlify.',
@@ -288,6 +302,7 @@ const projectsData = [
     tags: ['html', 'js', 'javascript', 'css', 'nescss', 'netlify', 'game', 'frontend', 'retro'],
   },
   {
+    id: 12,
     title: 'The Frontend Roadmap',
     description:
       'Landing page creada from scratch en Vue 2, Parcel v1, BulmaCSS. Desplegado en Netlify.',
