@@ -2,7 +2,7 @@
 title: Configurar Ubuntu 20.04
 date: '2021-07-17'
 tags: ['linux', 'ubuntu', 'zsh', 'nvm', 'tooling', 'pinned']
-draft: true
+draft: false
 summary: Instalación de utilidades para desarrollo en Ubuntu 20.04
 ---
 
@@ -32,6 +32,8 @@ sudo apt -y upgrade
 </section>
 
 <section id="git">
+
+## Instalación de Git
 
 ```bash
 sudo apt -y install git
@@ -127,6 +129,20 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 
 Necesitaremos reiniciar la sesión para que `nvm` funcione
 
+### Como instalar ¿Node?
+
+Podemos obtener el listado de todas las versiones con:
+
+```bash
+nvm ls-remote
+```
+
+Para instalar `Node.js` y `npm` simplemente ejecutamos:
+
+```bash
+nvm install --lts # Para instalar la última versión de larga duración
+```
+
 </section>
 
 <section id="mongo">
@@ -164,6 +180,8 @@ sudo apt -y install gnome-tweaks
 ```bash
 sudo apt -y install wmctrl
 ```
+
+Necesitamos instalar el plugin de `Custom Hot Corners`, para ello podemos acceder <a href="https://extensions.gnome.org/extension/1362/custom-hot-corners/" target="_blank" rel="noopener noreferrer">aquí</a> en `Firefox` y activarlo en el botón de switch, o si accedemos desde `Chrome` deberemos instalar un <a href="https://chrome.google.com/webstore/detail/gnome-shell-integration/gphhapmejobijbbhgpjhcjognlahblep" target="_blank" rel="noopener noreferrer">complemento</a> para el navegador
 
 Accedemos a Gnome Tweaks, y en `extensions`, activamos `Custom hot corners`. En el botón de configuración podremos seleccionar las acciones que queremos que se lancen al poner el puntero en cada esquina de nuestra pantalla.
 
@@ -233,10 +251,12 @@ sudo snap install spotify
 
 </section>
 
-<section id="">
+<section id="touchpad">
 
-```bash
+## Resetear Touchpad en Ubuntu
 
-```
+> Puedes encontrar algunas soluciones para resetear el touchpad en Ubuntu <a href="/blog/linux/touchpad" target="_blank" rel="noopener noreferrer">aquí</a>
 
 </section>
+
+Y hasta aquí toda la configuración base de mi Ubuntu ❤️. Se que son unas cuantas cositas, por ello lo he distribuido en otras entradas. Espero que te haya servido 😸
