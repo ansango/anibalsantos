@@ -64,9 +64,9 @@ export default function PostLayout({ children, frontMatter, next, prev }) {
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
+            <SendErrors params={{ title: title, url: urlShare, text: title }} />
             <footer>
               <div className="text-sm font-medium leading-5 divide-gray-200 xl:divide-y dark:divide-gray-700 xl:col-start-1 xl:row-start-2">
-                <SendErrors params={{ title: title, url: urlShare, text: title }} />
                 <div className="py-4 xl:py-8 flex flex-col md:flex-row md:justify-between md:items-center">
                   {tags && (
                     <div className="flex flex-wrap">
