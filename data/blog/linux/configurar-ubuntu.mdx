@@ -1,0 +1,242 @@
+---
+title: Configurar Ubuntu 20.04
+date: '2021-07-17'
+tags: ['linux', 'ubuntu', 'zsh', 'nvm', 'tooling', 'pinned']
+draft: true
+summary: Instalación de utilidades para desarrollo en Ubuntu 20.04
+---
+
+<div className="flex justify-center">
+  <Image alt="ubuntu" src="/static/blog/linux/ubuntu.jpg" width={768} height={476} />
+</div>
+
+<section>
+
+##
+
+Normalmente suelo formatear mi ordenador al menos dos veces al año, es una práctica que me gusta hacer para vaciarlo de basura o instalarme de cero alguna versión de Ubuntu nueva. He ido guardando todos los pasos que hago para dejar un Ubuntu listo para empezar a programar.
+
+Lo ideal sería componer todo mediante un script en `bash` que automatizase todos estos procesos de instalación. Te dejo a ti ese trabajo 😄
+
+</section>
+
+<section id="update">
+
+## Actualización de repositiorios
+
+```bash
+sudo apt update
+sudo apt -y upgrade
+```
+
+</section>
+
+<section id="git">
+
+```bash
+sudo apt -y install git
+```
+
+</section>
+
+<section id="exfat">
+
+## Soporte para exFAT
+
+```bash
+sudo apt -y install exfat-fuse exfat-utils
+```
+
+</section>
+
+<section id="fira-code">
+
+## Instalación de Fonts Powerline y Firacode
+
+```bash
+sudo apt -y install fonts-powerline
+```
+
+```bash
+sudo apt -y install fonts-firacode
+```
+
+</section>
+
+<section id="zsh">
+
+## Instalación y configuración de `zsh`
+
+```bash
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+```
+
+Accede al archivo de configuración de `zsh`
+
+```bash
+nano ~/.zshrc
+```
+
+Busca la variable `ZSH_THEME` y actualiza el valor a `agnoster`. Debería quedarte algo así:
+
+```bash
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="/home/ansango/.oh-my-zsh"
+
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="agnoster"
+
+```
+
+Guarda el anterior archivo y a continuación hacemos `zsh` nuestra terminal por defecto
+
+```bash
+chsh -s $(which zsh)
+```
+
+Necesitaremos reiniciar la sesión para que `zsh` sea nuestra terminal predeterminada.
+
+</section>
+
+<section id="nvm">
+
+## Instalación y configuración de Node Version Manager
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.1/install.sh | bash
+```
+
+Abrimos el archivo configuración de `zsh` de nuevo:
+
+```bash
+nano ~/.zshrc
+```
+
+Copiamos y pegamos al final del archivo el siguiente código:
+
+```bash
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+```
+
+Necesitaremos reiniciar la sesión para que `nvm` funcione
+
+</section>
+
+<section id="mongo">
+
+## Instalación de MongoDB
+
+> Para instalar MongoDB puedes seguir esta <a href="/blog/linux/instalar-mongo#mongodb" target="_blank" rel="noopener noreferrer">guía</a>
+
+</section>
+
+<section id="dashboard">
+
+## Dashboard
+
+Hace tiempo utilizaba OSX y me encantaba la interfaz gráfica, básicamente por el Dock y Mission Control. Pero puedes configurar tu distribución de Ubuntu para que tenga esas funcionalidades, siguiendo estos pasos:
+
+### Instalación de Dconf Editor para el Dock
+
+```bash
+sudo apt -y install dconf-editor
+```
+
+Entramos en Dconf Editor y accedemos a la siguiente ruta para customizar a nuestro gusto el Dock en Ubuntu:
+
+```bash
+org/gnome/shell/extensions/dash-to-dock
+```
+
+### Instalación de Gnome Tweaks y configuración para "Mission Control"
+
+```bash
+sudo apt -y install gnome-tweaks
+```
+
+```bash
+sudo apt -y install wmctrl
+```
+
+Accedemos a Gnome Tweaks, y en `extensions`, activamos `Custom hot corners`. En el botón de configuración podremos seleccionar las acciones que queremos que se lancen al poner el puntero en cada esquina de nuestra pantalla.
+
+</section>
+
+<section id="apps">
+
+## Aplicaciones que uso
+
+### Google Chrome
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+```
+
+```bash
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+```
+
+### Firefox Developer Edition
+
+> Para instalar Firefox Developer Edition puedes seguir esta <a href="/blog/linux/firefox-developer" target="_blank" rel="noopener noreferrer">guía</a>
+
+### Htop
+
+```bash
+sudo apt -y install htop
+```
+
+### Byobu
+
+```bash
+sudo apt -y install byobu
+```
+
+### Visual Studio Code
+
+```bash
+sudo snap install code --classic
+```
+
+Lo ideal es utilizar el plugin `Settings Sync` para tener sincronizados todos nuestros plugins de Visual Studio Code, así solo tendremos que descargarlos.
+
+> Puedes ver la lista de los plugins que uso <a href="/blog/vscode/plugins" target="_blank" rel="noopener noreferrer">aquí</a>
+
+### Postman
+
+```bash
+sudo snap install postman
+```
+
+### Robo 3T
+
+> Para instalar Robo 3T puedes seguir esta <a href="/blog/linux/instalar-mongo#robo3t" target="_blank" rel="noopener noreferrer">guía</a>
+
+### VLC
+
+```bash
+sudo snap install vlc
+```
+
+### Spotify
+
+```bash
+sudo snap install spotify
+```
+
+</section>
+
+<section id="">
+
+```bash
+
+```
+
+</section>
