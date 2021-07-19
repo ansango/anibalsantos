@@ -5,7 +5,10 @@ import {
   SiInstagram as Instagram,
 } from 'react-icons/si'
 
+import { HiCamera as Camera } from 'react-icons/hi'
+
 const components = {
+  photo: Camera,
   mail: Mail,
   github: Github,
   linkedin: Linkedin,

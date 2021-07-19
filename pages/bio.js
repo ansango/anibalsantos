@@ -28,6 +28,7 @@ export default function Bio() {
             <Link href={'https://www.everis.com/global/en'}>Everis</Link>
 
             <div className="flex pt-6 space-x-3">
+              <SocialIcon kind="photo" href={'https://ansango-photo.vercel.app'} size="6" />
               <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="5" />
               <SocialIcon kind="github" href={siteMetadata.github} size="5" />
               <SocialIcon kind="linkedin" href={siteMetadata.linkedin} size="5" />
@@ -58,8 +59,10 @@ export default function Bio() {
               programar, crear contenido e interfaces de usuario y la tecnología en general.
             </p>
             <p>
-              Tengo muchas otras pasiones, como la fotografía, el deporte, los animales o la
-              gastronomía. No se si el empezar a escribir en un blog se convertirá en otra de ellas.
+              Tengo muchas otras pasiones, como la{' '}
+              <Link href={'https://ansango-photo.vercel.app'}>fotografía</Link>, el deporte, los
+              animales o la gastronomía. No se si el empezar a escribir en un blog se convertirá en
+              otra de ellas.
             </p>
             <p>
               Por último, no pretendo aburrirte con mi stack tecnológico, puedes verlo{' '}

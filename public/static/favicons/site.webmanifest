@@ -1,6 +1,6 @@
 {
-  "name": "async-blocks",
-  "short_name": "async-blocks",
+  "name": "ansango.com",
+  "short_name": "ansango",
   "description": "a web development blog",
   "icons": [
     { "src": "android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
