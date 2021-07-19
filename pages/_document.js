@@ -34,14 +34,14 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
           {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script async src={`https://www.googletagmanager.com/gtag/js?id=UA-201059938-1`} />
+          <script async src={`https://www.googletagmanager.com/gtag/js?id=G-SKVP96NP8D`} />
           <script
             dangerouslySetInnerHTML={{
               __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'UA-201059938-1', {
+            gtag('config', 'G-SKVP96NP8D', {
               page_path: window.location.pathname,
             });
           `,
