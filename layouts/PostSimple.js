@@ -8,7 +8,6 @@ import { BlogSeo } from '@/components/SEO'
 import SocialShare from '@/components/SocialShare'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-import formatDate from '@/lib/utils/formatDate'
 
 import { HiOutlineClock as Clock, HiOutlineBookOpen as Book } from 'react-icons/hi'
 
@@ -26,7 +25,7 @@ const ToRead = ({ readingTime }) => {
 }
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
-  const { date, title, tags, readingTime } = frontMatter
+  const { date, title, tags, readingTime, cover } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
 
   return (
@@ -82,6 +81,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
+              <Image alt={title} src={cover} width="1920px" height="1280px" quality={30} />
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
 
