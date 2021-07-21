@@ -16,7 +16,7 @@ export default function AuthorLayout({ children, frontMatter }) {
           </h1>
         </div>
         <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+        <div className="items-start space-y-2">
           <div className="flex flex-col items-center pt-8 space-x-2">
             <Image
               src={avatar}
