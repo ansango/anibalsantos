@@ -1,3 +1,5 @@
+import Link from '@/components/Link'
+
 import {
   SiHtml5 as HTML5,
   SiSass as SASS,
@@ -22,8 +24,6 @@ import {
 } from 'react-icons/si'
 
 import { IoLogoVercel as VERCEL } from 'react-icons/io5'
-
-import Link from '@/components/Link'
 
 const Repo = ({ url }) => {
   return (

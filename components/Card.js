@@ -5,7 +5,7 @@ const Card = ({ title, description, imgSrc, href, stack }) => {
   const github = stack.filter((e) => e.key === 'github')
   const notGithub = stack.filter((e) => e.key !== 'github')
   return (
-    <div className="p-4 md:w-1/2 md" style={{ maxWidth: '544px' }}>
+    <div className="px-5 sm:px-20 md:px-0">
       <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-700 rounded-md overflow-hidden">
         {href ? (
           <Link href={href} aria-label={`Link to ${title}`}>

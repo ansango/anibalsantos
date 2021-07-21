@@ -97,10 +97,10 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           })}
         </ul>
         {posts.length > MAX_DISPLAY && (
-          <div className="flex justify-end text-lg leading-6 font-bold">
+          <div className="flex justify-end text-lg leading-6">
             <Link
               href="/blog"
-              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 font-bold"
               aria-label="all posts"
             >
               Publicaciones &rarr;
