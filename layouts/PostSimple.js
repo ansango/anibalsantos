@@ -40,7 +40,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
               </div>
             </div>
           </header>
-          <div className="flex justify-between items-center w-full mt-8">
+          <div className="flex justify-between items-center w-full mt-8 mb-2">
             <div className="flex items-center">
               <dl>
                 <dt className="sr-only">Autor</dt>
@@ -76,12 +76,12 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
               </dl>
             </div>
           </div>
+          <Image alt={title} src={cover} width="1920px" height="1280px" quality={30} />
           <div
             className="pb-8 divide-y divide-gray-200 xl:divide-y-0 dark:divide-gray-700 "
             style={{ gridTemplateRows: 'auto 1fr' }}
           >
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
-              <Image alt={title} src={cover} width="1920px" height="1280px" quality={30} />
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
 

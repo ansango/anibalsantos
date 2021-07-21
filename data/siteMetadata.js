@@ -7,7 +7,7 @@ const siteMetadata = {
   siteUrl: 'https://ansango.com',
   siteRepo: 'https://github.com/ansango/anibalsantos',
   siteLogo: '/static/images/logo.png',
-  image: '/static/images/logo.png',
+  image: '/static/images/profile.png',
   socialBanner: '/static/images/logo.png',
   email: 'anibalsantosgo@gmail.com',
   github: 'https://github.com/ansango',
