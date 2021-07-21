@@ -29,6 +29,7 @@ export default function Projects() {
             </span>
           </p>
         </div>
+        <hr className="w-full border-1 border-gray-200 dark:border-gray-800 pb-5" />
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-5">
           {pinnedProjects.map((d) => (
             <Card

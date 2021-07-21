@@ -1,7 +1,7 @@
-import { CameraIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from '../icons'
+import { MeIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from '../icons'
 
 const components = {
-  photo: CameraIcon,
+  photo: MeIcon,
   mail: MailIcon,
   github: GithubIcon,
   linkedin: LinkedinIcon,

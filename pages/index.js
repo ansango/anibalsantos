@@ -46,6 +46,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
+        <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
         <ul>
           {!posts.length && (
             <div className="text-center">

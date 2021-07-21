@@ -1,60 +1,59 @@
 import Link from '@/components/Link'
 
 import {
-  SiHtml5 as HTML5,
-  SiSass as SASS,
-  SiJavascript as JS,
-  SiNetlify as NETLIFY,
-  SiNextDotJs as NEXT,
-  SiTailwindcss as TAILWIND,
-  SiMarkdown as MARKDOWN,
-  SiAngular as ANGULAR,
-  SiMaterialdesign as MATERIAL,
-  SiRedux as REDUX,
-  SiReact as REACT,
-  SiBootstrap as BOOTSTRAP,
-  SiNodeDotJs as NODE,
-  SiMongodb as MONGO,
-  SiHeroku as HEROKU,
-  SiNuxtDotJs as NUXT,
-  SiVueDotJs as VUE,
-  SiCss3 as CSS3,
-  SiBulma as BULMA,
-  SiGithub as GITHUB,
-} from 'react-icons/si'
-
-import { IoLogoVercel as VERCEL } from 'react-icons/io5'
+  AngularIcon,
+  BootstrapIcon,
+  BulmaIcon,
+  Css3Icon,
+  GithubIcon,
+  HerokuIcon,
+  Html5Icon,
+  JsIcon,
+  MarkdownIcon,
+  MaterialIcon,
+  MongoIcon,
+  NetlifyIcon,
+  NextIcon,
+  NodeIcon,
+  NuxtIcon,
+  ReactIcon,
+  ReduxIcon,
+  SassIcon,
+  TailwindIcon,
+  VercelIcon,
+  VueIcon,
+} from '@/components/icons'
 
 const Repo = ({ url }) => {
   return (
     <Link href={url}>
-      <GITHUB size={sizeIcons} className="dark:text-gray-100" />
+      <GithubIcon size={sizeIcons} className="dark:text-gray-100" />
     </Link>
   )
 }
 
 const sizeIcons = 22
 const icons = {
-  html: <HTML5 key="html" size={sizeIcons} color="#EF6026" className="mr-3" />,
-  sass: <SASS key="sass" size={sizeIcons} color="#C56394" className="mr-3" />,
-  js: <JS key="js" size={sizeIcons} color="#FBD600" className="mr-3" />,
-  netlify: <NETLIFY key="netlify" size={sizeIcons} color="#27BDB8" className="mr-3" />,
-  next: <NEXT key="next" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
-  tailwind: <TAILWIND key="tailwind" size={sizeIcons} color="#27BDB8" className="mr-3" />,
-  markdown: <MARKDOWN key="markdown" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
-  vercel: <VERCEL key="vercel" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
-  angular: <ANGULAR key="angular" size={sizeIcons} color="#DD0031" className="mr-3" />,
-  material: <MATERIAL key="material" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
-  redux: <REDUX key="redux" size={sizeIcons} color="#764ABC" className="mr-3" />,
-  react: <REACT key="react" size={sizeIcons} color="#62DBFB" className="mr-3" />,
-  bootstrap: <BOOTSTRAP key="bootstrap" size={sizeIcons} color="#8913FC" className="mr-3" />,
-  node: <NODE key="node" size={sizeIcons} color="#7FC727" className="mr-3" />,
-  mongo: <MONGO key="mongo" size={sizeIcons} color="#138D4E" className="mr-3" />,
-  heroku: <HEROKU key="heroku" size={sizeIcons} color="#5719B3" className="mr-3" />,
-  nuxt: <NUXT key="nuxt" size={sizeIcons} color="#3B8070" className="mr-3" />,
-  vue: <VUE key="vue" size={sizeIcons} color="#3FB27F" className="mr-3" />,
-  css3: <CSS3 key="css" size={sizeIcons} color="#0270BA" className="mr-3" />,
-  bulma: <BULMA key="bulma" size={sizeIcons} color="#27BDB8" className="mr-3" />,
+  html: <Html5Icon key="html" size={sizeIcons} color="#EF6026" className="mr-3" />,
+  sass: <SassIcon key="sass" size={sizeIcons} color="#C56394" className="mr-3" />,
+  js: <JsIcon key="js" size={sizeIcons} color="#FBD600" className="mr-3" />,
+  netlify: <NetlifyIcon key="netlify" size={sizeIcons} color="#27BDB8" className="mr-3" />,
+  next: <NextIcon key="next" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
+  tailwind: <TailwindIcon key="tailwind" size={sizeIcons} color="#27BDB8" className="mr-3" />,
+  markdown: <MarkdownIcon key="markdown" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
+  vercel: <VercelIcon key="vercel" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
+  angular: <AngularIcon key="angular" size={sizeIcons} color="#DD0031" className="mr-3" />,
+  material: <MaterialIcon key="material" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
+  redux: <ReduxIcon key="redux" size={sizeIcons} color="#764ABC" className="mr-3" />,
+  react: <ReactIcon key="react" size={sizeIcons} color="#62DBFB" className="mr-3" />,
+  bootstrap: <BootstrapIcon key="bootstrap" size={sizeIcons} color="#8913FC" className="mr-3" />,
+  node: <NodeIcon key="node" size={sizeIcons} color="#7FC727" className="mr-3" />,
+  mongo: <MongoIcon key="mongo" size={sizeIcons} color="#138D4E" className="mr-3" />,
+  heroku: <HerokuIcon key="heroku" size={sizeIcons} color="#5719B3" className="mr-3" />,
+  nuxt: <NuxtIcon key="nuxt" size={sizeIcons} color="#3B8070" className="mr-3" />,
+  vue: <VueIcon key="vue" size={sizeIcons} color="#3FB27F" className="mr-3" />,
+  css3: <Css3Icon key="css" size={sizeIcons} color="#0270BA" className="mr-3" />,
+  bulma: <BulmaIcon key="bulma" size={sizeIcons} color="#27BDB8" className="mr-3" />,
 }
 
 const projectsData = [

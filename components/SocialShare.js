@@ -1,15 +1,10 @@
-import {
-  SiMailDotRu as Mail,
-  SiTwitter as Twitter,
-  SiWhatsapp as Whatsapp,
-  SiTelegram as Telegram,
-} from 'react-icons/si'
-
+import { MailIcon, TelegramIcon, TwitterIcon, WhatsappIcon } from './icons'
+import Link from '@/components/Link'
 const components = {
-  mail: Mail,
-  twitter: Twitter,
-  whatsapp: Whatsapp,
-  telegram: Telegram,
+  mail: MailIcon,
+  twitter: TwitterIcon,
+  whatsapp: WhatsappIcon,
+  telegram: TelegramIcon,
 }
 
 const shareURL = ({ kind, params }) => {
@@ -26,15 +21,15 @@ const shareURL = ({ kind, params }) => {
 
 const SocialShare = ({ kind, params, size }) => {
   if (!kind) return null
-  const SocialSvg = components[kind]
+  const SocialIcon = components[kind]
   const url = shareURL({ kind: kind, params: params })
   return (
-    <a href={url} className="mx-1" target="_blank" rel="noopener noreferrer">
+    <Link href={url} className="mx-1">
       <span className="sr-only">{kind}</span>
-      <SocialSvg
+      <SocialIcon
         className={`fill-current text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 h-${size} w-${size}`}
       />
-    </a>
+    </Link>
   )
 }
 
