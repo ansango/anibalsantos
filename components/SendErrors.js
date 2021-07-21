@@ -3,7 +3,7 @@ const SendErrors = ({ params }) => {
   return (
     <a
       href={url}
-      className="mx-1 text-gray-700 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400"
+      className="mx-1 text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400"
       target="_blank"
       rel="noopener noreferrer"
     >

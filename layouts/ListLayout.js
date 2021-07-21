@@ -3,6 +3,7 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
+import formatDate from '@/lib/utils/formatDate'
 
 const postDateTemplate = { year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -25,8 +26,8 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             {title}
           </h1>
           <p className="text-md leading-7 text-gray-500 dark:text-gray-400">
-            Aquí puedes encontrar todas las entradas que he ido escribiendo a lo largo del tiempo.
-            Utiliza el siguiente buscador para filtrar por título.
+            Puedes encontrar las entradas que he ido escribiendo a lo largo del tiempo. Utiliza el
+            siguiente buscador para filtrar por título.
           </p>
           <div className="relative">
             <input
@@ -34,7 +35,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
               type="text"
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Buscar artículos"
-              className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-yellow-500 focus:border-yellow-500 dark:bg-gray-800 dark:text-gray-100"
+              className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-300 rounded-md dark:border-gray-900 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-800 dark:text-gray-100"
             />
             <svg
               className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"

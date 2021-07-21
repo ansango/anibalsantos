@@ -1,5 +1,5 @@
-import Image from 'next/image'
-import Link from '@/components/Link'
+import Image from './Image'
+import Link from './Link'
 
 const Card = ({ title, description, imgSrc, href, stack }) => {
   const github = stack.filter((e) => e.key === 'github')
@@ -47,7 +47,7 @@ const Card = ({ title, description, imgSrc, href, stack }) => {
           {href && (
             <Link
               href={href}
-              className="text-base font-medium leading-6 text-yellow-500 hover:text-yellow-600 dark:hover:text-yellow-400"
+              className="text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
               aria-label={`Link to ${title}`}
             >
               Ir al proyecto &rarr;

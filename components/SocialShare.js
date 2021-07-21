@@ -32,7 +32,7 @@ const SocialShare = ({ kind, params, size }) => {
     <a href={url} className="mx-1" target="_blank" rel="noopener noreferrer">
       <span className="sr-only">{kind}</span>
       <SocialSvg
-        className={`fill-current text-gray-700 dark:text-gray-200 hover:text-yellow-500 dark:hover:text-yellow-400 h-${size} w-${size}`}
+        className={`fill-current text-gray-700 dark:text-gray-200 hover:text-primary-500 dark:hover:text-primary-400 h-${size} w-${size}`}
       />
     </a>
   )

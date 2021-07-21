@@ -2,19 +2,14 @@ import { HiChevronDown as ArrowDown } from 'react-icons/hi'
 import { Disclosure, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
 
-const Bookmarks = ({ posts }) => {
-  const bookmarks = posts
-    .filter((post) => post.tags.includes('bookmarks') && post.slug !== 'bookmarks/todos')
-    .sort(function (a, b) {
-      return new Date(a.date) - new Date(b.date)
-    })
+const Accordion = ({ posts, titleAccordion }) => {
   return (
     <Disclosure>
       {({ open }) => (
-        <div className="pt-5 space-y-2 md:space-y-5">
-          <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none">
-            <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14">
-              Bookmarks
+        <>
+          <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none pt-5">
+            <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14 capitalize">
+              {titleAccordion}
             </h2>
             <div className="px-4">
               <ArrowDown size={26} className={`${open ? 'transform rotate-180' : ''}`} />
@@ -31,7 +26,7 @@ const Bookmarks = ({ posts }) => {
           >
             <Disclosure.Panel className="py-5">
               <ul className="grid gap-3 md:grid-cols-2">
-                {bookmarks.map((bookmark) => {
+                {posts.map((bookmark) => {
                   const { slug, title, summary } = bookmark
                   return (
                     <li key={slug}>
@@ -49,10 +44,10 @@ const Bookmarks = ({ posts }) => {
               </ul>
             </Disclosure.Panel>
           </Transition>
-        </div>
+        </>
       )}
     </Disclosure>
   )
 }
 
-export default Bookmarks
+export default Accordion

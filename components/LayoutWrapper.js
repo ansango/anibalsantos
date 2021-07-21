@@ -1,5 +1,6 @@
 import siteMetadata from '@/data/siteMetadata'
 import headerNavLinks from '@/data/headerNavLinks'
+import Logo from '@/data/logo.svg'
 import Link from './Link'
 import SectionContainer from './SectionContainer'
 import Footer from './Footer'
@@ -14,8 +15,9 @@ const LayoutWrapper = ({ children }) => {
           <div>
             <Link href="/" aria-label="Javascript Blog">
               <div className="flex items-center justify-between">
+                <div className="w-2 h-2 p-2 mr-2 rounded-full bg-gradient-to-tr from-primary-200 to-primary-500"></div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className=" h-6 text-2xl font-semibold ">{siteMetadata.headerTitle}</div>
+                  <div className="text-2xl font-semibold">{siteMetadata.headerTitle}</div>
                 ) : (
                   siteMetadata.headerTitle
                 )}
@@ -39,7 +41,6 @@ const LayoutWrapper = ({ children }) => {
           </div>
         </header>
         <main className="mb-auto">{children}</main>
-
         <Footer />
       </div>
     </SectionContainer>
