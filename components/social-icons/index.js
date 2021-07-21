@@ -1,18 +1,11 @@
-import {
-  SiMailDotRu as Mail,
-  SiGithub as Github,
-  SiLinkedin as Linkedin,
-  SiInstagram as Instagram,
-} from 'react-icons/si'
-
-import { HiCamera as Camera } from 'react-icons/hi'
+import { CameraIcon, GithubIcon, InstagramIcon, LinkedinIcon, MailIcon } from '../icons'
 
 const components = {
-  photo: Camera,
-  mail: Mail,
-  github: Github,
-  linkedin: Linkedin,
-  instagram: Instagram,
+  photo: CameraIcon,
+  mail: MailIcon,
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
+  instagram: InstagramIcon,
 }
 
 const SocialIcon = ({ kind, href, size = 8 }) => {

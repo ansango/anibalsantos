@@ -1,6 +1,6 @@
-import { HiChevronDown as ArrowDown } from 'react-icons/hi'
 import { Disclosure, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
+import { ChevDownIcon } from './icons'
 
 const Accordion = ({ posts, titleAccordion }) => {
   return (
@@ -12,7 +12,7 @@ const Accordion = ({ posts, titleAccordion }) => {
               {titleAccordion}
             </h2>
             <div className="px-4">
-              <ArrowDown size={26} className={`${open ? 'transform rotate-180' : ''}`} />
+              <ChevDownIcon size={26} className={`${open ? 'transform rotate-180' : ''}`} />
             </div>
           </Disclosure.Button>
           <Transition

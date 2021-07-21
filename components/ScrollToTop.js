@@ -1,5 +1,6 @@
-import { ImArrowUp2 as ARROW } from 'react-icons/im'
 import { useEffect, useState } from 'react'
+import { AUpIcon } from './icons'
+
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false)
   const scrollToTop = () => {
@@ -25,10 +26,10 @@ const ScrollToTop = () => {
 
   const role = 'button'
   return (
-    <div className="fixed bottom-6 right-10">
+    <>
       {isVisible && (
         <button
-          className="bg-primary-300 hover:bg-primary-200 text-primary-600 font-bold px-3 py-2 border-b-4 border-primary-500 hover:border-blue rounded-md opacity-0 transition-opacity duration-700"
+          className="fixed bottom-6 right-10 bg-primary-300 hover:bg-primary-200 text-primary-600 font-bold px-3 py-2 border-b-4 border-primary-500 hover:border-blue rounded-md opacity-0 transition-opacity duration-700"
           style={{
             opacity: isVisible ? '100' : '0',
             pointerEvents: !isVisible ? 'none' : 'initial',
@@ -36,10 +37,10 @@ const ScrollToTop = () => {
           onClick={scrollToTop}
           role={role}
         >
-          <ARROW />
+          <AUpIcon />
         </button>
       )}
-    </div>
+    </>
   )
 }
 export default ScrollToTop

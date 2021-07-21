@@ -6,6 +6,7 @@ import Head from 'next/head'
 import LayoutWrapper from '@/components/LayoutWrapper'
 import { useRouter } from 'next/router'
 import { useEffect } from 'react'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function App({ Component, pageProps }) {
   const router = useRouter()
@@ -25,6 +26,7 @@ export default function App({ Component, pageProps }) {
       </Head>
       <LayoutWrapper>
         <Component {...pageProps} />
+        <ScrollToTop />
       </LayoutWrapper>
     </ThemeProvider>
   )

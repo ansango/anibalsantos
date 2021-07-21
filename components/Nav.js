@@ -3,12 +3,7 @@ import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import {
-  HiSun as SunIcon,
-  HiMoon as MoonIcon,
-  HiMenu as MenuIcon,
-  HiX as XIcon,
-} from 'react-icons/hi'
+import { MenuIcon, MoonIcon, SunIcon, XIcon } from './icons'
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
