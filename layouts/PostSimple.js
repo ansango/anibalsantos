@@ -8,7 +8,6 @@ import { BlogSeo } from '@/components/SEO'
 import SocialShare from '@/components/SocialShare'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-
 import { HiOutlineClock as Clock, HiOutlineBookOpen as Book } from 'react-icons/hi'
 
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
@@ -25,7 +24,8 @@ const ToRead = ({ readingTime }) => {
 }
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
-  const { date, title, tags, readingTime, cover } = frontMatter
+  const { date, title, tags, readingTime, cover, slug } = frontMatter
+
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
 
   return (
@@ -122,6 +122,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   </div>
                 </div>
               </div>
+
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
