@@ -109,7 +109,6 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </div>
         )}
       </div>
-
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
       <div className="pb-5">
         {accordionBlocks.map((block) => (

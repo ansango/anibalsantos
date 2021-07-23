@@ -19,6 +19,7 @@ export default function App({ Component, pageProps }) {
       router.events.off('routeChangeComplete', handleRouteChange)
     }
   }, [router.events])
+
   return (
     <ThemeProvider attribute="class">
       <Head>

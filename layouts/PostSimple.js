@@ -10,6 +10,10 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { HiOutlineClock as Clock, HiOutlineBookOpen as Book } from 'react-icons/hi'
 
+import { loginWithGitHub, onAuthStateChanged } from '@/lib/firebase'
+import { useEffect, useState } from 'react'
+import { GithubIcon } from '@/components/icons'
+
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 
 const ToRead = ({ readingTime }) => {
@@ -24,6 +28,18 @@ const ToRead = ({ readingTime }) => {
 }
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
+  const [user, setUser] = useState(undefined)
+
+  useEffect(() => {
+    onAuthStateChanged(setUser)
+  }, [])
+
+  const handleClick = () => {
+    loginWithGitHub()
+      .then(setUser)
+      .catch((err) => console.error(err))
+  }
+
   const { date, title, tags, readingTime, cover, slug } = frontMatter
 
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
@@ -122,7 +138,17 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   </div>
                 </div>
               </div>
-
+              {user === null && (
+                <button onClick={handleClick} className="p-2">
+                  <GithubIcon size={22} />
+                  Login with GitHub
+                </button>
+              )}
+              {user && user.avatar && (
+                <div>
+                  <strong>{user.username}</strong>
+                </div>
+              )}
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
                   <div className="pt-4 xl:pt-8">
