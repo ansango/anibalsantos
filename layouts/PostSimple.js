@@ -8,8 +8,9 @@ import SendErrors from '@/components/SendErrors'
 import { BlogSeo } from '@/components/SEO'
 import SocialShare from '@/components/SocialShare'
 import Tag from '@/components/Tag'
-import siteMetadata from '@/data/siteMetadata'
+import siteMetadata, { image } from '@/data/siteMetadata'
 import { BookIcon, ClockIcon } from '@/components/icons'
+import { useState } from 'react'
 
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 
@@ -25,11 +26,20 @@ const ToRead = ({ readingTime }) => {
 }
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
-  const [session, loading] = useSession()
-  const name = session?.user.name
-  const email = session?.user.email
   const { date, title, tags, readingTime, cover, comments } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
+  /**
+   * * Auth
+   */
+  const [session, loading] = useSession()
+  const name = session?.user.name.split(' ')[0]
+  const email = session?.user.email
+  const image = session?.user.image
+  /**
+   * * Comment
+   */
+
+  const [enteredComment, setEnteredComment] = useState('')
   const addCommentHandler = (event) => {
     event.preventDefault()
     if (!email) return
@@ -135,7 +145,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                     {comments.map((comment, index) => {
                       return (
                         <div className="py-5" key={index}>
-                          <h6>{comment.userId}</h6>
+                          <h6>{comment.name}</h6>
                           <p>{comment.description}</p>
                         </div>
                       )
@@ -165,9 +175,24 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   <div>
                     <form onSubmit={addCommentHandler}>
                       <label className="block">
-                        <span className="text-gray-700">
-                          Hola {name} ¿qué te ha parecido la entrada?{' '}
-                        </span>
+                        <div className="flex items-center">
+                          <span className="flex items-center">
+                            <Image
+                              src={image}
+                              alt="avatar"
+                              width="24px"
+                              height="24px"
+                              className="rounded-full"
+                            />
+                            <span className="font-bold ml-1 mr-2">{name}</span>
+                          </span>
+                          <span className="text-gray-700">
+                            ¿qué te ha parecido la entrada?{' '}
+                            <span role="img" aria-label="smile">
+                              😄
+                            </span>
+                          </span>
+                        </div>
                         <textarea
                           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
                           rows="3"

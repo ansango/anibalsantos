@@ -4,7 +4,11 @@ const schema = {
     type: String,
     required: true,
   },
-  userId: {
+  email: {
+    type: String,
+    required: true,
+  },
+  name: {
     type: String,
     required: true,
   },
