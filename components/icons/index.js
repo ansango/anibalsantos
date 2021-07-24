@@ -9,6 +9,8 @@ export {
   HiOutlineClipboardCheck as ClipCheckIcon,
   HiArrowUp as AUpIcon,
   HiOutlineSearch as SearchIcon,
+  HiOutlineClock as ClockIcon,
+  HiOutlineBookOpen as BookIcon,
 } from 'react-icons/hi'
 
 export {

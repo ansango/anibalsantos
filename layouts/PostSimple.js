@@ -8,8 +8,7 @@ import { BlogSeo } from '@/components/SEO'
 import SocialShare from '@/components/SocialShare'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
-
-import { HiOutlineClock as Clock, HiOutlineBookOpen as Book } from 'react-icons/hi'
+import { BookIcon, ClockIcon } from '@/components/icons'
 
 const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
 
@@ -18,7 +17,7 @@ const ToRead = ({ readingTime }) => {
   return (
     <>
       <span className="flex items-center space-x-1">
-        <span>{`${mins} '`}</span> <Clock size={16} /> <Book size={18} />
+        <span>{`${mins} '`}</span> <ClockIcon size={16} /> <BookIcon size={18} />
       </span>
     </>
   )
@@ -121,6 +120,11 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                     ></SocialShare>
                   </div>
                 </div>
+              </div>
+              <div>
+                {/* {comments.map((comment, index) => {
+                  return <div key={index}></div>
+                })} */}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
