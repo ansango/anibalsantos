@@ -26,9 +26,13 @@ const ToRead = ({ readingTime }) => {
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const [session, loading] = useSession()
-
+  const email = session?.user.email
   const { date, title, tags, readingTime, cover, comments } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
+  const addCommentHandler = (event) => {
+    event.preventDefault()
+    if (!email) return
+  }
 
   return (
     <SectionContainer>
@@ -139,10 +143,36 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 )}
                 {!session && (
                   <>
-                    <button onClick={() => signIn()}>Sign in</button>
+                    <p>Para dejar un comentario inicia sesión</p>
+                    <button
+                      onClick={() => {
+                        signIn('github')
+                      }}
+                    >
+                      Sign in
+                    </button>
+                    <button
+                      onClick={() => {
+                        signIn('google')
+                      }}
+                    >
+                      Sign in
+                    </button>
                   </>
                 )}
-                {session && <div> Sesion iniciada</div>}
+                {session && (
+                  <div>
+                    <form onSubmit={addCommentHandler}>
+                      <label className="block">
+                        <span className="text-gray-700">Additional details</span>
+                        <textarea
+                          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+                          rows="3"
+                        ></textarea>
+                      </label>
+                    </form>
+                  </div>
+                )}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
