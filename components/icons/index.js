@@ -17,6 +17,7 @@ export {
   SiAboutDotMe as MeIcon,
   SiMailDotRu as MailIcon,
   SiGithub as GithubIcon,
+  SiGoogle as GoogleIcon,
   SiLinkedin as LinkedinIcon,
   SiInstagram as InstagramIcon,
   SiTwitter as TwitterIcon,

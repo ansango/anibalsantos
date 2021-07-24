@@ -12,7 +12,8 @@ const schema = {
     type: String,
     required: true,
   },
-  description: { type: String, maxlength: 500, required: true },
+  image: { type: String, required: true },
+  description: { type: String, required: true },
 }
 const CommentSchema = new mongoose.Schema(schema, { timestamps: true })
 
