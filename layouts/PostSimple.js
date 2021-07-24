@@ -155,6 +155,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   </div>
                 </div>
               </div>
+              {/* TODO: SACAR DE AQUI */}
               <div className="py-10">
                 {commentsState.length > 0 && (
                   <div className="mb-10 grid grid-cols-1 xl:grid-cols-2 gap-5">
@@ -177,6 +178,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                     })}
                   </div>
                 )}
+                {/* TODO: SACAR DE AQUI */}
                 {!session && (
                   <div className="flex justify-center py-5">
                     <div>
@@ -211,6 +213,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                     </div>
                   </div>
                 )}
+                {/* TODO: SACAR DE AQUI */}
                 {session && (
                   <div>
                     <form onSubmit={addCommentHandler}>
