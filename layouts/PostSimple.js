@@ -26,6 +26,7 @@ const ToRead = ({ readingTime }) => {
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const [session, loading] = useSession()
+  const name = session?.user.name
   const email = session?.user.email
   const { date, title, tags, readingTime, cover, comments } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
@@ -149,14 +150,14 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                         signIn('github')
                       }}
                     >
-                      Sign in
+                      Github
                     </button>
                     <button
                       onClick={() => {
                         signIn('google')
                       }}
                     >
-                      Sign in
+                      Google
                     </button>
                   </>
                 )}
@@ -164,7 +165,9 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   <div>
                     <form onSubmit={addCommentHandler}>
                       <label className="block">
-                        <span className="text-gray-700">Additional details</span>
+                        <span className="text-gray-700">
+                          Hola {name} ¿qué te ha parecido la entrada?{' '}
+                        </span>
                         <textarea
                           className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
                           rows="3"
