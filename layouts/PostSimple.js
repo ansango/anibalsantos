@@ -1,3 +1,4 @@
+import { signIn, useSession } from 'next-auth/client'
 import { isMobile } from 'react-device-detect'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
@@ -24,7 +25,9 @@ const ToRead = ({ readingTime }) => {
 }
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
-  const { date, title, tags, readingTime, cover } = frontMatter
+  const [session, loading] = useSession()
+
+  const { date, title, tags, readingTime, cover, comments } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
 
   return (
@@ -122,9 +125,24 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 </div>
               </div>
               <div>
-                {/* {comments.map((comment, index) => {
-                  return <div key={index}></div>
-                })} */}
+                {comments.length > 0 && (
+                  <>
+                    {comments.map((comment, index) => {
+                      return (
+                        <div className="py-5" key={index}>
+                          <h6>{comment.userId}</h6>
+                          <p>{comment.description}</p>
+                        </div>
+                      )
+                    })}
+                  </>
+                )}
+                {!session && (
+                  <>
+                    <button onClick={() => signIn()}>Sign in</button>
+                  </>
+                )}
+                {session && <div> Sesion iniciada</div>}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
