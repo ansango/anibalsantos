@@ -33,7 +33,7 @@ const AddComent = ({ user, onAddComment }) => {
               <Image src={image} alt="avatar" width="24px" height="24px" className="rounded-full" />
               <span className="font-bold ml-1 mr-2">{name}</span>
             </span>
-            <span className="text-gray-700">
+            <span className="">
               ¿qué te ha parecido la entrada?{' '}
               <span role="img" aria-label="smile">
                 😄
