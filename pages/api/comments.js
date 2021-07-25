@@ -13,7 +13,6 @@ const handler = async (req, res) => {
       })
       res.status(200).json(comments)
     } catch (error) {
-      console.log(error)
       res.status(500).json({ status: 'Error', error: error })
     }
   } else if (req.method === 'POST') {
