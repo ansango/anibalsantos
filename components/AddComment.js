@@ -1,3 +1,4 @@
+import { postComment } from '@/lib/utils/postComment'
 import { useState } from 'react'
 import Image from './Image'
 
@@ -20,32 +21,13 @@ const AddComment = ({ user, slug, onAddComment }) => {
       return
     }
 
-    fetch('http://localhost:3000/api/comments/', {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        email: email,
-        name: name,
-        image: image,
-        slug: slug,
-        description: enteredComment,
-      }),
+    await postComment({
+      email: email,
+      name: name,
+      image: image,
+      slug: slug,
+      description: enteredComment,
     })
-    // const comment = await new Comment({
-    // email: email,
-    // name: name,
-    // image: image,
-    // slug: slug,
-    // description: enteredComment,
-    // })
-
-    // await comment.save((err, doc) => {
-    // if (err) return
-    // console.log(doc)
-    // })
 
     onAddComment(enteredComment)
     setEnteredComment('')
