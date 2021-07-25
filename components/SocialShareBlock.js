@@ -1,3 +1,4 @@
+import { isMobile } from 'react-device-detect'
 import { MailIcon, TelegramIcon, TwitterIcon, WhatsappIcon } from './icons'
 import Link from '@/components/Link'
 const components = {
@@ -33,4 +34,19 @@ const SocialShare = ({ kind, params, size }) => {
   )
 }
 
-export default SocialShare
+const SocialShareBlock = ({ title, tags, url }) => (
+  <>
+    <div className="flex justify-center">
+      <SocialShare kind={'mail'} size={5} params={{ title: title, url: url, text: title }} />
+      <SocialShare kind={'twitter'} size={5} params={{ title: title, url: url, tags: tags }} />
+      <SocialShare
+        kind={'whatsapp'}
+        size={5}
+        params={{ url: url, title: title, isMobile: isMobile }}
+      />
+      <SocialShare kind={'telegram'} size={5} params={{ url: url, text: title }} />
+    </div>
+  </>
+)
+
+export default SocialShareBlock

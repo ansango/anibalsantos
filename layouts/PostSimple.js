@@ -1,29 +1,20 @@
-import { signIn, useSession } from 'next-auth/client'
-import { isMobile } from 'react-device-detect'
+import { useSession } from 'next-auth/client'
+import { useState } from 'react'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import SendErrors from '@/components/SendErrors'
 import { BlogSeo } from '@/components/SEO'
-import SocialShare from '@/components/SocialShare'
+import SocialShare from '@/components/SocialShareBlock'
 import Tag from '@/components/Tag'
-import siteMetadata, { image } from '@/data/siteMetadata'
-import { BookIcon, ClockIcon, GithubIcon, GoogleIcon } from '@/components/icons'
-import { useState } from 'react'
-
-const postDateTemplate = { year: 'numeric', month: 'short', day: 'numeric' }
-
-const ToRead = ({ readingTime }) => {
-  const mins = Math.round(readingTime.minutes)
-  return (
-    <>
-      <span className="flex items-center space-x-1">
-        <span>{`${mins} '`}</span> <ClockIcon size={16} /> <BookIcon size={18} />
-      </span>
-    </>
-  )
-}
+import siteMetadata from '@/data/siteMetadata'
+import Comment from '@/components/Comment'
+import ToRead from '@/components/ToRead'
+import formatDate from '@/lib/utils/formatDate'
+import SignIn from '@/components/SignIn'
+import AddComent from '@/components/AddComment'
+import SocialShareBlock from '@/components/SocialShareBlock'
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const { date, title, tags, readingTime, cover, comments, slug } = frontMatter
@@ -32,33 +23,30 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
    * * Auth
    */
   const [session, loading] = useSession()
-  const name = session?.user.name.split(' ')[0]
-  const email = session?.user.email
-  const image = session?.user.image
+
+  const user = {
+    name: session?.user.name.split(' ')[0],
+    email: session?.user.email,
+    image: session?.user.image,
+  }
+
   /**
    * * Comment
    */
-
-  const [commentsState, setCommentsState] = useState(comments)
-  const [enteredComment, setEnteredComment] = useState('')
-
-  const commentChangeHandler = (event) => {
-    setEnteredComment(event.target.value)
-  }
-
-  const addCommentHandler = (event) => {
-    event.preventDefault()
-    if (!email) {
-      return
-    }
-    setCommentsState((prevComments) => {
+  const [commentsState, setCommentState] = useState(comments)
+  const onAddComentHandler = (description) => {
+    setCommentState((prevComments) => {
       return [
         ...prevComments,
-        { image: image, name: name, description: enteredComment, email: email, slug: slug },
+        {
+          image: user?.image,
+          name: user?.name,
+          description: description,
+          email: user?.email,
+          slug: slug,
+        },
       ]
     })
-    console.log(commentsState)
-    setEnteredComment('')
   }
 
   return (
@@ -95,7 +83,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 <dt className="sr-only">Publicado</dt>
                 <dd>
                   <time dateTime={date} className="truncate">
-                    {new Date(date).toLocaleDateString(siteMetadata.locale, postDateTemplate)}
+                    {formatDate(date)}
                   </time>
                 </dd>
               </dl>
@@ -131,127 +119,19 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                       ))}
                     </div>
                   )}
-                  <div className="flex justify-center">
-                    <SocialShare
-                      kind={'mail'}
-                      size={5}
-                      params={{ title: title, url: urlShare, text: title }}
-                    ></SocialShare>
-                    <SocialShare
-                      kind={'twitter'}
-                      size={5}
-                      params={{ title: title, url: urlShare, tags: tags }}
-                    ></SocialShare>
-                    <SocialShare
-                      kind={'whatsapp'}
-                      size={5}
-                      params={{ url: urlShare, title: title, isMobile: isMobile }}
-                    ></SocialShare>
-                    <SocialShare
-                      kind={'telegram'}
-                      size={5}
-                      params={{ url: urlShare, text: title }}
-                    ></SocialShare>
-                  </div>
+                  <SocialShareBlock title={title} url={slug} tags={tags} />
                 </div>
               </div>
-              {/* TODO: SACAR DE AQUI */}
               <div className="py-10">
                 {commentsState.length > 0 && (
                   <div className="mb-10 grid grid-cols-1 xl:grid-cols-2 gap-5">
                     {commentsState.map((comment, index) => {
-                      return (
-                        <div className="p-5 border-2 border-primary-300 rounded-lg" key={index}>
-                          <span className="flex items-center">
-                            <Image
-                              src={comment.image}
-                              alt="avatar"
-                              width="24px"
-                              height="24px"
-                              className="rounded-full"
-                            />
-                            <span className="font-bold ml-1 mr-2">{comment.name}</span>
-                          </span>
-                          <p className="pt-3">{comment.description}</p>
-                        </div>
-                      )
+                      return <Comment key={index} comment={comment} />
                     })}
                   </div>
                 )}
-                {/* TODO: SACAR DE AQUI */}
-                {!session && (
-                  <div className="flex justify-center py-5">
-                    <div>
-                      <p className="font-bold pb-5">
-                        Inicia sesión para comentar{' '}
-                        <span role="img" aria-label="smile">
-                          😄
-                        </span>
-                      </p>
-                      <button
-                        className="bg-gray-800 hover:bg-gray-700 text-white font-bold px-3 py-2 border-b-4 border-gray-500 rounded-md mr-3"
-                        onClick={() => {
-                          signIn('github')
-                        }}
-                      >
-                        <span className="flex items-center">
-                          <span className="mr-2">Github</span>
-                          <GithubIcon size={15} />
-                        </span>
-                      </button>
-                      <button
-                        className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-3 py-2 border-b-4 border-blue-500 rounded-md mr-3"
-                        onClick={() => {
-                          signIn('google')
-                        }}
-                      >
-                        <span className="flex items-center">
-                          <span className="mr-2">Google</span>
-                          <GoogleIcon size={15} />
-                        </span>
-                      </button>
-                    </div>
-                  </div>
-                )}
-                {/* TODO: SACAR DE AQUI */}
-                {session && (
-                  <div>
-                    <form onSubmit={addCommentHandler}>
-                      <label className="block pb-3">
-                        <div className="sm:flex items-center">
-                          <span className="flex items-center">
-                            <Image
-                              src={image}
-                              alt="avatar"
-                              width="24px"
-                              height="24px"
-                              className="rounded-full"
-                            />
-                            <span className="font-bold ml-1 mr-2">{name}</span>
-                          </span>
-                          <span className="text-gray-700">
-                            ¿qué te ha parecido la entrada?{' '}
-                            <span role="img" aria-label="smile">
-                              😄
-                            </span>
-                          </span>
-                        </div>
-                        <textarea
-                          className="mt-1 block w-full rounded-md border-2 border-primary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
-                          rows="3"
-                          onChange={commentChangeHandler}
-                          value={enteredComment}
-                        ></textarea>
-                      </label>
-                      <button
-                        type="submit"
-                        className="bg-primary-300 hover:bg-primary-200 text-primary-600 font-bold px-3 py-2 border-b-4 border-primary-500 rounded-md"
-                      >
-                        Añadir
-                      </button>
-                    </form>
-                  </div>
-                )}
+                {!session && <SignIn />}
+                {session && <AddComent user={user} onAddComment={onAddComentHandler} />}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
