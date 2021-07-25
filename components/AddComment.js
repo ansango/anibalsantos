@@ -4,6 +4,7 @@ import Image from './Image'
 const AddComent = ({ user, onAddComment }) => {
   const { name, image } = user
   const [enteredComment, setEnteredComment] = useState('')
+  const [error, setError] = useState(null)
 
   const commentChangeHandler = (event) => {
     setEnteredComment(event.target.value)
@@ -11,6 +12,14 @@ const AddComent = ({ user, onAddComment }) => {
 
   const addCommentHandler = (event) => {
     event.preventDefault()
+    if (enteredComment.trim().length === 0) {
+      setError('Tienes que rellenar este campo')
+      return
+    } else if (enteredComment.trim().length < 3) {
+      setError('Este campo es muy corto')
+      return
+    }
+
     onAddComment(enteredComment)
     setEnteredComment('')
   }
@@ -32,11 +41,12 @@ const AddComent = ({ user, onAddComment }) => {
             </span>
           </div>
           <textarea
-            className="mt-1 block w-full rounded-md border-2 border-primary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50"
+            className="mt-1 block w-full rounded-md border-2 border-primary-300 shadow-sm focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 dark:bg-gray-900"
             rows="3"
             onChange={commentChangeHandler}
             value={enteredComment}
           ></textarea>
+          <span className="text-red-600">{error}</span>
         </label>
         <button
           type="submit"
