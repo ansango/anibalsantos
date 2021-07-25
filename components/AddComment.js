@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Image from './Image'
 
-const AddComent = ({ user, onAddComment }) => {
-  const { name, image } = user
+const AddComment = ({ user, slug, onAddComment }) => {
+  const { name, image, email } = user
   const [enteredComment, setEnteredComment] = useState('')
   const [error, setError] = useState(null)
 
@@ -10,7 +10,7 @@ const AddComent = ({ user, onAddComment }) => {
     setEnteredComment(event.target.value)
   }
 
-  const addCommentHandler = (event) => {
+  const addCommentHandler = async (event) => {
     event.preventDefault()
     if (enteredComment.trim().length === 0) {
       setError('Tienes que rellenar este campo')
@@ -19,6 +19,33 @@ const AddComent = ({ user, onAddComment }) => {
       setError('Este campo es muy corto')
       return
     }
+
+    fetch('http://localhost:3000/api/comments/', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: email,
+        name: name,
+        image: image,
+        slug: slug,
+        description: enteredComment,
+      }),
+    })
+    // const comment = await new Comment({
+    // email: email,
+    // name: name,
+    // image: image,
+    // slug: slug,
+    // description: enteredComment,
+    // })
+
+    // await comment.save((err, doc) => {
+    // if (err) return
+    // console.log(doc)
+    // })
 
     onAddComment(enteredComment)
     setEnteredComment('')
@@ -58,4 +85,4 @@ const AddComent = ({ user, onAddComment }) => {
     </div>
   )
 }
-export default AddComent
+export default AddComment

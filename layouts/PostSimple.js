@@ -6,14 +6,13 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import SendErrors from '@/components/SendErrors'
 import { BlogSeo } from '@/components/SEO'
-import SocialShare from '@/components/SocialShareBlock'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comment from '@/components/Comment'
 import ToRead from '@/components/ToRead'
 import formatDate from '@/lib/utils/formatDate'
 import SignIn from '@/components/SignIn'
-import AddComent from '@/components/AddComment'
+import AddComment from '@/components/AddComment'
 import SocialShareBlock from '@/components/SocialShareBlock'
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
@@ -131,7 +130,9 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   </div>
                 )}
                 {!session && <SignIn />}
-                {session && <AddComent user={user} onAddComment={onAddComentHandler} />}
+                {session && (
+                  <AddComment user={user} slug={slug} onAddComment={onAddComentHandler} />
+                )}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
