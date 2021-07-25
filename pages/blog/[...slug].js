@@ -3,7 +3,6 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-import { BASEURL } from '@/lib/base'
 
 const DEFAULT_LAYOUT = 'PostSimple'
 
@@ -18,6 +17,10 @@ export async function getStaticPaths() {
     fallback: false,
   }
 }
+
+const dev = process.env.NODE_ENV !== 'production'
+
+export const server = dev ? 'http://localhost:3000' : 'https://www.ansango.com'
 
 export async function getStaticProps({ params }) {
   const allPosts = await getAllFilesFrontMatter('blog')
@@ -36,7 +39,7 @@ export async function getStaticProps({ params }) {
   const rss = generateRss(allPosts)
   fs.writeFileSync('./public/feed.xml', rss)
 
-  const data = await fetch(`${BASEURL}/api/comments`)
+  const data = await fetch(`${server}/api/comments`)
   const result = await data.json()
   const comments = result.filter((comment) => comment.slug === post.frontMatter.slug)
 
