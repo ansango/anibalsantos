@@ -14,9 +14,9 @@ import formatDate from '@/lib/utils/formatDate'
 import SignIn from '@/components/SignIn'
 import AddComment from '@/components/AddComment'
 import SocialShareBlock from '@/components/SocialShareBlock'
-
+import { server } from '@/lib/utils/server'
 export default function PostLayout({ frontMatter, next, prev, children }) {
-  const { date, title, tags, readingTime, cover, comments, slug } = frontMatter
+  const { date, title, tags, readingTime, cover, slug } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
   /**
    * * Auth
@@ -29,10 +29,20 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
     image: session?.user.image,
   }
 
+  const [loadedButton, setLoadedButton] = useState(false)
+
+  const onLoadComments = async () => {
+    const data = await fetch(`${server}/api/comments`)
+    const result = await data.json()
+    const comments = result.filter((comment) => comment.slug === slug)
+    setCommentState(comments)
+    setLoadedButton(true)
+  }
+
   /**
    * * Comment
-   
-  const [commentsState, setCommentState] = useState(comments)
+   */
+  const [commentsState, setCommentState] = useState([])
   const onAddComentHandler = (description) => {
     setCommentState((prevComments) => {
       return [
@@ -47,7 +57,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
       ]
     })
   }
-*/
+
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
@@ -122,17 +132,28 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 </div>
               </div>
               <div className="py-10">
-                {/* {commentsState.length > 0 && (
+                {!loadedButton && (
+                  <div className="flex justify-center pt-5 pb-10">
+                    <button
+                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
+                      onClick={onLoadComments}
+                    >
+                      Ver comentarios
+                    </button>
+                  </div>
+                )}
+
+                {commentsState.length > 0 && (
                   <div className="mb-10 grid grid-cols-1 xl:grid-cols-2 gap-5">
                     {commentsState.map((comment, index) => {
                       return <Comment key={index} comment={comment} />
                     })}
                   </div>
-                )} 
+                )}
                 {!session && <SignIn />}
                 {session && (
                   <AddComment user={user} slug={slug} onAddComment={onAddComentHandler} />
-                )}*/}
+                )}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
