@@ -32,7 +32,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
   const [loadedButton, setLoadedButton] = useState(false)
 
   const onLoadComments = async () => {
-    const data = await fetch(`${server}/api/comments`)
+    const data = await fetch(`/api/comments`)
     const result = await data.json()
     const comments = result.filter((comment) => comment.slug === slug)
     setCommentState(comments)
