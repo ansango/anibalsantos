@@ -54,9 +54,10 @@ Si tu respuesta es sí, entonces este artículo es para ti. Estoy seguro de que 
     ```
 11. Cierra el archivo con `ctrl+x` y guarda los cambios.
 12. El último es ejecutar un comando para crear un acceso directo de Unity. Después de crear este archivo, podremos buscar "Firefox Developer Edition" nuestro Dashboard:
+
     ```bash
-    cat > ~/.local/share/applications/firefoxDeveloperEdition.desktop
-    <<EOL
+
+    cat > ~/.local/share/applications/firefoxDeveloperEdition.desktop <<EOL
     [Desktop Entry]
     Encoding=UTF-8
     Name=Firefox Developer Edition
@@ -65,8 +66,10 @@ Si tu respuesta es sí, entonces este artículo es para ti. Estoy seguro de que 
     Terminal=false
     Type=Application
     Categories=Network;WebBrowser;Favorite;
-    MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https; x-scheme-handler/ftp; X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognitos;
+    MimeType=text/html;text/xml;application/xhtml_xml;x-scheme-handler/http;x-scheme-handler/https;x-scheme-handler/ftp; X-Ayatana-Desktop-Shortcuts=NewWindow;NewIncognitos;
     EOL
+
+
     ```
 
 Si, muchísimos comandos... 😪
