@@ -36,11 +36,13 @@ export async function getStaticProps({ params }) {
   const rss = generateRss(allPosts)
   fs.writeFileSync('./public/feed.xml', rss)
 
-  const data = await fetch(`${server}/api/comments`)
-  const result = await data.json()
-  const comments = result.filter((comment) => comment.slug === post.frontMatter.slug)
+  //TODO: ARREGLAR COMENTARIOS
 
-  post.frontMatter.comments = comments
+  // const data = await fetch(`${server}/api/comments`)
+  // const result = await data.json()
+  // const comments = result.filter((comment) => comment.slug === post.frontMatter.slug)
+
+  // post.frontMatter.comments = comments
   return { props: { post, authorDetails, prev, next } }
 }
 

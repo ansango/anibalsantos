@@ -31,7 +31,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
 
   /**
    * * Comment
-   */
+   
   const [commentsState, setCommentState] = useState(comments)
   const onAddComentHandler = (description) => {
     setCommentState((prevComments) => {
@@ -47,7 +47,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
       ]
     })
   }
-
+*/
   return (
     <SectionContainer>
       <BlogSeo url={`${siteMetadata.siteUrl}/blog/${frontMatter.slug}`} {...frontMatter} />
@@ -122,17 +122,17 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 </div>
               </div>
               <div className="py-10">
-                {commentsState.length > 0 && (
+                {/* {commentsState.length > 0 && (
                   <div className="mb-10 grid grid-cols-1 xl:grid-cols-2 gap-5">
                     {commentsState.map((comment, index) => {
                       return <Comment key={index} comment={comment} />
                     })}
                   </div>
-                )}
+                )} 
                 {!session && <SignIn />}
                 {session && (
                   <AddComment user={user} slug={slug} onAddComment={onAddComentHandler} />
-                )}
+                )}*/}
               </div>
               <div className="flex flex-col items-center md:flex-row md:justify-between">
                 {prev && (
