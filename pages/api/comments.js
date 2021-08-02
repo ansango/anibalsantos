@@ -1,4 +1,3 @@
-import Cors from 'cors'
 import db from '@/lib/db'
 import Comment from 'models/Comment'
 
@@ -14,14 +13,7 @@ function initMiddleware(middleware) {
     })
 }
 
-const cors = initMiddleware(
-  Cors({
-    methods: ['GET', 'POST'],
-  })
-)
-
 const handler = async (req, res) => {
-  await cors(req, res)
   await db()
   if (req.method === 'GET') {
     try {

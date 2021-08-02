@@ -3,7 +3,6 @@ import PageTitle from '@/components/PageTitle'
 import generateRss from '@/lib/generate-rss'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { formatSlug, getAllFilesFrontMatter, getFileBySlug, getFiles } from '@/lib/mdx'
-import { server } from '@/lib/utils/server'
 
 const DEFAULT_LAYOUT = 'PostSimple'
 
@@ -35,14 +34,6 @@ export async function getStaticProps({ params }) {
   // rss
   const rss = generateRss(allPosts)
   fs.writeFileSync('./public/feed.xml', rss)
-
-  //TODO: ARREGLAR COMENTARIOS
-
-  // const data = await fetch(`${server}/api/comments`)
-  // const result = await data.json()
-  // const comments = result.filter((comment) => comment.slug === post.frontMatter.slug)
-
-  // post.frontMatter.comments = comments
   return { props: { post, authorDetails, prev, next } }
 }
 

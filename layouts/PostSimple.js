@@ -14,7 +14,6 @@ import formatDate from '@/lib/utils/formatDate'
 import SignIn from '@/components/SignIn'
 import AddComment from '@/components/AddComment'
 import SocialShareBlock from '@/components/SocialShareBlock'
-import { server } from '@/lib/utils/server'
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const { date, title, tags, readingTime, cover, slug } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
