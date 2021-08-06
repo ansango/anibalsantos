@@ -14,6 +14,7 @@ import formatDate from '@/lib/utils/formatDate'
 import SignIn from '@/components/SignIn'
 import AddComment from '@/components/AddComment'
 import SocialShareBlock from '@/components/SocialShareBlock'
+
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const { date, title, tags, readingTime, cover, slug } = frontMatter
   const urlShare = `${siteMetadata.siteUrl}/blog/${frontMatter.slug}`
@@ -113,7 +114,6 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:pb-0 xl:col-span-3 xl:row-span-2">
               <div className="pt-10 pb-8 prose dark:prose-dark max-w-none">{children}</div>
             </div>
-
             <footer className="pt-8">
               <div className="flex flex-col items-center md:items-start">
                 <div className="pb-4">

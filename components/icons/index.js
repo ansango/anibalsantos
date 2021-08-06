@@ -46,4 +46,4 @@ export {
 
 export { IoLogoVercel as VercelIcon } from 'react-icons/io5'
 
-export { BiCookie as CookieIcon } from 'react-icons/bi'
+export { BiCookie as CookieIcon, BiCoffee as CoffeeIcon } from 'react-icons/bi'
