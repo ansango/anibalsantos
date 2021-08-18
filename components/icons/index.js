@@ -42,6 +42,7 @@ export {
   SiVueDotJs as VueIcon,
   SiCss3 as Css3Icon,
   SiBulma as BulmaIcon,
+  SiLeaflet as LeafletIcon,
 } from 'react-icons/si'
 
 export { IoLogoVercel as VercelIcon } from 'react-icons/io5'

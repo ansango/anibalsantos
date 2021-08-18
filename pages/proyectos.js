@@ -5,7 +5,7 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 
 export default function Projects() {
-  const pins = [1, 2, 4, 6, 8, 9, 10]
+  const pins = [15, 14, 12, 11, 7, 6, 4, 3]
   const pinnedProjects = projectsData.filter((project) => pins.includes(project.id))
   return (
     <>

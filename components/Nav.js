@@ -3,7 +3,6 @@ import siteMetadata from '@/data/siteMetadata'
 import Link from './Link'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
-import { useSession } from 'next-auth/client'
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from './icons'
 
 const ThemeSwitch = () => {
@@ -83,8 +82,6 @@ const MobileNav = () => {
 }
 
 const Nav = () => {
-  const { session, setSession } = useSession()
-  console.log(session)
   return (
     <div>
       <header className="flex items-center justify-between py-10">
