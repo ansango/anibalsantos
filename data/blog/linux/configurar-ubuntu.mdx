@@ -205,6 +205,16 @@ Necesitamos instalar el plugin de `Custom Hot Corners`, para ello podemos accede
 
 Accedemos a Gnome Tweaks, y en `extensions`, activamos `Custom hot corners`. En el botón de configuración podremos seleccionar las acciones que queremos que se lancen al poner el puntero en cada esquina de nuestra pantalla.
 
+### Instalación de GDM Background
+
+```bash
+sudo apt install git make gcc libgtk-3-dev libpolkit-gobject-1-dev
+git clone https://github.com/thiggy01/gdm-background.git
+cd gdm-background/
+make
+sudo make install
+```
+
 </section>
 
 <section id="apps">
