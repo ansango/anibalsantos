@@ -5,6 +5,7 @@ import { SpotifyIcon } from './icons'
 
 const NowPlaying = () => {
   const { data } = useSWR('/api/now-playing', Fetcher)
+
   return (
     <div className="flex flex-row mb-8 space-x-2 w-full pt-3">
       <SpotifyIcon className="text-green-400" size={20} />{' '}

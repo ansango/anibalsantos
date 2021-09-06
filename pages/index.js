@@ -10,6 +10,7 @@ import { CardCarousel } from '@/components/Card'
 import Line from '@/components/Line'
 import Accordions from '@/components/Accordions'
 import NowPlaying from '@/components/NowPlaying'
+import Contributions from '@/components/Contributions'
 
 const MAX_DISPLAY = 5
 
@@ -58,6 +59,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
             </Link>
           </p>
           <NowPlaying />
+          <Contributions />
         </div>
         <div className="pt-6 pb-5">
           <h2 className="text-2xl sm:leading-10 md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 ">
