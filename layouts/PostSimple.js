@@ -13,7 +13,14 @@ import ToRead from '@/components/ToRead'
 import formatDate from '@/lib/utils/formatDate'
 import SignIn from '@/components/SignIn'
 import AddComment from '@/components/AddComment'
-import SocialShareBlock from '@/components/SocialShareBlock'
+
+import {
+  EmailShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from 'react-share'
+import { MailIcon, TelegramIcon, TwitterIcon, WhatsappIcon } from '@/components/icons'
 
 export default function PostLayout({ frontMatter, next, prev, children }) {
   const { date, title, tags, readingTime, cover, slug } = frontMatter
@@ -127,7 +134,28 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                       ))}
                     </div>
                   )}
-                  <SocialShareBlock title={title} url={slug} tags={tags} />
+                  <div className="flex justify-center">
+                    <div className="mx-1 hover:text-primary-500">
+                      <EmailShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
+                        <MailIcon size={25} round />
+                      </EmailShareButton>
+                    </div>
+                    <div className="mx-1 hover:text-primary-500">
+                      <WhatsappShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
+                        <WhatsappIcon size={25} round />
+                      </WhatsappShareButton>
+                    </div>
+                    <div className="mx-1 hover:text-primary-500">
+                      <TelegramShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
+                        <TelegramIcon size={25} round />
+                      </TelegramShareButton>
+                    </div>
+                    <div className="mx-1 hover:text-primary-500">
+                      <TwitterShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
+                        <TwitterIcon size={25} round />
+                      </TwitterShareButton>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="py-10">
