@@ -20,7 +20,7 @@ export default function Projects() {
             <span className="font-bold">Github</span> y también puedes ver el{' '}
             <Link
               href="/proyectos/listado"
-              className="text-base font-bold leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+              className="font-bold leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             >
               listado completo
             </Link>

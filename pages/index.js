@@ -44,10 +44,29 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div className="pb-10">
         <div className="pt-6 pb-5 space-y-2 md:space-y-5">
-          <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Hola{' '}
+            <span role="img" aria-label="">
+              👋
+            </span>
+            , soy Aníbal
+          </h1>
+          <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
+            Soy desarrollador y fotógrafo. Actualmente trabajo en Minsait como Frontend Mid
+            Developer y en mis ratos libres hago{' '}
+            <Link
+              href="https://ansango-photo.vercel.app"
+              className="font-bold leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+            >
+              fotografías analógicas.
+            </Link>
+          </p>
+        </div>
+        <div className="pt-6 pb-5">
+          <h2 className="text-2xl sm:leading-10 md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 ">
             Últimas publicaciones
           </h2>
-          <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
+          <p className="sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
@@ -61,18 +80,18 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           {posts.slice(0, MAX_DISPLAY).map((frontMatter) => {
             const { slug, date, title, summary, tags } = frontMatter
             return (
-              <li key={slug} className="py-8">
+              <li key={slug} className="py-6">
                 <article>
                   <div className="space-y-2 xl:grid xl:grid-cols-4 xl:space-y-0 xl:items-baseline">
                     <dl className="xl:hidden">
                       <dt className="sr-only">Published on</dt>
-                      <dd className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
+                      <dd className="text-sm sm:text-base font-medium leading-6 text-gray-500 dark:text-gray-400">
                         <time dateTime={date}>{formatDate(date)}</time>
                       </dd>
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
                       <div>
-                        <h2 className="text-2xl font-bold leading-8 tracking-tight">
+                        <h2 className="text-xl font-bold leading-8 tracking-tight">
                           <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                             {title}{' '}
                             <span className="text-4xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
@@ -128,6 +147,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </div>
         ))}
       </CarouselEl>
+
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
       <div className="pb-5">
         {accordionBlocks.map((block) => (

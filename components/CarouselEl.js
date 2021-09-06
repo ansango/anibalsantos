@@ -25,12 +25,12 @@ const CarouselEl = ({ children, title = null, subtitle = null }) => {
   return (
     <div className="pt-10 pb-20">
       {title && (
-        <div className="pt-6 pb-5 space-y-2 md:space-y-5">
-          <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+        <div className="pt-6 pb-5">
+          <h2 className="text-2xl sm:leading-10 md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 ">
             {title}
           </h2>
           {subtitle && (
-            <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">{subtitle}</p>
+            <p className="sm:text-lg leading-7 text-gray-500 dark:text-gray-400">{subtitle}</p>
           )}
         </div>
       )}
