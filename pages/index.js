@@ -43,7 +43,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div className="pb-10">
-        <div className="pt-6 pb-5 space-y-2 md:space-y-5">
+        <div className="pt-24 pb-10 space-y-2 md:space-y-5">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             Hola{' '}
             <span role="img" aria-label="">
