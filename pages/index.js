@@ -91,7 +91,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
                         <h2 className="text-xl font-bold leading-8 tracking-tight">
                           <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                             {title}{' '}
-                            <span className="text-4xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
+                            <span className="text-xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                               &rarr;
                             </span>
                           </Link>
