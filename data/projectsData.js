@@ -368,7 +368,7 @@ const projectsData = [
     description:
       'Aplicación full stack en tiempo real, construida con React, Chart.js, Chakra UI, Socket.io y Node.js. Desplegada en Heroku.',
     imgSrc: '/static/images/survey.jpg',
-    href: 'https://hooks-app-two.vercel.app/',
+    href: 'http://band-survey-client.herokuapp.com/',
     stack: [
       icons.react,
       icons.chara,
