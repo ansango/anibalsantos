@@ -1,5 +1,5 @@
 import { useSession } from 'next-auth/client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from '@/components/Image'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
@@ -21,7 +21,7 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
   /**
    * * Auth
    */
-  const [session, loading] = useSession()
+  const [session] = useSession()
 
   const user = {
     name: session?.user.name.split(' ')[0],
@@ -29,22 +29,22 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
     image: session?.user.image,
   }
 
-  const [loadedButton, setLoadedButton] = useState(false)
+  const [comments, setComment] = useState([])
 
-  const onLoadComments = async () => {
-    const data = await fetch(`/api/comments`)
-    const result = await data.json()
-    const comments = result.filter((comment) => comment.slug === slug)
-    setCommentState(comments)
-    setLoadedButton(true)
-  }
+  useEffect(() => {
+    let mounted = true
+    const getComments = async () => {
+      const response = await fetch(`/api/comments`)
+      const data = await response.json()
+      const result = data.filter((comment) => comment.slug === slug)
+      setComment(result)
+    }
+    getComments()
+    return () => (mounted = false)
+  }, [slug])
 
-  /**
-   * * Comment
-   */
-  const [commentsState, setCommentState] = useState([])
   const onAddComentHandler = (description) => {
-    setCommentState((prevComments) => {
+    setComment((prevComments) => {
       return [
         ...prevComments,
         {
@@ -131,20 +131,9 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                 </div>
               </div>
               <div className="py-10">
-                {!loadedButton && (
-                  <div className="flex justify-center pt-5 pb-10">
-                    <button
-                      className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400 underline"
-                      onClick={onLoadComments}
-                    >
-                      Ver comentarios
-                    </button>
-                  </div>
-                )}
-
-                {commentsState.length > 0 && (
+                {comments.length > 0 && (
                   <div className="mb-10 grid grid-cols-1 xl:grid-cols-2 gap-5">
-                    {commentsState.map((comment, index) => {
+                    {comments.map((comment, index) => {
                       return <Comment key={index} comment={comment} />
                     })}
                   </div>
