@@ -23,6 +23,9 @@ import {
   TailwindIcon,
   VercelIcon,
   VueIcon,
+  SocketIcon,
+  ChakraIcon,
+  ChartJSIcon,
 } from '@/components/icons'
 import { compareById } from '@/lib/utils/compare'
 
@@ -57,6 +60,9 @@ const icons = {
   css3: <Css3Icon key="css" size={sizeIcons} color="#0270BA" className="mr-3" />,
   bulma: <BulmaIcon key="bulma" size={sizeIcons} color="#27BDB8" className="mr-3" />,
   leaflet: <LeafletIcon key="leaflet" size={sizeIcons} color="#27BDB8" className="mr-3" />,
+  socket: <SocketIcon key="socket" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
+  chara: <ChakraIcon key="chakra" className="mr-3 w-5 fill-current text-green-600" />,
+  chart: <ChartJSIcon key="chart" className="mr-3 w-5 fill-current text-green-600" />,
 }
 
 const projectsData = [
@@ -65,7 +71,7 @@ const projectsData = [
     title: 'The Frontend Roadmap',
     description:
       'Landing page creada from scratch en Vue 2, Parcel v1, BulmaCSS. Desplegado en Netlify.',
-    imgSrc: '/static/images/roadmap.png',
+    imgSrc: '/static/images/roadmap.jpg',
     href: 'https://frontend-roadmap.netlify.app/',
     stack: [
       icons.vue,
@@ -96,7 +102,7 @@ const projectsData = [
     title: 'Shopping List',
     description:
       'Lista de la compra, instalable con PWA y LocalStorage, desarrollada con Nuxt.js, Vuex y TailwindCSS. Desplegado en Netlify.',
-    imgSrc: '/static/images/nuxt.jpg',
+    imgSrc: '/static/images/shopping.jpg',
     href: 'https://nuxt-shopping-list.netlify.app/',
     stack: [
       icons.nuxt,
@@ -206,7 +212,7 @@ const projectsData = [
     title: 'NgMaterial',
     description:
       'Aplicación de gestión con roles de usuario y administrador, desarrollada en Angular 12, Material, y NGRX. Desplegado en Netlify. Puedes probar a registrarte como turista o empresa!',
-    imgSrc: '/static/images/material.png',
+    imgSrc: '/static/images/material.jpg',
     href: 'https://ng-material.netlify.app/',
     stack: [
       icons.angular,
@@ -238,7 +244,7 @@ const projectsData = [
     title: 'Blog',
     description:
       'Mi blog actual, en el que estás navegando. Desarrollado en Next.js, TailwindCSS, basado en Markdown y mejorado con MDX. Desplegado en Vercel.',
-    imgSrc: '/static/images/next.jpg',
+    imgSrc: '/static/images/blog.jpg',
     href: '/',
     stack: [
       icons.next,
@@ -253,7 +259,7 @@ const projectsData = [
     id: 10,
     title: 'Expense Tracker',
     description: `Pequeña aplicación realizada en React para controlar los gastos diarios y crear una UI Base para arquitectura dinámica. Desarrollada en React y Tailwind. Desplegada en Vercel.`,
-    imgSrc: '/static/images/react-tailwind.jpeg',
+    imgSrc: '/static/images/expense.jpg',
     href: 'https://expense-tracker-react-app.vercel.app/',
     stack: [
       icons.react,
@@ -267,7 +273,7 @@ const projectsData = [
     id: 11,
     title: 'Meal Tracker',
     description: `Aplicación full stack para el seguimiento semanal de comidas y recetas. Desarrollada en React, Node (Express), Mongo y Tailwind. Desplegada en Vercel y Heroku.`,
-    imgSrc: '/static/images/mern.jpeg',
+    imgSrc: '/static/images/meal.jpg',
     href: 'https://meal-tracker-front.vercel.app/',
     stack: [
       icons.react,
@@ -331,7 +337,7 @@ const projectsData = [
     title: 'Hooks App',
     description:
       'Resumen del funcionamiento de los hooks de React en una aplicación, realizada con React y Bootstrap 5.',
-    imgSrc: '/static/images/hooks.png',
+    imgSrc: '/static/images/hooks.jpg',
     href: 'https://hooks-app-two.vercel.app/',
     stack: [
       icons.react,
@@ -343,6 +349,48 @@ const projectsData = [
   },
   {
     id: 15,
+    title: 'Heroes App',
+    description:
+      'Pequeña aplicación con rutas públicas y privadas, manejo de query params en React Router y maquetación en Bootstrap 5',
+    imgSrc: '/static/images/heroes.jpg',
+    href: 'https://hooks-app-two.vercel.app/',
+    stack: [
+      icons.react,
+      icons.bootstrap,
+      icons.vercel,
+      <Repo key="github" url={'https://heroes-app-iota.vercel.app/login'} />,
+    ],
+    tags: ['react', 'bootstrap', 'vercel', 'frontend'],
+  },
+  {
+    id: 16,
+    title: 'Band Survey',
+    description:
+      'Aplicación full stack en tiempo real, construida con React, Chart.js, Chakra UI, Socket.io y Node.js. Desplegada en Heroku.',
+    imgSrc: '/static/images/survey.jpg',
+    href: 'https://hooks-app-two.vercel.app/',
+    stack: [
+      icons.react,
+      icons.chara,
+      icons.chart,
+      icons.socket,
+      icons.node,
+      icons.heroku,
+      <Repo key="github" url={'https://heroes-app-iota.vercel.app/login'} />,
+    ],
+    tags: [
+      'react',
+      'chartjs',
+      'chakraui',
+      'socketio',
+      'heroku',
+      'frontend',
+      'backend',
+      'fullstack',
+    ],
+  },
+  {
+    id: 17,
     title: 'Curriculum',
     description: `Mi Curriculum Vitae desarrollado en ES6, Sass, y HTML. Desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
     imgSrc: '/static/images/profile.png',
