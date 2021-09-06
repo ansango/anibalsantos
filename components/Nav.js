@@ -4,6 +4,8 @@ import Link from './Link'
 import { useEffect, useState } from 'react'
 import { useTheme } from 'next-themes'
 import { MenuIcon, MoonIcon, SunIcon, XIcon } from './icons'
+import { useRouter } from 'next/router'
+import { route } from 'next/dist/next-server/server/router'
 
 const ThemeSwitch = () => {
   const [mounted, setMounted] = useState(false)
@@ -82,6 +84,7 @@ const MobileNav = () => {
 }
 
 const Nav = () => {
+  const { pathname: route } = useRouter()
   return (
     <div>
       <header className="flex items-center justify-between py-10">
@@ -97,15 +100,19 @@ const Nav = () => {
         </Link>
         <div className="flex items-center text-base leading-5">
           <div className="hidden sm:block">
-            {headerNavLinks.map((link) => (
-              <Link
-                key={link.title}
-                href={link.href}
-                className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
-              >
-                {link.title}
-              </Link>
-            ))}
+            {headerNavLinks.map((link) => {
+              if (link.href !== route) {
+                return (
+                  <Link
+                    key={link.title}
+                    href={link.href}
+                    className="p-1 font-medium text-gray-900 sm:p-4 dark:text-gray-100"
+                  >
+                    {link.title}
+                  </Link>
+                )
+              }
+            })}
           </div>
           <ThemeSwitch />
           <MobileNav />
