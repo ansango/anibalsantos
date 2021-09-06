@@ -60,3 +60,50 @@ const Card = ({ title, description, imgSrc, href, stack }) => {
 }
 
 export default Card
+
+export const CardCarousel = ({ title, description, imgSrc, href, stack }) => {
+  const github = stack.filter((e) => e.key === 'github')
+  const notGithub = stack.filter((e) => e.key !== 'github')
+  return (
+    <div className="px-5 sm:px-20 md:px-0">
+      <div className="h-full border-2 border-gray-200 border-opacity-60 dark:border-gray-700 rounded-md overflow-hidden">
+        {href ? (
+          <Link href={href} aria-label={`Link to ${title}`}>
+            <Image
+              alt={title}
+              src={imgSrc}
+              className="lg:h-48 md:h-36 object-cover object-center"
+              width={544}
+              height={306}
+            />
+          </Link>
+        ) : (
+          <Image
+            alt={title}
+            src={imgSrc}
+            className="lg:h-48 md:h-36 object-cover object-center"
+            width={544}
+            height={306}
+          />
+        )}
+        <div className="px-3 py-5">
+          <h4 className="text-xl font-semibold leading-8 tracking-tight">
+            {href ? (
+              <span className="flex items-center">
+                <Link href={href} aria-label={`Link to ${title}`} className="mr-3 truncate">
+                  {title}
+                </Link>
+                <span>{github}</span>
+              </span>
+            ) : (
+              <span className="truncate">
+                {title}
+                <span>{github}</span>
+              </span>
+            )}
+          </h4>
+        </div>
+      </div>
+    </div>
+  )
+}

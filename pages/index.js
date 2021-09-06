@@ -5,6 +5,9 @@ import Accordion from '@/components/Accoordion'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
+import CarouselEl from '@/components/CarouselEl'
+import projectsData from '@/data/projectsData'
+import { CardCarousel } from '@/components/Card'
 
 const MAX_DISPLAY = 5
 
@@ -29,6 +32,8 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
+  const projects = projectsData.filter((project) => project.title !== 'Curriculum')
+
   const accordionBlocks = [
     { title: 'destacados', data: pinned },
     { title: 'marcadores', data: bookmarks },
@@ -38,10 +43,10 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div className="pb-10">
-        <div className="pt-6 pb-8 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
+        <div className="pt-6 pb-5 space-y-2 md:space-y-5">
+          <h2 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-14">
             Últimas publicaciones
-          </h1>
+          </h2>
           <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
             Se me olvidan las cosas, entonces escribo.
           </p>
@@ -109,7 +114,20 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </div>
         )}
       </div>
-
+      <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+      <CarouselEl title="Últimos proyectos" subtitle="A veces aprendo cosas nuevas">
+        {projects.map((project) => (
+          <div key={project.id} className="px-2">
+            <CardCarousel
+              title={project.title}
+              description={project.description}
+              imgSrc={project.imgSrc}
+              href={project.href}
+              stack={project.stack}
+            />
+          </div>
+        ))}
+      </CarouselEl>
       <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
       <div className="pb-5">
         {accordionBlocks.map((block) => (

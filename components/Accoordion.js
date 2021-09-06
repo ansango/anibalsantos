@@ -8,9 +8,9 @@ const Accordion = ({ posts, titleAccordion }) => {
       {({ open }) => (
         <>
           <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none pt-5">
-            <h2 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14 capitalize">
+            <h4 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14 capitalize">
               {titleAccordion}
-            </h2>
+            </h4>
             <div className="px-4">
               <ChevDownIcon size={26} className={`${open ? 'transform rotate-180' : ''}`} />
             </div>
