@@ -23,6 +23,7 @@ const handler = async (req, res) => {
         comment._id = comment._id.toString()
         return comment
       })
+
       res.status(200).json(comments)
     } catch (error) {
       res.status(500).json({ status: 'Error', error: error })
