@@ -1,13 +1,15 @@
 import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import Tag from '@/components/Tag'
-import Accordion from '@/components/Accoordion'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import formatDate from '@/lib/utils/formatDate'
 import CarouselEl from '@/components/CarouselEl'
 import projectsData from '@/data/projectsData'
 import { CardCarousel } from '@/components/Card'
+import Line from '@/components/Line'
+import Accordions from '@/components/Accordions'
+import NowPlaying from '@/components/NowPlaying'
 
 const MAX_DISPLAY = 5
 
@@ -33,12 +35,6 @@ export async function getStaticProps() {
 
 export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
   const projects = projectsData.filter((project) => project.title !== 'Curriculum')
-
-  const accordionBlocks = [
-    { title: 'destacados', data: pinned },
-    { title: 'marcadores', data: bookmarks },
-    { title: 'chuletas', data: cheatsheet },
-  ]
   return (
     <>
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
@@ -61,6 +57,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
               fotografías analógicas.
             </Link>
           </p>
+          <NowPlaying />
         </div>
         <div className="pt-6 pb-5">
           <h2 className="text-2xl sm:leading-10 md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 ">
@@ -70,7 +67,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
-        <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+        <Line />
         <ul>
           {!posts.length && (
             <div className="text-center">
@@ -133,7 +130,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </div>
         )}
       </div>
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+      <Line />
       <CarouselEl title="Últimos proyectos" subtitle="A veces aprendo cosas nuevas">
         {projects.map((project) => (
           <div key={project.id} className="px-2">
@@ -147,13 +144,14 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </div>
         ))}
       </CarouselEl>
-
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
-      <div className="pb-5">
-        {accordionBlocks.map((block) => (
-          <Accordion key={block.title} posts={block.data} titleAccordion={block.title} />
-        ))}
-      </div>
+      <Line />
+      <Accordions
+        data={[
+          { title: 'destacados', data: pinned },
+          { title: 'marcadores', data: bookmarks },
+          { title: 'chuletas', data: cheatsheet },
+        ]}
+      />
     </>
   )
 }

@@ -1,14 +1,15 @@
-import Link from './Link'
+import Link from '@/components/Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
 import headerNavLinks from '@/data/headerNavLinks'
-import Coffee from './Coffee'
+import Coffee from '@/components/Coffee'
+import Line from '@/components/Line'
 
 export default function Footer() {
   return (
     <footer>
       <div className="pb-10">
-        <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+        <Line />
       </div>
       <div className="pb-10">
         <div className="space-y-4">

@@ -4,6 +4,7 @@ import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import { SearchIcon } from '@/components/icons'
+import Line from '@/components/Line'
 
 const postDateTemplate = { year: 'numeric', month: 'long', day: 'numeric' }
 
@@ -39,7 +40,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
           <SearchIcon className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300" />
         </div>
       </div>
-      <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+      <Line />
       <ul className="pb-10">
         {!filteredBlogPosts.length && (
           <div className="text-center py-10">

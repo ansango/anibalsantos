@@ -46,6 +46,7 @@ export {
   SiBulma as BulmaIcon,
   SiLeaflet as LeafletIcon,
   SiSocketDotIo as SocketIcon,
+  SiSpotify as SpotifyIcon,
 } from 'react-icons/si'
 
 export { IoLogoVercel as VercelIcon } from 'react-icons/io5'

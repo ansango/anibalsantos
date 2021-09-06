@@ -2,6 +2,7 @@ import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import siteMetadata from '@/data/siteMetadata'
 import { PageSeo } from '@/components/SEO'
+import Line from '@/components/Line'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
@@ -15,7 +16,7 @@ export default function AuthorLayout({ children, frontMatter }) {
             Bio
           </h1>
         </div>
-        <hr className="w-full border-1 border-gray-200 dark:border-gray-800" />
+        <Line />
         <div className="items-start space-y-2">
           <div className="flex flex-col items-center pt-8 space-x-2">
             <Image
