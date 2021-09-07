@@ -353,12 +353,12 @@ const projectsData = [
     description:
       'Pequeña aplicación con rutas públicas y privadas, manejo de query params en React Router y maquetación en Bootstrap 5',
     imgSrc: '/static/images/heroes.jpg',
-    href: 'https://github.com/ansango/heroes-app/',
+    href: 'https://heroes-app-iota.vercel.app/',
     stack: [
       icons.react,
       icons.bootstrap,
       icons.vercel,
-      <Repo key="github" url={'https://heroes-app-iota.vercel.app/'} />,
+      <Repo key="github" url={'https://github.com/ansango/heroes-app/'} />,
     ],
     tags: ['react', 'bootstrap', 'vercel', 'frontend'],
   },
