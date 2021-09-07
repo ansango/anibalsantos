@@ -49,8 +49,8 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
             , soy Aníbal
           </h1>
           <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
-            Soy desarrollador y fotógrafo. Actualmente trabajo en Minsait como Frontend Mid
-            Developer y en mis ratos libres hago{' '}
+            Soy desarrollador enfocado en el ecosistema JavaScript. Actualmente trabajo en Minsait
+            como Frontend Mid Developer, en mis ratos libres hago{' '}
             <Link
               href="https://ansango-photo.vercel.app"
               className="font-bold leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
