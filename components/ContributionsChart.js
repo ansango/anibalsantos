@@ -10,7 +10,7 @@ const ContributionsChart = () => {
 
   return (
     <>
-      {days ? (
+      {/* {days ? (
         <div className="flex flex-col h-44 flex-wrap w-full">
           {days.map((day, index) => {
             return (
@@ -24,7 +24,7 @@ const ContributionsChart = () => {
         </div>
       ) : (
         <></>
-      )}
+      )} */}
     </>
   )
 }
