@@ -1,0 +1,61 @@
+---
+title: 101 Comandos Bash 💻
+date: '2021-09-08'
+tags: ['linux', 'terminal', 'bash', 'command', 'ubuntu']
+draft: true
+summary: Comandos Bash y consejos para principiantes y expertos
+cover: /static/blog/linux/101-comandos-bash.jpg
+---
+
+<section>
+
+##
+
+Hace tiempo que quería recopilar en algún sitio los comandos de `bash`, soy usuario de Ubuntu y bueno no es que tenga mucho nivel, pero siempre se puede aprender algo más. El caso es que por tiempo no me he metido en profundidad con la terminal.
+
+Leyendo artículos en <a href="https://dev.to" target="_blank" rel="noopener noreferrer">dev.to</a> encontré uno fantástico que recopilaba 101 comandos, así que he decidido traducir el <a href="https://dev.to/awwsmm/101-bash-commands-and-tips-for-beginners-to-experts-30je#first-commands" target="_blank" rel="noopener noreferrer">artículo</a> de <a href="https://awwsmm.com/" target="_blank" rel="noopener noreferrer">Andrew William</a>, al cual le agradezco mucho su publicación 💓
+
+Los comandos a continuación se presentan en un estilo más o menos narrativo, por lo que si estás empezando con bash, puedes trabajar desde el principio hasta el final. Las cosas generalmente se vuelven menos comunes y más difíciles hacia el final.
+
+1. [Comandos básicos](/blog/linux/101-comandos-bash/basicos)
+2. [Comandos intermedios](/blog/linux/101-comandos-bash/intermedios)
+3. [Comandos avanzados](/blog/linux/101-comandos-bash/avanzados)
+
+</section>
+
+<section id="basicos">
+
+## Comandos básicos
+
+### Primeros Comandos, Navegando por el Sistema de Archivos
+
+Los sistemas de archivos modernos tienen árboles de directorios (carpetas), donde un directorio es un directorio raíz (sin directorio padre) o es un subdirectorio (contenido dentro de otro directorio, al que llamamos "padre").
+
+Si se recorre el árbol de archivos hacia atrás (desde el directorio hijo hasta el directorio padre) siempre se llegará al directorio raíz. Algunos sistemas de archivos tienen múltiples directorios raíz (como las unidades de Windows: `C:\`, `A:\`, etc.), pero los sistemas Unix y similares sólo tienen un único directorio raíz llamado `\`.
+
+#### `pwd / ls / cd`
+
+Cuando se trabaja dentro de un sistema de archivos, el usuario siempre está trabajando dentro de algún directorio, al que llamamos directorio actual o directorio de trabajo. Imprime el directorio de trabajo del usuario con `pwd`:
+
+```bash
+$ pwd
+/home/andrew
+```
+
+Listar el contenido de este directorio (archivos y/o directorios hijos, etc.) con ls:
+
+```bash
+$ ls
+Git  TEST  jdoc  test  test.file
+```
+
+> - Mostrar archivos ocultos ("punto") con `ls -a`
+> - Mostrar los detalles de los archivos con `ls -l`
+> - Combinar múltiples banderas como `ls -l -a`
+> - A veces se pueden encadenar banderas como `ls -la` en lugar de `ls -l -a`
+
+#### `; / && / &`
+
+</section>
+<section id="intermedios"></section>
+<section id="avanzados"></section>
