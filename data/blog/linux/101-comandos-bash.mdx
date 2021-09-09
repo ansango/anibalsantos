@@ -1,6 +1,6 @@
 ---
 title: 101 Comandos Bash 💻
-date: '2021-09-08'
+date: '2021-09-09'
 tags: ['linux', 'terminal', 'bash', 'command', 'ubuntu']
 draft: true
 summary: Comandos Bash y consejos para principiantes y expertos
@@ -17,9 +17,86 @@ Leyendo artículos en <a href="https://dev.to" target="_blank" rel="noopener nor
 
 Los comandos a continuación se presentan en un estilo más o menos narrativo, por lo que si estás empezando con bash, puedes trabajar desde el principio hasta el final. Las cosas generalmente se vuelven menos comunes y más difíciles hacia el final.
 
-1. [Comandos básicos](/blog/linux/101-comandos-bash/basicos)
-2. [Comandos intermedios](/blog/linux/101-comandos-bash/intermedios)
-3. [Comandos avanzados](/blog/linux/101-comandos-bash/avanzados)
+1. [Comandos básicos](/blog/linux/101-comandos-bash/#basicos)
+   - [Primeros Comandos, Navegando por el Sistema de Archivos](/blog/linux/101-comandos-bash/#primeros)
+     - `pwd / ls / cd`
+     - `; / && / &`
+   - [Cómo obtener ayuda](/blog/linux/101-comandos-bash/#ayuda)
+     - `-h`
+     - `man`
+   - [Visualización y edición de archivos](/blog/linux/101-comandos-bash/#visualizacion)
+     - `head / tail / cat / less`
+     - `nano / nedit`
+   - [Creación y eliminación de archivos y directorios](/blog/linux/101-comandos-bash/#creacion)
+     - `touch`
+     - `mkdir / rm / rmdir`
+   - [Mover y copiar archivos, hacer enlaces, historial de comandos](/blog/linux/101-comandos-bash/#mover)
+     - `mv / cp / ln`
+     - Historial de comandos
+   - [Árboles de directorios, uso del disco y procesos](/blog/linux/101-comandos-bash/#arboles)
+     - `mkdir –p / tree`
+     - `df / du / ps`
+   - [Miscellaneous](/blog/linux/101-comandos-bash/#misc-basicos)
+     - `passwd / logout / exit`
+     - `clear / *`
+2. [Comandos intermedios](/blog/linux/101-comandos-bash/#intermedios)
+
+   - [Uso de disco, memoria y procesador](/blog/linux/101-comandos-bash/#disco)
+     - `ncdu`
+     - `top / htop`
+   - [REPLs y versiones de software](/blog/linux/101-comandos-bash/#repls)
+     - REPLs
+     - `-version / --version / -v`
+   - [Variables de entorno y alias](/blog/linux/101-comandos-bash/#variables)
+     - Variables de entorno
+     - Alias
+   - [Scripts bash básicos](/blog/linux/101-comandos-bash/#scripts)
+     - Scripts `bash`
+     - Prompt y `ls` personalizados
+   - [Archivos de configuración](/blog/linux/101-comandos-bash/#archivos)
+     - Archivos de configuración / `.bashrc`
+     - Tipos de Shells
+   - [Cómo encontrar cosas](/blog/linux/101-comandos-bash/#encontrar)
+     - `whereis / which / whatis`
+     - `locate / find`
+   - [Descargando cosas](/blog/linux/101-comandos-bash/#descargar)
+     - `ping / wget / curl`
+     - `apt / gunzip / tar / gzip`
+   - [Redirigir la entrada y la salida](/blog/linux/101-comandos-bash/#redirigir)
+     - `| / > / < / echo / printf`
+     - `0 / 1 / 2 / tee`
+
+3. [Comandos avanzados](/blog/linux/101-comandos-bash/#avanzados)
+
+   - [Superusuario](/blog/linux/101-comandos-bash/#superusuario)
+     - `sudo / su`
+     - `!!`
+   - [Permisos de archivo](/blog/linux/101-comandos-bash/#permisos)
+     - Permisos de archivos
+     - `chmod / chown`
+   - [Gestión de usuarios y grupos](/blog/linux/101-comandos-bash/#gestion)
+     - Usuarios
+     - Grupos
+   - [Procesamiento de textos](/blog/linux/101-comandos-bash/#texto)
+     - `uniq / sort / diff / cmp`
+     - `cut / sed`
+   - [Comparación de patrones](/blog/linux/101-comandos-bash/#patrones)
+     - `grep`
+     - `awk`
+   - [Copiar archivos a través de ssh](/blog/linux/101-comandos-bash/#ssh)
+     - `ssh / scp`
+     - `rsync`
+   - [Procesos de larga duración](/blog/linux/101-comandos-bash/#procesos-largos)
+     - `yes / nohup / ps / kill`
+     - `cron / crontab / >>`
+   - [Miscellaneous](/blog/linux/101-comandos-bash/#misc-avanzados)
+     - `pushd / popd`
+     - `xdg-open`
+     - `xargs`
+
+4. [Bonus: Cosas divertidas pero inútiles](/blog/linux/101-comandos-bash/#cosas-divertidas)
+   - `w / write / wall / lynx`
+   - `nautilus / date / cal / bc`
 
 </section>
 
@@ -27,15 +104,15 @@ Los comandos a continuación se presentan en un estilo más o menos narrativo, p
 
 ## Comandos básicos
 
+<article id="primeros"> 
+   
 ### Primeros Comandos, Navegando por el Sistema de Archivos
 
-Los sistemas de archivos modernos tienen árboles de directorios (carpetas), donde un directorio es un directorio raíz (sin directorio padre) o es un subdirectorio (contenido dentro de otro directorio, al que llamamos "padre").
-
-Si se recorre el árbol de archivos hacia atrás (desde el directorio hijo hasta el directorio padre) siempre se llegará al directorio raíz. Algunos sistemas de archivos tienen múltiples directorios raíz (como las unidades de Windows: `C:\`, `A:\`, etc.), pero los sistemas Unix y similares sólo tienen un único directorio raíz llamado `\`.
+Los sistemas de archivos modernos tienen árboles de directorios (carpetas), donde un directorio es un directorio raíz (sin directorio padre) o es un subdirectorio (contenido dentro de otro directorio, al que llamamos "padre"). Si se recorre el árbol de archivos hacia atrás (desde el directorio hijo hasta el directorio padre) siempre se llegará al directorio raíz. Algunos sistemas de archivos tienen múltiples directorios raíz (como las unidades de Windows: `C:\`, `A:\,` etc.), pero los sistemas Unix y similares sólo tienen un único directorio raíz llamado `\`.
 
 #### `pwd / ls / cd`
 
-Cuando se trabaja dentro de un sistema de archivos, el usuario siempre está trabajando dentro de algún directorio, al que llamamos directorio actual o directorio de trabajo. Imprime el directorio de trabajo del usuario con `pwd`:
+Cuando se trabaja dentro de un sistema de archivos, el usuario siempre está trabajando dentro de algún directorio, al que llamamos directorio actual o directorio de trabajo. Imprime el directorio de trabajo del usuario con pwd:
 
 ```bash
 $ pwd
@@ -49,13 +126,334 @@ $ ls
 Git  TEST  jdoc  test  test.file
 ```
 
-> - Mostrar archivos ocultos ("punto") con `ls -a`
+> - Mostrar archivos ocultos (".") con `ls -a`
 > - Mostrar los detalles de los archivos con `ls -l`
-> - Combinar múltiples banderas como `ls -l -a`
+> - Combinar varios indicadores como `ls -l -a`
 > - A veces se pueden encadenar banderas como `ls -la` en lugar de `ls -l -a`
+
+Cambia de directorio con cd
+
+```bash
+
+$ cd TEST/
+
+$ pwd
+/home/andrew/TEST
+
+$ cd A
+
+$ pwd
+/home/andrew/TEST/A
+```
+
+`cd ..` es la abreviatura de "cd al directorio padre":
+
+```bash
+$ cd ..
+
+$ pwd
+/home/andrew/TEST
+```
+
+`cd ~` o simplemente `cd` es la abreviatura de "cd a mi directorio personal" (/home/nombredeusuario):
+
+```bash
+$ cd
+
+$ pwd
+/home/andrew
+```
+
+> - `cd ~user` significa `cd` al directorio principal del usuario
+> - Puede saltar varios niveles de directorio con `cd ../..`, etc.
+> - Vuelve al directorio más reciente con `cd -`
+> - `.` es la abreviatura de "este directorio", así que `cd .` no hará nada
 
 #### `; / && / &`
 
+Las cosas que escribimos en la línea de comandos se llaman comandos, y siempre ejecutan algún código máquina almacenado en algún lugar de tu ordenador. A veces este código de máquina es un comando incorporado de Linux, a veces es una aplicación, a veces es algún código que escribiste tú mismo. Ocasionalmente, querremos ejecutar un comando justo después de otro. Para hacer eso, podemos usar `;`
+
+```bash
+$ ls; pwd
+Git  TEST  jdoc  test  test.file
+/home/andrew
+```
+
+En el ejemplo anterior, punto y coma significa que primero (ls) lista el contenido del directorio de trabajo, y luego (pwd) imprime su ubicación.
+
+Otra herramienta útil para encadenar comandos es `&&`. Con `&&`, el comando de la derecha no se ejecutará si el comando de la izquierda falla. `;` y `&&` pueden utilizarse varias veces en la misma línea:
+
+```bash
+# whoops!
+$ cd /Giit/Parser && pwd && ls && cd
+-bash: cd: /Giit/Parser: No such file or directory
+
+# el primer comando funcion ahora, así que se ejecuta el siguiente
+$ cd Git/Parser/ && pwd && ls && cd
+/home/andrew/Git/Parser
+README.md  doc.sh  pom.xml  resource  run.sh  shell.sh  source  src  target
+```
+
+pero con `;`, el segundo comando se ejecutará incluso si el primero falla:
+
+```bash
+# pwd y ls se ejecutarán aún si cd falla
+$ cd /Giit/Parser ; pwd ; ls
+-bash: cd: /Giit/Parser: No such file or directory
+/home/andrew
+Git  TEST  jdoc  test  test.file
+```
+
+`&` se parece a `&&` pero en realidad cumple una función completamente diferente. Normalmente, cuando se ejecuta un comando de larga duración, la línea de comandos espera a que ese comando termine antes de permitirle introducir otro. Poner `&` después de un comando evita que esto ocurra, y te permite ejecutar un nuevo comando mientras uno anterior sigue en marcha:
+
+```bash
+$ cd Git/Parser && mvn package & cd
+[1] 9263
+```
+
+> Cuando usamos `&` después de un comando para "ocultarlo", decimos que el trabajo está "en segundo plano". Para ver qué trabajos en segundo plano se están ejecutando actualmente, podemos utilizar el comando `jobs`:
+>
+> ```bash
+> $ jobs
+> [1]+ Running cd Git/Parser/ && mvn package &
+> ```
+
+</article>
+   <article id="ayuda"> 
+   
+### Cómo obtener ayuda
+
+#### `-h`
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+```bash
+
+```
+
+#### `man`
+
+</article>
+<article id="visualizacion"> 
+   
+### Visualización y edición de archivos
+
+#### `head / tail / cat / less`
+
+#### `nano / nedit`
+
+</article>
+<article id="creacion"> 
+   
+### Creación y eliminación de archivos y directorios
+
+#### `touch`
+
+#### `mkdir / rm / rmdir`
+
+</article>
+<article id="mover"> 
+   
+### Mover y copiar archivos, hacer enlaces, historial de comandos
+
+#### `mv / cp / ln`
+
+#### Historial de comandos
+
+</article>
+<article id="arboles"> 
+   
+### Árboles de directorios, uso del disco y procesos
+
+#### `mkdir –p / tree`
+
+#### `df / du / ps`
+
+</article>
+<article id="misc-basicos"> 
+   
+### Miscellaneous
+
+#### `passwd / logout / exit`
+
+#### `clear / *`
+
+</article>
+
 </section>
-<section id="intermedios"></section>
-<section id="avanzados"></section>
+<section id="intermedios">
+
+## Comandos intermedios
+
+<article id="disco">
+
+### Uso de disco, memoria y procesador
+
+#### `ncdu`
+
+#### `top / htop`
+
+</article>
+<article id="repls">
+
+### REPLs y versiones de software
+
+#### REPLs
+
+#### `-version / --version / -v`
+
+</article>
+<article id="variables">
+
+### Variables de entorno y alias
+
+#### Variables de entorno
+
+#### Alias
+
+</article>
+<article id="scripts">
+
+### Scripts bash básicos
+
+#### Scripts `bash`
+
+#### Prompt y `ls` personalizados
+
+</article>
+<article id="archivos">
+
+### Archivos de configuración
+
+#### Archivos de configuración / `.bashrc`
+
+#### Tipos de Shells
+
+</article>
+<article id="encontrar">
+
+### Cómo encontrar cosas
+
+#### `whereis / which / whatis`
+
+#### `locate / find`
+
+</article>
+<article id="descargar">
+
+### Descargando cosas
+
+#### `ping / wget / curl`
+
+#### `apt / gunzip / tar / gzip`
+
+</article>
+<article id="redirigir">
+
+### Redirigir la entrada y la salida
+
+#### `| / > / < / echo / printf`
+
+#### `0 / 1 / 2 / tee`
+
+</article>
+
+</section>
+<section id="avanzados">
+
+## Comandos avanzados
+
+<article id="superusuario">
+
+### Superusuario
+
+     - `sudo / su`
+     - `!!`
+
+</article>
+<article id="permisos">
+
+### Permisos de archivo
+
+     - Permisos de archivos
+     - `chmod / chown`
+
+</article>
+<article id="gestion">
+
+### Gestión de usuarios y grupos
+
+#### Usuarios
+
+#### Grupos
+
+</article>
+<article id="texto">
+
+### Procesamiento de textos
+
+#### `uniq / sort / diff / cmp`
+
+#### `cut / sed`
+
+</article>
+<article id="patrones">
+
+### Comparación de patrones
+
+#### `grep`
+
+#### `awk`
+
+</article>
+<article id="ssh">
+
+### Copiar archivos a través de ssh
+
+#### `ssh / scp`
+
+#### `rsync`
+
+</article>
+<article id="procesos-largos">
+
+### Procesos de larga duración
+
+#### `yes / nohup / ps / kill`
+
+#### `cron / crontab / >>`
+
+</article>
+<article id="misc-avanzados">
+
+### Miscellaneous
+
+#### `pushd / popd`
+
+#### `xdg-open`
+
+#### `xargs`
+
+</article>
+
+</section>
+
+<section id="cosas-divertidas">
+
+## Bonus: Cosas divertidas pero inútiles
+
+#### `w / write / wall / lynx`
+
+#### `nautilus / date / cal / bc`
+
+</section>

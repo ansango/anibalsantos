@@ -137,22 +137,22 @@ export default function PostLayout({ frontMatter, next, prev, children }) {
                   <div className="flex justify-center">
                     <div className="mx-1 hover:text-primary-500">
                       <EmailShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
-                        <MailIcon size={25} round />
+                        <MailIcon size={25} />
                       </EmailShareButton>
                     </div>
                     <div className="mx-1 hover:text-primary-500">
                       <WhatsappShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
-                        <WhatsappIcon size={25} round />
+                        <WhatsappIcon size={25} />
                       </WhatsappShareButton>
                     </div>
                     <div className="mx-1 hover:text-primary-500">
                       <TelegramShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
-                        <TelegramIcon size={25} round />
+                        <TelegramIcon size={25} />
                       </TelegramShareButton>
                     </div>
                     <div className="mx-1 hover:text-primary-500">
                       <TwitterShareButton url={`https://ansango.com/blog/${slug}`} title={title}>
-                        <TwitterIcon size={25} round />
+                        <TwitterIcon size={25} />
                       </TwitterShareButton>
                     </div>
                   </div>
