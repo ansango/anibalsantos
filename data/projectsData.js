@@ -26,6 +26,7 @@ import {
   SocketIcon,
   ChakraIcon,
   ChartJSIcon,
+  FirebaseIcon,
 } from '@/components/icons'
 import { compareById } from '@/lib/utils/compare'
 
@@ -63,6 +64,7 @@ const icons = {
   socket: <SocketIcon key="socket" size={sizeIcons} className="dark:text-gray-100 mr-3" />,
   chara: <ChakraIcon key="chakra" className="mr-3 w-5 fill-current text-green-600" />,
   chart: <ChartJSIcon key="chart" className="mr-3 w-5 fill-current text-green-600" />,
+  firebase: <FirebaseIcon key="firebase" size={sizeIcons} className="mr-3 text-primary-600" />,
 }
 
 const projectsData = [
@@ -391,6 +393,22 @@ const projectsData = [
   },
   {
     id: 17,
+    title: 'Journal App',
+    description:
+      'Aplicación full stack construida con React, Redux, y Firebase. Desplegada en Vercel',
+    imgSrc: '/static/images/journal.jpg',
+    href: 'https://journal-app-iota.vercel.app/',
+    stack: [
+      icons.react,
+      icons.redux,
+      icons.firebase,
+      icons.vercel,
+      <Repo key="github" url={'https://github.com/ansango/journal-app'} />,
+    ],
+    tags: ['react', 'redux', 'firebase', 'vercel', 'frontend', 'backend', 'fullstack'],
+  },
+  {
+    id: 18,
     title: 'Curriculum',
     description: `Mi Curriculum Vitae desarrollado en ES6, Sass, y HTML. Desplegado en Netlify. Utilizando una estructura de maquetación OOCSS e ITCSS para mejorar mantenimiento.`,
     imgSrc: '/static/images/profile.png',

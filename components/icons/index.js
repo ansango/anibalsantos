@@ -47,6 +47,7 @@ export {
   SiLeaflet as LeafletIcon,
   SiSocketDotIo as SocketIcon,
   SiSpotify as SpotifyIcon,
+  SiFirebase as FirebaseIcon,
 } from 'react-icons/si'
 
 export { IoLogoVercel as VercelIcon } from 'react-icons/io5'

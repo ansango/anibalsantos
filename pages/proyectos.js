@@ -5,8 +5,18 @@ import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 
 export default function Projects() {
-  const pins = [17, 16, 14, 12, 11, 7, 6, 4, 3]
-  const pinnedProjects = projectsData.filter((project) => pins.includes(project.id))
+  const pins = [
+    'Curriculum',
+    'Band Survey',
+    'Hook App',
+    'Ansango Photo',
+    'Meal Tracker',
+    'NgMaterial',
+    'Undefined Band - TailwindCSS',
+    'Neo Punk Api',
+    'Shopping List',
+  ]
+  const pinnedProjects = projectsData.filter((project) => pins.includes(project.title))
   return (
     <>
       <PageSeo title={`Proyectos Destacados`} description={siteMetadata.description} />
