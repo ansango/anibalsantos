@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import Fetcher from '@/lib/fetcher'
 import { Popover } from '@headlessui/react'
-import { groupContributionsByMonth } from '@/lib/github'
+import { getTotalMaxValue, getRoundedValue, groupContributionsByMonth } from '@/lib/github'
 
 const ContributionsChart = () => {
   const { data } = useSWR('/api/contributions-current-year', Fetcher)
@@ -11,15 +11,14 @@ const ContributionsChart = () => {
     .flatMap((e) => e)
 
   const months = groupContributionsByMonth(days)
-  const values = months.map((month) => month.contributions)
-  const totalMax = Math.max(...values)
+  const totalMax = getTotalMaxValue(months)
 
   return (
     <div className="py-5">
       {months ? (
         <div className="grid grid-cols-12 gap-1 h-96">
           {months.map((month, i) => {
-            const roundedValue = Math.round((month.contributions / totalMax) * 100) + '%'
+            const roundedValue = getRoundedValue(month.contributions, totalMax)
             const barFillHeight = totalMax > 0 ? roundedValue : '0%'
 
             return (
@@ -29,7 +28,6 @@ const ContributionsChart = () => {
                   className="bg-green-400 hover:bg-green-200 rounded-t-lg cursor-pointer"
                   style={{ height: barFillHeight }}
                 ></div>
-                <MyPopover />
               </div>
             )
           })}
