@@ -1,31 +1,60 @@
-import Link from '@/components/Link'
 import useSWR from 'swr'
 import Fetcher from '@/lib/fetcher'
-import { GithubIcon } from './icons'
+import { Popover } from '@headlessui/react'
+import { groupContributionsByMonth } from '@/lib/github'
 
 const ContributionsChart = () => {
-  const { data } = useSWR('/api/contributions', Fetcher)
+  const { data } = useSWR('/api/contributions-current-year', Fetcher)
 
-  let days = data?.weeks.map((week) => week.contributionDays).flatMap((e) => e)
+  const days = data?.contributionCalendar.weeks
+    .map((week) => week.contributionDays)
+    .flatMap((e) => e)
+
+  const months = groupContributionsByMonth(days)
+  const values = months.map((month) => month.contributions)
+  const totalMax = Math.max(...values)
 
   return (
-    <>
-      {/* {days ? (
-        <div className="flex flex-col h-44 flex-wrap w-full">
-          {days.map((day, index) => {
+    <div className="py-5">
+      {months ? (
+        <div className="grid grid-cols-12 gap-1 h-96">
+          {months.map((month, i) => {
+            const roundedValue = Math.round((month.contributions / totalMax) * 100) + '%'
+            const barFillHeight = totalMax > 0 ? roundedValue : '0%'
+
             return (
-              <div
-                key={index}
-                className="p-1 m-1 w-4 h-4"
-                style={{ backgroundColor: day.color }}
-              ></div>
+              <div key={month.name} className="h-full flex flex-col-reverse text-center">
+                <div className="">{month.name}</div>
+                <div
+                  className="bg-green-400 hover:bg-green-200 rounded-t-lg cursor-pointer"
+                  style={{ height: barFillHeight }}
+                ></div>
+                <MyPopover />
+              </div>
             )
           })}
         </div>
       ) : (
         <></>
-      )} */}
-    </>
+      )}
+    </div>
+  )
+}
+
+function MyPopover() {
+  return (
+    <Popover className="relative">
+      <Popover.Button>Solutions</Popover.Button>
+
+      <Popover.Panel className="absolute z-10">
+        <div className="grid grid-cols-2">
+          <a href="/analytics">Analytics</a>
+          <a href="/engagement">Engagement</a>
+          <a href="/security">Security</a>
+          <a href="/integrations">Integrations</a>
+        </div>
+      </Popover.Panel>
+    </Popover>
   )
 }
 

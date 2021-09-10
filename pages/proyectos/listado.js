@@ -5,7 +5,7 @@ import Card from '@/components/Card'
 import Link from '@/components/Link'
 import { PageSeo } from '@/components/SEO'
 import { SearchIcon } from '@/components/icons'
-import ContributionsChart from '@/components/ContributionsChart'
+import Line from '@/components/Line'
 
 export default function ListProjects() {
   const initialDisplayPosts = []
@@ -53,9 +53,9 @@ export default function ListProjects() {
             <SearchIcon className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300" />
           </div>
         </div>
-        <hr className="w-full border-1 border-gray-200 dark:border-gray-800 pb-5" />
-        <ContributionsChart />
-        <div className="container pb-12">
+        <Line />
+
+        <div className="container pb-12 pt-5">
           {!filteredProjects.length && (
             <div className="text-center py-10">
               <p>No se han encontrado entradas</p>
