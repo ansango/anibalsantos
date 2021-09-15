@@ -1,9 +1,9 @@
 ---
-title: Configurar Ubuntu 20.04
+title: Configurar Ubuntu 20.04 / 21.04
 date: '2021-07-17'
 tags: ['linux', 'ubuntu', 'zsh', 'nvm', 'tooling', 'pinned']
 draft: false
-summary: Instalación de utilidades para desarrollo en Ubuntu 20.04
+summary: Instalación de utilidades para desarrollo en Ubuntu 20.04 y 21.04
 cover: /static/blog/linux/ubuntu.jpg
 ---
 
@@ -14,6 +14,8 @@ cover: /static/blog/linux/ubuntu.jpg
 Normalmente suelo formatear mi ordenador al menos dos veces al año, es una práctica que me gusta hacer para vaciarlo de basura o instalarme de cero alguna versión de Ubuntu nueva. He ido guardando todos los pasos que hago para dejar un Ubuntu listo para empezar a programar.
 
 Lo ideal sería componer todo mediante un script en `bash` que automatizase todos estos procesos de instalación. Te dejo a ti ese trabajo 😄
+
+> He revisado todos los puntos que contiene esta entrada y es totalmente aplicable a la versión 21.04
 
 1. [Actualizar repositorios](/blog/linux/configurar-ubuntu#update)
 2. [Instalar Git](/blog/linux/configurar-ubuntu#git)
@@ -278,6 +280,7 @@ sudo snap install vlc
 ```bash
 sudo snap install spotify
 ```
+
 ### Balena Etcher
 
 Descarga la última versión de Balena Etcher <a href="https://www.balena.io/etcher/" target="_blank" rel="noopener noreferrer">aquí</a>. Y ya puedes hace un USB booteable.
@@ -287,7 +290,7 @@ Descarga la última versión de Balena Etcher <a href="https://www.balena.io/etc
 ```bash
 sudo apt install transmission
 ```
-  
+
 </section>
 
 <section id="touchpad">
@@ -295,6 +298,37 @@ sudo apt install transmission
 ## Resetear Touchpad en Ubuntu
 
 > Puedes encontrar algunas soluciones para resetear el touchpad en Ubuntu <a href="/blog/linux/touchpad" target="_blank" rel="noopener noreferrer">aquí</a>
+
+</section>
+
+<section id="nvidia">
+
+## Reconfigurar Drivers de Nvidia
+
+Si en algún momento has perdido la configuración por defecto de tus drivers privativos de Nvidia y Ubuntu no te permite seleccionarlos en "Additional Drivers", entonces puedes hacer lo siguiente:
+
+En primer lugar, busca qué controlador necesitas. ¿Cómo lo averiguas? Consultando según el modelo de tarjeta que tengas y seleccionando obviamente la opción de _Linux 64-bit_ en **Sistema Operativo** <a href="https://www.nvidia.es/Download/index.aspx?lang=es" target="_blank" rel="noopener noreferrer">aquí</a>. Es recomendable utilizar en **Tipo de descarga** la opción de _Rama de producción_, que suele ser la versión ya testeada y que da menos problemas.
+
+En mi caso tengo una GeForce GTX 1060, así que seleccionaría estas opciones:
+
+- Tipo de producto: GeForce
+- Serie del producto: GeForce 10 Series
+- Familia del producto: GeForce 1060
+- Sistema operativo: Linux 64-bit
+- Tipo de descarga: Rama de producción
+- Idioma: Español (España)
+
+A continuación le damos a buscar, y podremos descargarlo, pero si no te apetece ejecutar un .run, es más fácil quedarnos con el número de versión del driver. En mi caso la **470.63.01**
+
+Abrimos un terminal y ejecutamos:
+
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt update
+sudo apt install nvidia-driver-470
+```
+
+Después de la instalación reiniciamos `reboot`, y ya deberíamos tener aplicado el controlador de nuevo.
 
 </section>
 
