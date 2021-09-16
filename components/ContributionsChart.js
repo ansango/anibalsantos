@@ -22,7 +22,7 @@ const ContributionsChart = () => {
             const barFillHeight = totalMax > 0 ? roundedValue : '0%'
 
             return (
-              <>
+              <div key={i}>
                 {month.contributions > 0 && (
                   <div key={month.name} className="flex items-center justify-between">
                     <div
@@ -46,7 +46,7 @@ const ContributionsChart = () => {
                     </div>
                   </div>
                 )}
-              </>
+              </div>
             )
           })}
         </div>
