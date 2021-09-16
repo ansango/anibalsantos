@@ -39,18 +39,37 @@ export default function AuthorLayout({ children, frontMatter }) {
               <SocialIcon kind="instagram" href={siteMetadata.instagram} size="5" />
             </div>
           </div>
-          <div className="pt-8 pb-8 prose text-gray-500 dark:prose-dark max-w-none xl:col-span-2 text-lg sm:text-xl leading-7 dark:text-gray-400">
+          <div className="py-8 prose text-gray-500 dark:prose-dark max-w-none xl:col-span-2 text-lg sm:text-xl leading-7 dark:text-gray-400">
             {children}
           </div>
+          <div className="py-8">
+            <div className="py-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+                Timeline
+              </h2>
+              <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
+                Estos son algunos de los eventos que han ido sucediendome a lo largo de mi vida.
+                Esta es básicamente una pequeña Timeline que ha marcado un antes y un después.
+              </p>
+              <Line />
+              <TimeLine />
+            </div>
 
-          <TimeLine />
-
-          <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
-            Como me encanta mostrar algunos datos relevantes, he pensado que sería interesante hacer
-            una pequeña gráfica de este año {new Date().getFullYear()}, mostrándote cuanto
-            contribuyo al mes, en Github.
-          </p>
-          <ContributionsChart />
+            <div className="py-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+                Contribuciones
+              </h2>
+              <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
+                Como me encanta mostrar algunos datos relevantes, he pensado que sería interesante
+                hacer una pequeña gráfica de este año {new Date().getFullYear()}, mostrándote cuanto
+                contribuyo al mes, en Github.
+              </p>
+              <Line />
+              <div className="py-8">
+                <ContributionsChart />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
