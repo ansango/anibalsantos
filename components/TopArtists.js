@@ -12,7 +12,8 @@ const TopArtists = () => {
           {data.artists.map((artist, i) => {
             const position = i + 1
             const bronze = position === 3 ? '🥉' : null
-            const medal = position === 1 ? '🥇' : position === 2 ? '🥈' : bronze
+            const silver = position === 2 ? '🥈' : bronze
+            const medal = position === 1 ? '🥇' : silver
             return (
               <li key={i + 1} className="flex flex-row items-baseline w-full ">
                 <article className="border border-primary-200 rounded-lg w-full flex bg-gradient-to-r from-primary-200  to-white dark:from-gray-900 dark:to-gray-900 dark:border-primary-600">
@@ -36,7 +37,7 @@ const TopArtists = () => {
                         {medal}
                       </p>
                     ) : (
-                      <p className="text-lg font-bold text-primary-500 dark:text-primary-600">
+                      <p className="text-lg font-bold text-primary-500 dark:text-primary-600 mr-5">
                         {position}
                       </p>
                     )}

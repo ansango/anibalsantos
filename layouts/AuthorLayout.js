@@ -8,6 +8,7 @@ import ContributionsChart from '@/components/ContributionsChart'
 import { GithubIcon, SpotifyIcon } from '@/components/icons'
 import TopArtists from '@/components/TopArtists'
 import TopTracks from '@/components/TopTracks'
+import { NowPlayingBig } from '@/components/NowPlaying'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company } = frontMatter
@@ -85,6 +86,12 @@ export default function AuthorLayout({ children, frontMatter }) {
               </p>
               <Line />
               <div className="py-8">
+                <div className="pb-8">
+                  <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
+                    Escuchando ahora
+                  </h3>
+                  <NowPlayingBig />
+                </div>
                 <div className="pb-8">
                   <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
                     Top Tracks

@@ -29,4 +29,29 @@ const NowPlaying = () => {
   )
 }
 
+export const NowPlayingBig = () => {
+  const { data } = useSWR('/api/now-playing', Fetcher)
+  return (
+    <div className="flex flex-row mb-8 space-x-2 w-full text-lg">
+      <span role="img" aria-label="">
+        🎵
+      </span>
+      {data?.songUrl ? (
+        <Link
+          className="text-gray-800 dark:text-gray-200 max-w-max truncate font-semibold"
+          href={data.songUrl}
+        >
+          {data.title}
+        </Link>
+      ) : (
+        <p className="text-gray-800 dark:text-gray-200 max-w-max truncate">Nada reproduciendo</p>
+      )}
+      <span className="mx-2 text-gray-500 dark:text-gray-300 block">{' – '}</span>
+      <p className="text-gray-500 dark:text-gray-300 max-w-max truncate">
+        {data?.artist ?? 'Spotify'}
+      </p>
+    </div>
+  )
+}
+
 export default NowPlaying
