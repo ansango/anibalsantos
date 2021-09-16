@@ -1,7 +1,7 @@
 import Fetcher from '@/lib/fetcher'
 import useSWR from 'swr'
 import Image from './Image'
-
+import Link from '@/components/Link'
 const TopArtists = () => {
   const { data } = useSWR('/api/top-artists', Fetcher)
 
@@ -14,9 +14,13 @@ const TopArtists = () => {
             const bronze = position === 3 ? '🥉' : null
             const silver = position === 2 ? '🥈' : bronze
             const medal = position === 1 ? '🥇' : silver
+
             return (
               <li key={i + 1} className="flex flex-row items-baseline w-full ">
-                <article className="border border-primary-200 rounded-lg w-full flex bg-gradient-to-r from-primary-200  to-white dark:from-gray-900 dark:to-gray-900 dark:border-primary-600">
+                <Link
+                  href={artist.url}
+                  className="border border-primary-200 rounded-lg w-full flex bg-gradient-to-r from-primary-200  to-white dark:from-gray-900 dark:to-gray-900 dark:border-primary-600"
+                >
                   <div className="w-1/3">
                     <div className="w-24 mt-2 ml-2">
                       <Image
@@ -42,7 +46,7 @@ const TopArtists = () => {
                       </p>
                     )}
                   </div>
-                </article>
+                </Link>
               </li>
             )
           })}
