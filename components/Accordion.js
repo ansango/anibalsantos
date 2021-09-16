@@ -2,15 +2,26 @@ import { Disclosure, Transition } from '@headlessui/react'
 import Link from '@/components/Link'
 import { ChevDownIcon } from './icons'
 
-const Accordion = ({ posts, titleAccordion }) => {
+const Accordion = ({ posts, titleAccordion, isPinned = false }) => {
   return (
     <Disclosure>
       {({ open }) => (
         <>
           <Disclosure.Button className="flex items-center justify-between w-full focus:outline-none pt-5">
-            <h4 className="text-2xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:leading-14 capitalize">
-              {titleAccordion}
-            </h4>
+            {isPinned ? (
+              <div className="text-left max-w-sm sm:max-w-lg">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+                  {titleAccordion}
+                </h2>
+                <p className="text-md sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
+                  No se si las mejores hasta ahora, pero sí que hay algunas que me gustan.
+                </p>
+              </div>
+            ) : (
+              <h4 className="text-2xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
+                {titleAccordion}
+              </h4>
+            )}
             <div className="px-4">
               <ChevDownIcon size={26} className={`${open ? 'transform rotate-180' : ''}`} />
             </div>
@@ -32,10 +43,12 @@ const Accordion = ({ posts, titleAccordion }) => {
                     <li key={slug}>
                       <Link href={`/blog/${slug}`}>
                         <article className="p-5 border border-gray-300 rounded-lg">
-                          <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200">
+                          <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 truncate">
                             {title}
                           </h3>
-                          <p className="text-gray-500 max-w-none dark:text-gray-400">{summary}</p>
+                          <p className="text-gray-500 max-w-none dark:text-gray-400 truncate">
+                            {summary}
+                          </p>
                         </article>
                       </Link>
                     </li>

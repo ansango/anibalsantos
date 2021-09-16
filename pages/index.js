@@ -11,6 +11,7 @@ import Line from '@/components/Line'
 import Accordions from '@/components/Accordions'
 import NowPlaying from '@/components/NowPlaying'
 import Contributions from '@/components/Contributions'
+import Accordion from '@/components/Accordion'
 
 const MAX_DISPLAY = 5
 
@@ -67,6 +68,39 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           </p>
           <NowPlaying />
           <Contributions />
+        </div>
+        <div className="hidden md:block">
+          <div className="pt-6 pb-5">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 ">
+              Publicaciones destacadas
+            </h2>
+            <p className="text-md sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
+              No se si las mejores hasta ahora, pero sí que hay algunas que me gustan.
+            </p>
+          </div>
+          <Line />
+          <ul className="grid gap-3 md:grid-cols-2 py-5">
+            {pinned.map((bookmark) => {
+              const { slug, title, summary } = bookmark
+              return (
+                <li key={slug}>
+                  <Link href={`/blog/${slug}`}>
+                    <article className="p-5 border border-gray-300 rounded-lg">
+                      <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 truncate">
+                        {title}
+                      </h3>
+                      <p className="text-gray-500 max-w-none dark:text-gray-400 truncate">
+                        {summary}
+                      </p>
+                    </article>
+                  </Link>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+        <div className="md:hidden py-5">
+          <Accordion posts={pinned} titleAccordion="Publicaciones destacadas" isPinned />
         </div>
         <div className="pt-6 pb-5">
           <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 ">
@@ -156,9 +190,9 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
       <Line />
       <Accordions
         data={[
-          { title: 'destacados', data: pinned },
-          { title: 'marcadores', data: bookmarks },
-          { title: 'chuletas', data: cheatsheet },
+          // { title: 'destacados', data: pinned },
+          { title: 'Marcadores', data: bookmarks },
+          { title: 'Chuletas', data: cheatsheet },
         ]}
       />
     </>
