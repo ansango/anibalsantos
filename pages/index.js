@@ -69,7 +69,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           <NowPlaying />
           <Contributions />
         </div>
-        <div className="hidden md:block">
+        <div className="hidden md:block pb-10">
           <div className="pt-6 pb-5">
             <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 ">
               Publicaciones destacadas
@@ -98,7 +98,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
             })}
           </ul>
         </div>
-        <div className="md:hidden py-5">
+        <div className="md:hidden pt-5 pb-10">
           <Accordion posts={pinned} titleAccordion="Publicaciones destacadas" isPinned />
         </div>
         <div className="pt-6 pb-5">
