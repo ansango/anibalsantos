@@ -39,17 +39,16 @@ export default function AuthorLayout({ children, frontMatter }) {
               <SocialIcon kind="instagram" href={siteMetadata.instagram} size="5" />
             </div>
           </div>
-          <div className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2">
+          <div className="pt-8 pb-8 prose text-xl text-gray-500 dark:prose-dark max-w-none xl:col-span-2">
             {children}
           </div>
-
           <TimeLine />
-
           <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2">
             Como me encanta mostrar algunos datos relevantes, he pensado que sería interesante hacer
             una pequeña gráfica de este año {new Date().getFullYear()}, mostrándote cuanto
             contribuyo al mes, en Github.
           </p>
+
           <ContributionsChart />
         </div>
       </div>

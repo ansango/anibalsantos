@@ -94,30 +94,36 @@ const eventsData = Object.values(groupByYear(data))
 const Bars = () => {
   return (
     <div className="h-full w-4 flex items-center justify-center">
-      <div className="h-full w-1 bg-primary-200 pointer-events-none"></div>
+      <div className="h-full w-1 bg-primary-200 dark:bg-gray-700 pointer-events-none"></div>
     </div>
   )
 }
 
 const Points = () => {
   return (
-    <div className="w-4 h-4 absolute top-1/2 -mt-3 bg-primary-200 text-primary-600 shadow-lg p-1 rounded-full"></div>
+    <div className="w-4 h-4 absolute top-1/2 -mt-3 bg-primary-200 text-primary-600 shadow-lg dark:bg-gray-800 p-1 rounded-full"></div>
   )
 }
 
 const EventTitle = ({ title = '' }) => {
-  return <h4 className="font-semibold text-md mb-1 text-primary-600">{title}</h4>
+  return (
+    <h4 className="font-semibold text-md mb-1 text-primary-600 dark:text-primary-500">{title}</h4>
+  )
 }
 
 const EventContent = ({ content = '' }) => {
-  return <p className="leading-tight text-justify text-primary-500 text-sm">{content}</p>
+  return (
+    <p className="leading-tight text-justify text-primary-500 dark:text-gray-500 text-sm">
+      {content}
+    </p>
+  )
 }
 
 const LeftBlock = ({ ...rest }) => {
   const { title, content } = rest
   return (
     <div className="flex flex-row-reverse md:contents">
-      <div className="bg-primary-100 col-start-1 col-end-5 py-2 px-4 rounded-xl my-1 mr-auto md:ml-auto md:mr-0">
+      <div className="bg-primary-100 dark:bg-gray-800 col-start-1 col-end-5 py-2 px-4 rounded-xl my-1 mr-auto md:ml-auto md:mr-0">
         <EventTitle title={title} />
         <EventContent content={content} />
       </div>
@@ -137,7 +143,7 @@ const RightBlock = ({ ...rest }) => {
         <Bars />
         <Points />
       </div>
-      <div className="bg-primary-100 col-start-6 col-end-10 py-2 px-4 rounded-xl my-1 mr-auto">
+      <div className="bg-primary-100 dark:bg-gray-800 col-start-6 col-end-10 py-2 px-4 rounded-xl my-1 mr-auto">
         <EventTitle title={title} />
         <EventContent content={content} />
       </div>
@@ -153,7 +159,7 @@ const TimeLine = () => {
         return (
           <div className="container " key={index}>
             <div className="flex md:justify-center">
-              <div className="p-2 md:text-center bg-primary-200 rounded-lg text-primary-600 font-semibold">
+              <div className="p-2 md:text-center rounded-lg font-semibold bg-primary-200 text-primary-600 dark:bg-gray-800 dark:text-gray-400">
                 {year}
               </div>
             </div>
