@@ -26,7 +26,7 @@ export default function Footer() {
             <Link href="/">{siteMetadata.title}</Link>
             <Coffee />
           </div>
-          <div className="flex items-center justify-center md:justify-start space-x-2">
+          <div className="flex items-center justify-center md:justify-start space-x-2 pt-8 md:p-0">
             <SocialIcon kind="photo" href={'https://ansango-photo.vercel.app'} size="6" />
             <SocialIcon kind="mail" href={`mailto:${siteMetadata.email}`} size="5" />
             <SocialIcon kind="github" href={siteMetadata.github} size="5" />
