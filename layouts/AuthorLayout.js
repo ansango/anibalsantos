@@ -47,7 +47,7 @@ export default function AuthorLayout({ children, frontMatter }) {
             {children}
           </div>
           <div className="py-8">
-            <div className="py-8">
+            <div className="pt-16 pb-24">
               <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
                 Timeline{' '}
                 <span role="img" aria-label="">
@@ -62,7 +62,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               <TimeLine />
             </div>
 
-            <div className="py-8">
+            <div className="pt-8 pb-24">
               <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 flex items-center">
                 Contribuciones <GithubIcon className="ml-3" />
               </h2>
@@ -73,16 +73,19 @@ export default function AuthorLayout({ children, frontMatter }) {
               </p>
               <Line />
               <div className="py-8">
+                <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
+                  Contribuciones en {new Date().getFullYear()}
+                </h3>
                 <ContributionsChart />
               </div>
             </div>
-            <div className="py-8">
+            <div className="pt-8 pb-24">
               <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 flex items-center">
                 Música que escucho <SpotifyIcon className="ml-3 text-green-500" />
               </h2>
               <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
-                Me encanta escuchar música a todas horas. Desde que me levanto hasta que me acuesto
-                tengo mi Spotify funcionando, aquí puedes ver mi top 10 de canciones y artistas.
+                Escucho música a todas horas. Desde que me levanto hasta que me acuesto tengo mi
+                Spotify funcionando, aquí puedes ver mi top 10 de canciones y artistas.
               </p>
               <Line />
               <div className="py-8">
