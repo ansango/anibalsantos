@@ -53,7 +53,7 @@ const data = [
   },
   {
     year: '2013',
-    title: 'Primera cámara reflex analógica 🎞️',
+    title: 'Primera cámara analógica 🎞️',
     content: 'Empiezo en el mundo analógico con una Canon 50E',
     direction: 'right',
   },
@@ -65,7 +65,7 @@ const data = [
   },
   {
     year: '2018',
-    title: 'CFGS Desarrollo de Aplicaciones Multiplataforma ✳️',
+    title: 'CFGS DAM ✳️',
     content: 'Acabo el módulo Desarrollo de Aplicaciones Multiplataforma en Ilerna Online',
     direction: 'left',
   },
