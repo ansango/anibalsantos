@@ -5,6 +5,7 @@ import { PageSeo } from '@/components/SEO'
 import Line from '@/components/Line'
 import TimeLine from '@/components/TimeLine'
 import ContributionsChart from '@/components/ContributionsChart'
+import { GithubIcon, SpotifyIcon } from '@/components/icons'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
@@ -45,7 +46,10 @@ export default function AuthorLayout({ children, frontMatter }) {
           <div className="py-8">
             <div className="py-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
-                Timeline
+                Timeline{' '}
+                <span role="img" aria-label="">
+                  ⏳
+                </span>
               </h2>
               <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
                 Estos son algunos de los eventos que han ido sucediendome a lo largo de mi vida.
@@ -56,8 +60,8 @@ export default function AuthorLayout({ children, frontMatter }) {
             </div>
 
             <div className="py-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
-                Contribuciones
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 flex items-center">
+                Contribuciones <GithubIcon className="ml-3" />
               </h2>
               <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
                 Como me encanta mostrar algunos datos relevantes, he pensado que sería interesante
@@ -69,6 +73,17 @@ export default function AuthorLayout({ children, frontMatter }) {
                 <ContributionsChart />
               </div>
             </div>
+            {/* <div className="py-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 flex items-center">
+                Música que escucho <SpotifyIcon className="ml-3 text-green-500" />
+              </h2>
+              <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
+                Me encanta escuchar música a todas horas. Desde que me levanto hasta que me acuesto
+                tengo mi Spotify funcionando, aquí puedes mi top 10 de canciones.
+              </p>
+              <Line />
+              <div className="py-8"></div>
+            </div> */}
           </div>
         </div>
       </div>
