@@ -16,19 +16,37 @@ const ContributionsChart = () => {
   return (
     <div className="py-5">
       {months ? (
-        <div className="grid grid-cols-12 gap-1 h-96">
+        <div className="">
           {months.map((month, i) => {
             const roundedValue = getRoundedValue(month.contributions, totalMax)
             const barFillHeight = totalMax > 0 ? roundedValue : '0%'
 
             return (
-              <div key={month.name} className="h-full flex flex-col-reverse text-center">
-                <div className="">{month.name}</div>
-                <div
-                  className="bg-green-400 hover:bg-green-200 rounded-t-lg cursor-pointer"
-                  style={{ height: barFillHeight }}
-                ></div>
-              </div>
+              <>
+                {month.contributions > 0 && (
+                  <div key={month.name} className="flex items-center justify-between">
+                    <div
+                      key={month.name}
+                      className="bg-green-300 dark:bg-green-800 my-1 py-1 px-3 flex items-center justify-between flex-row-reverse md:flex-row-reverse"
+                      style={{ width: barFillHeight }}
+                    >
+                      <div className="text-green-800 font-bold dark:text-green-200">
+                        {month.contributions}
+                      </div>
+                      <div className="opacity-0 md:opacity-100">
+                        <div className="text-green-800 font-bold dark:text-green-200 capitalize">
+                          {month.name}
+                        </div>
+                      </div>
+                    </div>
+                    <div className="opacity-100 md:opacity-0 pl-16 md:pl-0">
+                      <div className="text-green-700 font-bold dark:text-green-200 capitalize">
+                        {month.name}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </>
             )
           })}
         </div>

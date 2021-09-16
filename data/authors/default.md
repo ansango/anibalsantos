@@ -8,16 +8,10 @@ linkedin: https://www.linkedin.com/in/ansango
 github: https://github.com/ansango
 ---
 
-Me llamo Aníbal, actualmente resido en Salamanca, donde trabajo como desarrollador
-Frontend para [Minsait](https://www.minsait.com/en)
+¡Hola! 👋 Soy Aníbal,
 
-Me licencié en Derecho en la [Universidad de Salamanca](https://www.usal.es/) finalizando mi último año de carrera en la [Università di Roma Tre](https://www.uniroma3.it/), en Roma.
+Nací en Salamanca📍, España 🇪🇸, mi lugar de origen. Estudié el título de Licenciatura en Derecho en la [Universidad de Salamanca](https://www.usal.es/), además del CFGS en Desarrollo de Aplicaciones Multiplataforma en [Ilerna](https://ilerna.es).
 
-Un día cambié de opinión y decidí reinventarme y empecé a estudiar programación. Actualmente me encuentro finalizando el Máster de Desarrollo de Aplicaciones Web de la[Universitat Oberta de Catalunya](https://www.uoc.edu/portal/en/index.html)
+Actualmente estoy finalizando el Máster de Desarrollo de Aplicaciones Web en la [Universitat Oberta de Catalunya](https://www.uoc.edu/portal/en/index.html). Trabajo como Frontend Mid Developer para [Minsait](https://www.minsait.com/en) en el departamento de Tecnologías Avanzadas. He trabajado para Iberdrola, Everis o Yowi.tv
 
-He trabajado en proyectos como [Iberdrola ES](https://www.iberdrola.es) y [Iberdrola IT](https://www.iberdrola.it).
-
-En este momento me encuentro feliz de haber cambiado y dedicarme a lo que me gusta:
-programar, crear contenido e interfaces de usuario y la tecnología en general.
-
-Tengo muchas otras pasiones, como la [fotografía](https://ansango-photo.vercel.app), el deporte, los animales o la gastronomía. No se si el empezar a escribir en un blog se convertirá en otra de ellas.
+Me encanta el mundo del desarrollo web y la tecnología en general, pero tengo muchas otras pasiones, como la [fotografía analógica](https://ansango-photo.vercel.app), el deporte o viajar.

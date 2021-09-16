@@ -41,8 +41,6 @@ export default function Projects() {
             </span>
           </p>
         </div>
-        {/* <Line /> */}
-        {/* <ContributionsChart /> */}
         <Line />
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-4 xl:grid-cols-3 xl:gap-5 pt-5">
           {pinnedProjects.map((d) => (
