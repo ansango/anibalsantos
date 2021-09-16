@@ -46,7 +46,7 @@ const Accordion = ({ posts, titleAccordion, isPinned = false }) => {
                           <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 truncate">
                             {title}
                           </h3>
-                          <p className="text-gray-500 dark:text-gray-400 truncate">{summary}</p>
+                          <p className="text-gray-500 dark:text-gray-400 tru">{summary}</p>
                         </article>
                       </Link>
                     </li>

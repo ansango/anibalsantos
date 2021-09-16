@@ -81,12 +81,22 @@ export default function AuthorLayout({ children, frontMatter }) {
               </h2>
               <p className="pt-8 pb-8 prose text-lg text-gray-500 dark:prose-dark max-w-none xl:col-span-2 sm:text-xl leading-7 dark:text-gray-400">
                 Me encanta escuchar música a todas horas. Desde que me levanto hasta que me acuesto
-                tengo mi Spotify funcionando, aquí puedes mi top 10 de canciones.
+                tengo mi Spotify funcionando, aquí puedes ver mi top 10 de canciones y artistas.
               </p>
               <Line />
               <div className="py-8">
-                <TopArtists />
-                <TopTracks />
+                <div className="pb-8">
+                  <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
+                    Top Tracks
+                  </h3>
+                  <TopTracks />
+                </div>
+                <div className="pt-8">
+                  <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
+                    Top Artistas
+                  </h3>
+                  <TopArtists />
+                </div>
               </div>
             </div>
           </div>
