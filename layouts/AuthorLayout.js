@@ -6,9 +6,11 @@ import Line from '@/components/Line'
 import TimeLine from '@/components/TimeLine'
 import ContributionsChart from '@/components/ContributionsChart'
 import { GithubIcon, SpotifyIcon } from '@/components/icons'
+import TopArtists from '@/components/TopArtists'
+import TopTracks from '@/components/TopTracks'
 
 export default function AuthorLayout({ children, frontMatter }) {
-  const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
+  const { name, avatar, occupation, company } = frontMatter
 
   return (
     <>
@@ -73,7 +75,7 @@ export default function AuthorLayout({ children, frontMatter }) {
                 <ContributionsChart />
               </div>
             </div>
-            {/* <div className="py-8">
+            <div className="py-8">
               <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 flex items-center">
                 Música que escucho <SpotifyIcon className="ml-3 text-green-500" />
               </h2>
@@ -82,8 +84,11 @@ export default function AuthorLayout({ children, frontMatter }) {
                 tengo mi Spotify funcionando, aquí puedes mi top 10 de canciones.
               </p>
               <Line />
-              <div className="py-8"></div>
-            </div> */}
+              <div className="py-8">
+                <TopArtists />
+                <TopTracks />
+              </div>
+            </div>
           </div>
         </div>
       </div>
