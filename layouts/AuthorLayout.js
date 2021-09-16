@@ -9,6 +9,7 @@ import { GithubIcon, SpotifyIcon } from '@/components/icons'
 import TopArtists from '@/components/TopArtists'
 import TopTracks from '@/components/TopTracks'
 import { NowPlayingBig } from '@/components/NowPlaying'
+import { ContributionsLite } from '@/components/Contributions'
 
 export default function AuthorLayout({ children, frontMatter }) {
   const { name, avatar, occupation, company } = frontMatter
@@ -73,9 +74,7 @@ export default function AuthorLayout({ children, frontMatter }) {
               </p>
               <Line />
               <div className="py-8">
-                <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8">
-                  Contribuciones en {new Date().getFullYear()}
-                </h3>
+                <ContributionsLite />
                 <ContributionsChart />
               </div>
             </div>

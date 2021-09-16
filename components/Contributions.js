@@ -29,4 +29,25 @@ const Contributions = () => {
   )
 }
 
+export const ContributionsLite = () => {
+  const { data } = useSWR('/api/contributions-current-year', Fetcher)
+  return (
+    <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 pb-8 flex">
+      {data?.contributionCalendar ? (
+        <Link className="max-w-max truncate" href="https://github.com/ansango">
+          <span>Contribuciones en {new Date().getFullYear()}</span>
+        </Link>
+      ) : (
+        <p className="text-gray-800 dark:text-gray-200 font-medium max-w-max truncate">
+          Sin registro
+        </p>
+      )}
+      <span className="mx-2 block">{' – '}</span>
+      <p className="max-w-max truncate">
+        {data?.contributionCalendar.totalContributions ?? 'Github'}
+      </p>
+    </h3>
+  )
+}
+
 export default Contributions
