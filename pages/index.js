@@ -189,7 +189,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
       <Line />
       <Accordions
         data={[
-          { title: 'destacados', data: pinned },
+          // { title: 'destacados', data: pinned },
           { title: 'Marcadores', data: bookmarks },
           { title: 'Chuletas', data: cheatsheet },
         ]}
