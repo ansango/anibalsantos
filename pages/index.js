@@ -78,7 +78,6 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
               No se si las mejores hasta ahora, pero sí que hay algunas que me gustan.
             </p>
           </div>
-          <Line />
           <ul className="grid gap-3 md:grid-cols-2 py-5">
             {pinned.map((bookmark) => {
               const { slug, title, summary } = bookmark
