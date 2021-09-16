@@ -78,7 +78,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
               No se si las mejores hasta ahora, pero sí que hay algunas que me gustan.
             </p>
           </div>
-          <ul className="grid gap-3 md:grid-cols-2 py-5">
+          <ul className="grid gap-3 grid-cols-2 py-5">
             {pinned.map((bookmark) => {
               const { slug, title, summary } = bookmark
               return (
@@ -189,7 +189,7 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
       <Line />
       <Accordions
         data={[
-          // { title: 'destacados', data: pinned },
+          { title: 'destacados', data: pinned },
           { title: 'Marcadores', data: bookmarks },
           { title: 'Chuletas', data: cheatsheet },
         ]}

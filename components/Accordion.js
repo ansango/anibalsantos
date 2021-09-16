@@ -36,7 +36,7 @@ const Accordion = ({ posts, titleAccordion, isPinned = false }) => {
             leaveTo="transform scale-95 opacity-0"
           >
             <Disclosure.Panel className="py-5">
-              <ul className="grid gap-3 md:grid-cols-2">
+              <ul className="grid gap-3 grid-cols-1 md:grid-cols-2">
                 {posts.map((bookmark) => {
                   const { slug, title, summary } = bookmark
                   return (
@@ -46,9 +46,7 @@ const Accordion = ({ posts, titleAccordion, isPinned = false }) => {
                           <h3 className="text-xl font-bold leading-8 tracking-tight text-gray-900 dark:text-gray-200 truncate">
                             {title}
                           </h3>
-                          <p className="text-gray-500 max-w-none dark:text-gray-400 truncate">
-                            {summary}
-                          </p>
+                          <p className="text-gray-500 dark:text-gray-400 truncate">{summary}</p>
                         </article>
                       </Link>
                     </li>
