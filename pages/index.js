@@ -41,14 +41,14 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
       <PageSeo title={siteMetadata.title} description={siteMetadata.description} />
       <div className="pb-10">
         <div className="pt-24 pb-10 space-y-2 md:space-y-5">
-          <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
             Hola{' '}
             <span role="img" aria-label="">
               👋
             </span>
             , soy Aníbal
           </h1>
-          <p className="text-xl leading-7 text-gray-500 dark:text-gray-400">
+          <p className="text-lg sm:text-xl leading-7 text-gray-500 dark:text-gray-400">
             Soy desarrollador enfocado en el ecosistema JavaScript. Actualmente trabajo como
             Frontend Mid Developer en{' '}
             <Link
@@ -69,10 +69,10 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
           <Contributions />
         </div>
         <div className="pt-6 pb-5">
-          <h2 className="text-2xl sm:leading-10 md:leading-14 font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 ">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl leading-9 sm:leading-10 md:leading-14 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 ">
             Últimas publicaciones
           </h2>
-          <p className="sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
+          <p className="text-md sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
             Se me olvidan las cosas, entonces escribo.
           </p>
         </div>
@@ -97,15 +97,15 @@ export default function Home({ posts, bookmarks, cheatsheet, pinned }) {
                     </dl>
                     <div className="space-y-5 xl:col-span-3">
                       <div>
-                        <h2 className="text-xl font-bold leading-8 tracking-tight">
+                        <h3 className="text-xl sm:text-xl md:text-2xl leading-9 font-extrabold tracking-tight text-gray-900 dark:text-gray-100">
                           <Link href={`/blog/${slug}`} className="text-gray-900 dark:text-gray-100">
                             {title}{' '}
                             <span className="text-xl text-primary-500 hover:text-primary-600 dark:hover:text-primary-400">
                               &rarr;
                             </span>
                           </Link>
-                        </h2>
-                        <div className="prose text-gray-500 max-w-none dark:text-gray-400">
+                        </h3>
+                        <div className="text-md sm:text-lg leading-7 text-gray-500 dark:text-gray-400">
                           {summary}
                         </div>
                         <div className="flex flex-wrap items-center">
