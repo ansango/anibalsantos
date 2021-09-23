@@ -33,13 +33,13 @@ const ContributionsChart = () => {
                       <div className="text-green-800 font-bold dark:text-green-200">
                         {month.contributions}
                       </div>
-                      <div className="opacity-0 md:opacity-100">
+                      <div className="hidden md:block">
                         <div className="text-green-800 font-bold dark:text-green-200 capitalize">
                           {month.name}
                         </div>
                       </div>
                     </div>
-                    <div className="opacity-100 md:opacity-0 pl-16 md:pl-0">
+                    <div className="md:hidden pl-6">
                       <div className="text-green-700 font-bold dark:text-green-200 capitalize">
                         {month.name}
                       </div>
