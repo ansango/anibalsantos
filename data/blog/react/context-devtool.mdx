@@ -28,49 +28,21 @@ Ahora puedes depurar fácilmente tu contexto en tu aplicación React con vistas 
 ## Instalación
 
 1. Descarga la extensión para <a href="https://chrome.google.com/webstore/detail/react-context-devtool/oddhnidmicpefilikhgeagedibnefkcf" target="_blank" rel="noopener noreferrer">Chrome</a> o <a href="https://addons.mozilla.org/en-US/firefox/addon/react-context-devtool/" target="_blank" rel="noopener noreferrer">Firefox</a>.
-2. Añade el método `_REACT_CONTEXT_DEVTOOL` in tu `Consumer`.
+2. Añade la propiedad `displayName` en el `Provider`
 
 ```javascript
-<MyContext.Consumer>
-  {(values) => {
-    if (window._REACT_CONTEXT_DEVTOOL) {
-      window._REACT_CONTEXT_DEVTOOL({
-        id: 'uniqContextId',
-        displayName: 'Context Display Name',
-        values,
-      })
-    }
-    return null
-  }}
-</MyContext.Consumer>
-```
-
-¡Y listo! 🥳
-
-</section>
-
-<section>
-
-## Usarlo como paquete de `npm`
-
-1. Descarga el paquete:
-
-```bash
-npm install react-context-devtool
-```
-
-2. Añade `ContextDevTool` dentro de tu `Provider`
-
-```javascript
-import ContextDevTool from 'react-context-devtool'
-;<MyContext.Provider value={{ a: 'hello', b: 'world' }}>
-  // Add this in your context provider
-  <ContextDevTool context={MyContext} id="uniqContextId" displayName="Context Display Name" />
+<MyContext.Provider value={{ a: 'hello', b: 'world' }} displayName="Context Display Name">
   <YourComponent />
 </MyContext.Provider>
 ```
 
-Ready! 🥳
+o bien asigna el nombre a mostrar en el `Context`:
+
+```javascript
+MyContext.displayName = 'Context Display Name'
+```
+
+¡Y listo! 🥳
 
 </section>
 
