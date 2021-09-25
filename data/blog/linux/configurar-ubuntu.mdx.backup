@@ -291,16 +291,13 @@ Descarga la última versión de Balena Etcher <a href="https://www.balena.io/etc
 ```bash
 sudo apt install transmission
 ```
-
 ### Ghostwriter
 
 Si quieres escribir markdown sin distracciones aquí tienes un editor genial que te ayudará a prescindir de editores
 
 ```bash
-sudo add-apt-repository ppa:wereturtle/ppa
-sudo apt update
-sudo apt install ghostwriter
-```
+``
+
 
 </section>
 
