@@ -5,3 +5,4 @@ https://flaviocopes.com/swr/
 https://dev.to/saviomartin/20-killer-javascript-one-liners-94f
 https://dev.to/aspittel/three-new-next-js-features-and-how-to-use-them-1d3d
 https://dev.to/zahab/5-ways-to-fetch-api-data-in-react-js-3pfk
+https://dev.to/knowankit/do-you-know-all-the-popular-npm-commands-22ac
