@@ -13,14 +13,14 @@ import {
   queries,
 } from "../../../lib/tina";
 
-const SeriePage = (props: AsyncReturnType<typeof getStaticProps>["props"]) => {
+const BlogPage = (props: AsyncReturnType<typeof getStaticProps>["props"]) => {
   const { prev, next, route, collection } = props;
   const { data } = useTina({
     query: props.query,
     variables: props.variables,
     data: props.data,
   });
-  const post = data[collection] as any;
+  const post = data && (data[collection] as any);
   if (post && !post.draft) {
     const { publishedAt, title, summary, _body, bodyHighlight, cover } = post;
 
@@ -60,7 +60,7 @@ const SeriePage = (props: AsyncReturnType<typeof getStaticProps>["props"]) => {
         description: post?.seo?.description,
         images: [
           {
-            // TODO: Add cover image
+            //TODO:  Add cover image
             url: `${process.env.NEXT_PUBLIC_WEB_URI}/static/blog/${collection}/${post.cover}.jpg`,
             width: 400,
             height: 400,
@@ -99,7 +99,7 @@ const SeriePage = (props: AsyncReturnType<typeof getStaticProps>["props"]) => {
   return <FourOhFour />;
 };
 
-export default SeriePage;
+export default BlogPage;
 
 export const getStaticProps = async ({
   params,
@@ -132,20 +132,33 @@ export const getStaticProps = async ({
       route: `${nextPost._sys.path.replace("content", "").split(".")[0]}`,
     }) ||
     null;
-  console.log(params);
-  const tinaProps = await queries[params.collection]({
-    relativePath: `${params.filename}.mdx`,
-  });
+  try {
+    const tinaProps = await queries[params.collection]({
+      relativePath: `${params.filename}.mdx`,
+    });
 
-  return {
-    props: {
-      ...tinaProps,
-      collection: params.collection,
-      route: `blog/${params.collection}/${params.filename}`,
-      prev,
-      next,
-    },
-  };
+    return {
+      props: {
+        ...tinaProps,
+        collection: params.collection,
+        route: `blog/${params.collection}/${params.filename}`,
+        prev,
+        next,
+      },
+    };
+  } catch (error) {
+    return {
+      props: {
+        prev: null,
+        next: null,
+        route: null,
+        collection: null,
+        data: null,
+        query: null,
+        variables: null,
+      },
+    };
+  }
 };
 
 export const getStaticPaths = async () => {

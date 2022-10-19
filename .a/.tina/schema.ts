@@ -47,11 +47,6 @@ const fieldBase = [
     label: "Summary",
     type: "string",
   },
-  {
-    name: "cover",
-    label: "Cover",
-    type: "image",
-  },
   { ...tagSchema },
   {
     label: "Body Highlight",

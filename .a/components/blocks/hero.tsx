@@ -31,7 +31,7 @@ const renderHero = (
             <div className="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
               {tagline && (
                 <span
-                  className={`mb-8 text-xs font-bold tracking-widest uppercase  ${primaryTextColors[color]}`}
+                  className={`mb-4 text-xs font-bold tracking-widest uppercase  ${primaryTextColors[color]}`}
                   data-tinafield={`${parentField}.tagline`}
                 >
                   {tagline}
@@ -39,7 +39,7 @@ const renderHero = (
               )}
               {headline && (
                 <h1
-                  className={`mb-8 text-5xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-7xl`}
+                  className={`mb-4 text-4xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-5xl`}
                   data-tinafield={`${parentField}.headline`}
                 >
                   {headline}
@@ -65,7 +65,7 @@ const renderHero = (
             <div className="flex flex-col w-full mb-12 text-center">
               {headline && (
                 <h1
-                  className={`max-w-5xl text-5xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-7xl lg:max-w-7xl`}
+                  className={`mb-4 text-4xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-5xl`}
                   data-tinafield={`${parentField}.headline`}
                 >
                   {headline}
@@ -84,14 +84,20 @@ const renderHero = (
         </Container>
       );
     }
-    case "blogPost": {
+    case "avatar": {
       return (
         <Container>
-          <div className="flex flex-wrap items-center mx-auto 5xl:max-w-7xl pb-10">
+          <div className="flex flex-col lg:flex-row-reverse lg:items-center mx-auto 5xl:max-w-7xl gap-10">
+            <div>
+              <img
+                src="https://www.anibalsantosgomez.com/avatar.jpeg"
+                className="rounded-full w-20 md:w-32 lg:w-36"
+              />
+            </div>
             <div className="flex flex-col items-start mb-16 text-left lg:flex-grow lg:w-1/2 lg:pr-24 md:mb-0">
               {tagline && (
                 <span
-                  className={`mb-8 text-xs font-bold tracking-widest uppercase  ${primaryTextColors[color]}`}
+                  className={`mb-4 text-xs font-bold tracking-widest uppercase  ${primaryTextColors[color]}`}
                   data-tinafield={`${parentField}.tagline`}
                 >
                   {tagline}
@@ -99,7 +105,7 @@ const renderHero = (
               )}
               {headline && (
                 <h1
-                  className={`mb-8 text-5xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-6xl`}
+                  className={`mb-4 text-4xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-5xl`}
                   data-tinafield={`${parentField}.headline`}
                 >
                   {headline}
@@ -115,7 +121,40 @@ const renderHero = (
               )}
             </div>
           </div>
-          <Image {...image} />
+        </Container>
+      );
+    }
+    case "blogPost": {
+      return (
+        <Container>
+          <div className="flex flex-wrap items-center mx-auto 5xl:max-w-7xl">
+            <div className="flex flex-col items-start text-left lg:flex-grow lg:w-1/2 lg:pr-24">
+              {tagline && (
+                <span
+                  className={`mb-8 text-xs font-bold tracking-widest uppercase  ${primaryTextColors[color]}`}
+                  data-tinafield={`${parentField}.tagline`}
+                >
+                  {tagline}
+                </span>
+              )}
+              {headline && (
+                <h1
+                  className={`mb-4 text-4xl font-bold leading-none tracking-tighter ${monoTextColors[700][mono]} md:text-5xl`}
+                  data-tinafield={`${parentField}.headline`}
+                >
+                  {headline}
+                </h1>
+              )}
+              {text && (
+                <p
+                  className={`mb-8 text-base leading-relaxed text-left max-w-4xl ${monoTextColors[500][mono]}`}
+                  data-tinafield={`${parentField}.text`}
+                >
+                  {text}
+                </p>
+              )}
+            </div>
+          </div>
         </Container>
       );
     }
@@ -169,7 +208,7 @@ export const heroBlockSchema: Template = {
       type: "string",
       label: "Type",
       name: "type",
-      options: ["left", "center"],
+      options: ["left", "center", "avatar"],
     },
   ],
 };

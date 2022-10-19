@@ -7,7 +7,17 @@
     "iconClose": {
       "size": "sm",
       "name": "close"
-    }
+    },
+    "nav": [
+      {
+        "href": "",
+        "label": "Inicio"
+      },
+      {
+        "href": "",
+        "label": "Bio"
+      }
+    ]
   },
   "footer": {
     "links": [

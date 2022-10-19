@@ -23,15 +23,8 @@ export const Header = ({ data }) => {
   return (
     <header>
       <Container className="pt-6 sm:py-12">
-        <div className="flex flex-col md:items-center md:justify-between md:flex-row">
-          <div className="flex flex-row items-center justify-between lg:justify-start">
-            <Link href="/">
-              <a
-                className={`text-lg font-bold tracking-tight transition duration-600 ease-in-out transform tracking-relaxed lg:pr-8 ${primaryTextColors[color]}`}
-              >
-                anibalsantos
-              </a>
-            </Link>
+        <div className="flex flex-col md:items-center md:flex-row">
+          <div className="flex flex-row items-center">
             <div ref={menu}>
               <button
                 className={`rounded-lg md:hidden focus:outline-none focus:shadow-outline p-4`}
@@ -52,12 +45,12 @@ export const Header = ({ data }) => {
               </button>
               {isOpen && (
                 <div
-                  className="absolute right-8 sm:right-10 z-10 mt-4  p-2 origin-top-right rounded-md bg-neutral-100/20 dark:bg-neutral-800/30 ring-1 ring-neutral-700 dark:ring-neutral-500 ring-opacity-5 focus:outline-none"
+                  className="absolute left-8 sm:right-10 z-10 mt-4 max-w-[10rem] p-2 origin-top-right rounded-md bg-neutral-100/20 dark:bg-neutral-800/30 ring-1 ring-neutral-700 dark:ring-neutral-500 ring-opacity-5 focus:outline-none"
                   role="menu"
                   aria-hidden={!isOpen}
                 >
                   <ul className="space-y-2 flex flex-col w-full">
-                    {data.nav.map((item, i) => {
+                    {data.nav?.map((item, i) => {
                       return (
                         <Link
                           href={`/${item.href}`}
@@ -79,7 +72,7 @@ export const Header = ({ data }) => {
           </div>
 
           <nav
-            className={`flex-col items-center flex-grow hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row lg:border-l-2 lg:pl-2 ${primaryBorderColors[color]}`}
+            className={`flex-col items-center hidden pb-4 md:pb-0 md:flex md:justify-end md:flex-row`}
           >
             {data.nav?.map((item, i) => {
               return (

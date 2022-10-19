@@ -57,18 +57,6 @@ export const Footer = ({ data, rawData }) => {
       <footer>
         <Container>
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
-            <div className="space-y-8 xl:col-span-1">
-              <Link href="/" passHref>
-                <a
-                  className={`text-lg font-bold tracking-tight ${primaryTextColors[color]} transition duration-500 ease-in-out transform tracking-relaxed lg:pr-8`}
-                >
-                  anibalsantos
-                </a>
-              </Link>
-              <p className={`mt-2 text-sm ${monoTextColors[500][mono]}`}>
-                film captures / miscellaneous
-              </p>
-            </div>
             <div className="grid grid-cols-2 gap-8 mt-12 xl:mt-0 xl:col-span-2">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
@@ -93,15 +81,6 @@ export const Footer = ({ data, rawData }) => {
                 </div>
               </div>
             </div>
-          </div>
-
-          <div className="px-5 py-12 mt-12 mx-auto bg-neutral-100 dark:bg-neutral-800 sm:px-6 md:flex md:items-center md:justify-between lg:px-20">
-            <span
-              className={`mt-2 text-sm font-light ${monoTextColors[500][mono]}`}
-            >
-              Copyright © 2013 - {new Date().getFullYear()}. Anibal Santos.
-              Todos los derechos reservados.
-            </span>
           </div>
         </Container>
       </footer>
