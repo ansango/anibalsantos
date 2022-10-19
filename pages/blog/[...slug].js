@@ -30,7 +30,7 @@ export async function getStaticProps({ params }) {
     return authorResults.frontMatter
   })
   const authorDetails = await Promise.all(authorPromise)
-
+  console.log(post)
   // rss
   const rss = generateRss(allPosts)
   fs.writeFileSync('./public/feed.xml', rss)
@@ -38,6 +38,7 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Blog({ post, comments, authorDetails, prev, next }) {
+  console.log(post)
   const { mdxSource, frontMatter } = post
 
   return (
